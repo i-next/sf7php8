@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Seeder{% endblock %}
+
+{% block body %}
+    <h1>Create new Seeder</h1>
+
+    {{ include('seeder/_form.html.twig') }}
+
+    <a href="{{ path('app_seeder_index') }}">back to list</a>
+{% endblock %}
