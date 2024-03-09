@@ -14,9 +14,9 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+/*  font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
-  color: #444444;
+  color: #444444;*/
 }
 
 a {
@@ -42,8 +42,7 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
-  padding: 20px 30px;
+  padding: 10px 10px;
   transition: all 0.3s;
 }
 
@@ -633,7 +632,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    /*margin-left: 300px;*/
   }
 }
 

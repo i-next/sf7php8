@@ -60,3 +60,9 @@ cc: sf
 
 pg: ##shell postgresql
 	@$(POSTGRESQL_CONT) sh
+
+cs-fixer: ## php-cs-fixer fix src
+	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
+
+cs-fixer-tests: ## php-cs-fixer fix tests
+	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests

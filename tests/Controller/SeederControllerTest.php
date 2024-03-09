@@ -1,112 +1,47 @@
 <?php
 
-namespace App\Test\Controller;
+namespace App\Tests\Controller;
 
-use App\Entity\Seeder;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityRepository;
-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class SeederControllerTest extends WebTestCase
 {
-    private KernelBrowser $client;
-    private EntityManagerInterface $manager;
-    private EntityRepository $repository;
-    private string $path = '/seeder/';
-
-    protected function setUp(): void
+    public function testSeederInder(): void
     {
-        $this->client = static::createClient();
-        $this->manager = static::getContainer()->get('doctrine')->getManager();
-        $this->repository = $this->manager->getRepository(Seeder::class);
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
 
-        foreach ($this->repository->findAll() as $object) {
-            $this->manager->remove($object);
-        }
+        // retrieve the test user
+        $testUser = $userRepository->findOneByEmail('test@test.fr');
 
-        $this->manager->flush();
+        // simulate $testUser being logged in
+        $client->loginUser($testUser);
+        $crawler = $client->request('GET', '/seeder');
+
+        $this->assertGreaterThan(
+            0,
+            $crawler->filter('td:contains("testseederfix")')->count()
+        );
+        $this->assertResponseIsSuccessful();
     }
 
-    public function testIndex(): void
+    public function testSeederAdd(): void
     {
-        $crawler = $this->client->request('GET', $this->path);
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
 
-        self::assertResponseStatusCodeSame(200);
-        self::assertPageTitleContains('Seeder index');
+        // retrieve the test user
+        $testUser = $userRepository->findOneByEmail('test@test.fr');
 
-        // Use the $crawler to perform additional assertions e.g.
-        // self::assertSame('Some text on the page', $crawler->filter('.p')->first());
-    }
-
-    public function testNew(): void
-    {
-        $this->markTestIncomplete();
-        $this->client->request('GET', sprintf('%snew', $this->path));
-
-        self::assertResponseStatusCodeSame(200);
-
-        $this->client->submitForm('Save', [
-            'seeder[name]' => 'Testing',
+        // simulate $testUser being logged in
+        $client->loginUser($testUser);
+        $crawler = $client->request('GET', '/seeder/new');
+        $form = $crawler->filter('form[name="seeder"]')->form();
+        $client->submit($form, [
+            'seeder[name]' => 'testseeder'
         ]);
-
-        self::assertResponseRedirects('/sweet/food/');
-
-        self::assertSame(1, $this->getRepository()->count([]));
+        $this->assertResponseStatusCodeSame('303');
     }
 
-    public function testShow(): void
-    {
-        $this->markTestIncomplete();
-        $fixture = new Seeder();
-        $fixture->setName('My Title');
-
-        $this->manager->persist($fixture);
-        $this->manager->flush();
-
-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
-
-        self::assertResponseStatusCodeSame(200);
-        self::assertPageTitleContains('Seeder');
-
-        // Use assertions to check that the properties are properly displayed.
-    }
-
-    public function testEdit(): void
-    {
-        $this->markTestIncomplete();
-        $fixture = new Seeder();
-        $fixture->setName('Value');
-
-        $this->manager->persist($fixture);
-        $this->manager->flush();
-
-        $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));
-
-        $this->client->submitForm('Update', [
-            'seeder[name]' => 'Something New',
-        ]);
-
-        self::assertResponseRedirects('/seeder/');
-
-        $fixture = $this->repository->findAll();
-
-        self::assertSame('Something New', $fixture[0]->getName());
-    }
-
-    public function testRemove(): void
-    {
-        $this->markTestIncomplete();
-        $fixture = new Seeder();
-        $fixture->setName('Value');
-
-        $this->manager->remove($fixture);
-        $this->manager->flush();
-
-        $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
-        $this->client->submitForm('Delete');
-
-        self::assertResponseRedirects('/seeder/');
-        self::assertSame(0, $this->repository->count([]));
-    }
 }

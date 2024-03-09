@@ -3,33 +3,31 @@
 {% block title %}Seeder index{% endblock %}
 
 {% block body %}
-    <h1>Seeder index</h1>
+    <main id="main" class="main">
+        <table class="table datatables stripe">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for seeder in seeders %}
+                <tr>
+                    <td>{{ seeder.name }}</td>
+                    <td>
+                        <a href="{{ path('app_seeder_show', {'id': seeder.id}) }}"><i class="bi bi-eye button_action"></i></a>
+                        <a href="{{ path('app_seeder_edit', {'id': seeder.id}) }}"><i class="bi bi-pencil-square button_action"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for seeder in seeders %}
-            <tr>
-                <td>{{ seeder.id }}</td>
-                <td>{{ seeder.name }}</td>
-                <td>
-                    <a href="{{ path('app_seeder_show', {'id': seeder.id}) }}">show</a>
-                    <a href="{{ path('app_seeder_edit', {'id': seeder.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_seeder_new') }}">Create new</a>
+        <a href="{{ path('app_seeder_new') }}">Create new</a>
+    </main>
 {% endblock %}

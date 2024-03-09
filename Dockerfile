@@ -20,6 +20,9 @@ RUN apk add --no-cache \
 		file \
 		gettext \
 		git \
+    	make \
+    	htop \
+    	nano \
 	;
 
 RUN set -eux; \

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+        <a href="{{ path('app_index') }}" class="navbar-brand">
+            <img src="{{ asset('img/logo.png') }}" alt="">
+            <span class="d-none d-lg-block">JDC</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0  nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link {% if nav is not defined %}active{% endif %}" aria-current="page" href="{{ path('app_index') }}">Dashboard</a>
+                </li>
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if nav is defined and nav == 'seeder' %}active{% endif %}" href="{{ path('app_seeder_index') }}"><i class="bi bi-shop"></i> Seeders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if nav is defined and nav == 'seed' %}active{% endif %}" href="{{ path('app_seed_index') }}"><i class="bi bi-egg-fill"></i> Seeds</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-flower1"></i> Plantes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Germination</a></li>
+                            <li><a class="dropdown-item" href="#">Croissance</a></li>
+                            <li><a class="dropdown-item" href="#">PreFlo</a></li>
+                            <li><a class="dropdown-item" href="#">Floraison</a></li>
+                            <li><a class="dropdown-item" href="#">Toutes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                {% endif %}
+            </ul>
+            {% if is_granted('ROLE_USER') %}
+                <h5><span class="d-none d-md-block dropdown-toggle ps-2"><i class="bi bi-person-fill"></i>{{ app.user.email }}</span></h5>
+            {% else %}
+                <a href="{{ path('app_login') }}"><i class="bi bi-person-check-fill icons" ></i> &nbsp;&nbsp;</a><a href="{{ path('app_register') }}"><i class="bi bi-person-fill-add icons"></i></a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

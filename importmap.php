@@ -49,7 +49,7 @@ return [
         'version' => '5.5.0',
     ],
     'tslib' => [
-        'version' => '2.3.0',
+        'version' => '2.6.2',
     ],
     'zrender/lib/zrender.js' => [
         'version' => '5.5.0',
@@ -228,5 +228,22 @@ return [
     ],
     'zrender' => [
         'version' => '5.5.0',
+    ],
+    'bootstrap-icons/font/bootstrap-icons.min.css' => [
+        'version' => '1.11.3',
+        'type' => 'css',
+    ],
+    'datatables.net-dt' => [
+        'version' => '2.0.1',
+    ],
+    'datatables.net' => [
+        'version' => '2.0.1',
+    ],
+    'datatables.net-dt/css/dataTables.dataTables.min.css' => [
+        'version' => '2.0.1',
+        'type' => 'css',
+    ],
+    'datatables.net-plugins/i18n/fr-FR.mjs' => [
+        'version' => '1.13.6',
     ],
 ];

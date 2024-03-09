@@ -12,13 +12,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/seeder')]
+#[IsGranted('ROLE_USER')]
 class SeederController extends AbstractController
 {
-    #[Route('/', name: 'app_seeder_index', methods: ['GET'])]
+    #[Route('', name: 'app_seeder_index', methods: ['GET'])]
     public function index(SeederRepository $seederRepository): Response
     {
         return $this->render('seeder/index.html.twig', [
-            'seeders' => $seederRepository->findAll(),
+            'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
+            'nav'       => 'seeder'
         ]);
     }
 
@@ -37,8 +39,9 @@ class SeederController extends AbstractController
         }
 
         return $this->render('seeder/new.html.twig', [
-            'seeder' => $seeder,
-            'form' => $form,
+            'seeder'    => $seeder,
+            'form'      => $form,
+            'nav'       => 'seeder'
         ]);
     }
 
@@ -46,7 +49,8 @@ class SeederController extends AbstractController
     public function show(Seeder $seeder): Response
     {
         return $this->render('seeder/show.html.twig', [
-            'seeder' => $seeder,
+            'seeder'    => $seeder,
+            'nav'       => 'seeder'
         ]);
     }
 
@@ -63,8 +67,9 @@ class SeederController extends AbstractController
         }
 
         return $this->render('seeder/edit.html.twig', [
-            'seeder' => $seeder,
-            'form' => $form,
+            'seeder'    => $seeder,
+            'form'      => $form,
+            'nav'       => 'seeder'
         ]);
     }
 
