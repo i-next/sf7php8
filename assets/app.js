@@ -29,7 +29,4 @@ import './js/main.js';
 // import 'simple-datatables/dist/style.min.css';
 
 import 'zrender';*/
-$(document).ready(function(){
-  console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-});
-//console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+

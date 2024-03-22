@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plant{% endblock %}
+
+{% block body %}
+    <h1>Plant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>State</th>
+                <td>{{ plant.state.value }}</td>
+            </tr>
+            <tr>
+                <th>Date_flo</th>
+                <td>{{ plant.dateFlo ? plant.dateFlo|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Jours restants</th>
+                <td>{{ function_days_remained(plant) }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{ render(path('app_plant_history',{'id': plant.id})) }}
+
+    <a href="{{ path('app_plant_index') }}">back to list</a>
+
+    <a href="{{ path('app_plant_edit', {'id': plant.id}) }}">edit</a>
+
+    {{ include('plant/_delete_form.html.twig') }}
+{% endblock %}

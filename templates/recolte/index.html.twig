@@ -1,0 +1,24 @@
+{% extends 'recolte/base.html.twig' %}
+
+{% block title %}Récoltes{% endblock %}
+
+{% block body %}
+    <table class="table datatables stripe">
+        <thead>
+        <tr>
+            <th>Variété</th>
+            <th>Poids</th>
+            <th>notes</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for recolte in recoltes %}
+            <tr>
+                <td>{{ recolte.plant.seedid.name }} ({{ recolte.plant.seedid.duration }})</td>
+                <td>{{ recolte.weight }}</td>
+                <td>{{ recolte.notes }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

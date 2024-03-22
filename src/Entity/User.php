@@ -16,8 +16,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface, PasswordUpgraderInterface
 {
+    //strategy: "SEQUENCE"
+
     #[ORM\Id]
-    #[ORM\GeneratedValue(strategy: "SEQUENCE")]
+    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -42,10 +44,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
     #[ORM\OneToMany(targetEntity: Plant::class, mappedBy: 'userid', orphanRemoval: true)]
     private Collection $plants;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $date_last_login = null;
+
+    #[ORM\OneToMany(targetEntity: Recolte::class, mappedBy: 'userid', orphanRemoval: true)]
+    private Collection $recoltes;
+
     public function __construct()
     {
         $this->seeds = new ArrayCollection();
         $this->plants = new ArrayCollection();
+        $this->recoltes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -189,6 +198,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
             // set the owning side to null (unless already changed)
             if ($plant->getUserid() === $this) {
                 $plant->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getDateLastLogin(): ?\DateTimeImmutable
+    {
+        return $this->date_last_login;
+    }
+
+    public function setDateLastLogin(?\DateTimeImmutable $date_last_login): static
+    {
+        $this->date_last_login = $date_last_login;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Recolte>
+     */
+    public function getRecoltes(): Collection
+    {
+        return $this->recoltes;
+    }
+
+    public function addRecolte(Recolte $recolte): static
+    {
+        if (!$this->recoltes->contains($recolte)) {
+            $this->recoltes->add($recolte);
+            $recolte->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecolte(Recolte $recolte): static
+    {
+        if ($this->recoltes->removeElement($recolte)) {
+            // set the owning side to null (unless already changed)
+            if ($recolte->getUserid() === $this) {
+                $recolte->setUserid(null);
             }
         }
 

@@ -1,0 +1,16 @@
+<div class="card dashboard">
+    <div class="card-body">
+        <h5 class="card-title">Historique</h5>
+        <div class="activity">
+            {% for planthistory in planthistories %}
+            <div class="activity-item d-flex">
+                <div class="activite-label">{{ planthistory.date|date("d/m/Y") }} &nbsp</div>
+                <i class="bi bi-circle-fill activity-badge {{ planthistory.state.name|lower }} align-self-start"></i>
+                <div class="activity-content">
+                    {{ planthistory.state.value }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

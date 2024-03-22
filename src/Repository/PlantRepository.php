@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\EnumStates;
 use App\Entity\Plant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -19,6 +20,35 @@ class PlantRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Plant::class);
+    }
+
+    public function countPlantsByState(string $state, int $userId): int
+    {
+
+        $req = $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->where('p.userid = :userid')
+            ->setParameter('userid', $userId);
+        if($state != '*') {
+            $req->andWhere('p.state = :state')
+            ->setParameter('state', $state);
+        }
+        $res = $req->getQuery()->execute();
+        $resarray = $res[array_key_first($res)];
+
+        return $resarray[array_key_first($resarray)];
+    }
+
+    public function countPlantsAllStates(int $userId): array
+    {
+        $res = $this->createQueryBuilder('p')
+            ->select('p.state, count(p.id)')
+            ->groupBy('p.state')
+            ->where('p.userid = :userid')
+            ->setParameter('userid', $userId)
+            ->getQuery()
+            ->getResult();
+        return $res;
     }
 
     //    /**

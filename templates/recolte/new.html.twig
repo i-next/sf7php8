@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Recolte{% endblock %}
+
+{% block body %}
+
+    {{ include('recolte/_form.html.twig') }}
+
+    <a href="{{ path('app_recolte') }}">back to list</a>
+{% endblock %}

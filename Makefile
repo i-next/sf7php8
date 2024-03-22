@@ -23,7 +23,7 @@ build: ## Builds the Docker images
 	@$(DOCKER_COMP) build --pull --no-cache
 
 up: ## Start the docker hub in detached mode (no logs)
-	@$(DOCKER_COMP) up --detach
+	@$(DOCKER_COMP) up --force-recreate --detach
 
 start: build up ## Build and start the containers
 
@@ -38,7 +38,7 @@ sh: ## Connect to the FrankenPHP container
 
 test: ## Start tests with phpunit, pass the parameter "c=" to add options to phpunit, example: make test c="--group e2e --stop-on-failure"
 	@$(eval c ?=)
-	@$(DOCKER_COMP) exec -e APP_ENV=test php bin/phpunit $(c)
+	@$(DOCKER_COMP) exec -e APP_ENV=test php bin/phpunit $(c) --verbose
 
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
@@ -62,7 +62,7 @@ pg: ##shell postgresql
 	@$(POSTGRESQL_CONT) sh
 
 cs-fixer: ## php-cs-fixer fix src
-	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
+	@$(PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
 
 cs-fixer-tests: ## php-cs-fixer fix tests
-	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests
+	@$(PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests

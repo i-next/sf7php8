@@ -1,0 +1,38 @@
+{% extends 'plant/base.html.twig' %}
+
+{% block title %}Plantes{% endblock %}
+
+{% block body %}
+    <table class="table datatables stripe">
+        <thead>
+            <tr>
+                <th class="header_action"></th>
+                <th>Variété</th>
+                <th>Seeder</th>
+                <th>Etat</th>
+                <th>Date création</th>
+                <th>Date Mise à jour</th>
+                <th>Date Récolte</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plant in plants %}
+            <tr>
+                <td class="table_col_action">
+                    <a href="{{ path('app_plant_show', {'id': plant.id}) }}"><i class="bi bi-eye button_action"></i></a>
+                    <a href="{{ path('app_plant_edit', {'id': plant.id}) }}"><i class="bi bi-pencil-square button_action"></i></a>
+                    <a href="{{ path('app_plant_delete', {'id': plant.id}) }}"><i class="bi bi-trash button_action"></i></a>
+                    {% if constant('App\\Entity\\EnumStates::REC') != plant.state %}<a href="{{ path('app_plant_change', {'id' : plant.id, 'state' : states[plant.state.name]}) }}"><i class="bi bi-node-plus button_action"></i></a>{% endif %}
+                </td>
+                <td>{{ plant.seedid.name }} ({{ plant.seedid.duration }}) {% if plant.state == constant('App\\Entity\\EnumStates::FLO')%}{{ function_remain(plant)|raw }} <i class="bi bi-bar-chart-fill {{ function_step(plant) }}"></i>{% endif %}</td>
+                <td>{{ plant.seedid.seeder.name }}</td>
+                <td>{{ plant.state.value }}</td>
+                <td>{{ plant.dateCreated ? plant.dateCreated|date('d/m/Y') : '' }}</td>
+                <td>{{ plant.dateUpdated ? plant.dateUpdated|date('d/m/Y') : '' }}</td>
+                <td>{{ plant.dateFlo ? plant.dateFlo|date('d/m/Y') : '' }} {% if constant('App\\Entity\\EnumStates::REC') != plant.state %}(-{{ function_days_remained(plant) }}j){% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {#<a href="{{ path('app_plant_new') }}">Create new</a>#}
+{% endblock %}

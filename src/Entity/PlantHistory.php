@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PlantHistoryRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class PlantHistory
 {
     #[ORM\Id]
@@ -18,8 +19,8 @@ class PlantHistory
     #[ORM\JoinColumn(nullable: false)]
     private ?Plant $plant_id = null;
 
-    #[ORM\Column(length: 255, enumType: EnumStates::class)]
-    private ?string $state = null;
+    #[ORM\Column(type: "string", length: 255, enumType: EnumStates::class)]
+    private EnumStates $state;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
@@ -41,26 +42,28 @@ class PlantHistory
         return $this;
     }
 
-    public function getState(): ?string
+    public function getState(): EnumStates
     {
         return $this->state;
     }
 
-    public function setState(string $state): static
+    public function setState(EnumStates $state): static
     {
         $this->state = $state;
 
         return $this;
     }
 
+
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    #[ORM\PrePersist]
+    public function setDate(): static
     {
-        $this->date = $date;
+        $this->date = new \DateTimeImmutable();
 
         return $this;
     }

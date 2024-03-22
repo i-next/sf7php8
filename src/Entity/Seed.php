@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Seed
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue(strategy: "SEQUENCE")]
+    #[ORM\GeneratedValue()]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -31,7 +31,7 @@ class Seed
     #[ORM\Column]
     private ?int $Duration = null;
 
-    #[ORM\OneToMany(targetEntity: Plant::class, mappedBy: 'seedid', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Plant::class, mappedBy: 'seedid', fetch: 'EAGER', orphanRemoval: true)]
     private Collection $plants;
 
     public function __construct()

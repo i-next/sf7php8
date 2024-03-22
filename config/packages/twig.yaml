@@ -1,5 +1,9 @@
 twig:
     file_name_pattern: '*.twig'
+when@dev:
+    twig:
+        paths:
+            '%kernel.project_dir%/vendor/symfony/web-profiler-bundle/Resources/views': WebProfilerBundle
 
 when@test:
     twig:

@@ -1,3 +1,29 @@
 .button_action{
-    color: #4154f1;
+    color: #c1092a;
+    font-size: 1em;
 }
+.table_col_action{
+    text-align: right;
+}
+.header_action{
+    width: 100px;
+}
+.step1{
+    color: yellow;
+}
+.step2{
+    color: orange;
+}
+.step3{
+    color: orangered;
+}
+.step4{
+    color: darkred;
+}
+
+table.datatables{
+    table-layout: auto;
+    font-size: smaller;
+    width: fit-content;
+}
+

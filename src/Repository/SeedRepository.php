@@ -21,6 +21,18 @@ class SeedRepository extends ServiceEntityRepository
         parent::__construct($registry, Seed::class);
     }
 
+    public function getCountSeed(int $userId): int
+    {
+        $res = $this->createQueryBuilder('s')
+            ->select('SUM(s.Quantity)')
+            ->where('s.userid = :userid')
+            ->setParameter('userid', $userId)
+            ->getQuery()
+            ->execute();
+        return reset($res[array_key_first($res)]);
+
+    }
+
     //    /**
     //     * @return Seed[] Returns an array of Seed objects
     //     */

@@ -3,28 +3,30 @@
 {% block title %}Seed index{% endblock %}
 
 {% block body %}
-<main id="main" class="main">
+
     <table class="table datatables stripe">
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Seeder</th>
-                <th>Quantity</th>
-                <th>Duration</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th class="header_action"></th>
+            <th>Name</th>
+            <th>Seeder</th>
+            <th>Quantity</th>
+            <th>Duration</th>
+
+        </tr>
         </thead>
         <tbody>
         {% for seed in seeds %}
             <tr>
+                <td class="table_col_action">
+                    <a href="{{ path('app_seed_show', {'id': seed.id}) }}"><i class="bi bi-eye button_action"></i></a>
+                    <a href="{{ path('app_seed_edit', {'id': seed.id}) }}"><i class="bi bi-pencil-square button_action"></i></a>
+                    <a href="{{ path('app_seed_change', {'id': seed.id}) }}"><i class="bi bi-node-plus button_action"></i></a>
+                </td>
                 <td>{{ seed.name }}</td>
                 <td>{{ seed.seeder.name }}</td>
                 <td>{{ seed.Quantity }}</td>
                 <td>{{ seed.Duration }}</td>
-                <td>
-                    <a href="{{ path('app_seed_show', {'id': seed.id}) }}"><i class="bi bi-eye button_action"></i></a>
-                    <a href="{{ path('app_seed_edit', {'id': seed.id}) }}"><i class="bi bi-pencil-square button_action"></i></a>
-                </td>
             </tr>
         {% else %}
             <tr>
@@ -35,5 +37,5 @@
     </table>
 
     <a href="{{ path('app_seed_new') }}">Create new</a>
-</main>
+
 {% endblock %}

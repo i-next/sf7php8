@@ -9,9 +9,6 @@ import 'tinymce';
 import 'simple-datatables';
 import 'apexcharts';
 import $ from 'jquery';
-$(document).ready(function(){
-  console.log('gfdsgfdgfdgdfgdf');
-});
 
 (function() {
   "use strict";

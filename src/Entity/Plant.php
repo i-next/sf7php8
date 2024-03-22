@@ -3,16 +3,22 @@
 namespace App\Entity;
 
 use App\Repository\PlantRepository;
+use App\Entity\Traits\TimeStampableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Recolte;
 
 #[ORM\Entity(repositoryClass: PlantRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Plant
 {
+
+    use TimeStampableTrait;
+
     #[ORM\Id]
-    #[ORM\GeneratedValue(strategy: "SEQUENCE")]
+    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -20,18 +26,13 @@ class Plant
     #[ORM\JoinColumn(nullable: false)]
     private ?User $userid = null;
 
-    #[ORM\ManyToOne(inversedBy: 'plants')]
+    #[ORM\ManyToOne(fetch: 'EAGER', inversedBy: 'plants')]
     #[ORM\JoinColumn(nullable: false)]
+    #[ORM\OrderBy(['name' => "ASC"])]
     private ?Seed $seedid = null;
 
-    #[ORM\Column(length: 255, enumType: EnumStates::class)]
-    private ?string $state = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_created = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_updated = null;
+    #[ORM\Column(type: "string", length: 255, enumType: EnumStates::class)]
+    private EnumStates $state;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_flo = null;
@@ -39,9 +40,13 @@ class Plant
     #[ORM\OneToMany(targetEntity: PlantHistory::class, mappedBy: 'plant_id')]
     private Collection $plantHistories;
 
+    #[ORM\OneToOne(targetEntity: Recolte::class,mappedBy: 'plant', cascade: ['persist', 'remove'])]
+    private ?Recolte $recolte = null;
+
     public function __construct()
     {
         $this->plantHistories = new ArrayCollection();
+        $this->state = EnumStates::GERM;
     }
 
     public function getId(): ?int
@@ -73,38 +78,14 @@ class Plant
         return $this;
     }
 
-    public function getState(): ?string
+    public function getState(): EnumStates
     {
         return $this->state;
     }
 
-    public function setState(string $state): static
+    public function setState(EnumStates $state): static
     {
         $this->state = $state;
-
-        return $this;
-    }
-
-    public function getDateCreated(): ?\DateTimeInterface
-    {
-        return $this->date_created;
-    }
-
-    public function setDateCreated(\DateTimeInterface $date_created): static
-    {
-        $this->date_created = $date_created;
-
-        return $this;
-    }
-
-    public function getDateUpdated(): ?\DateTimeInterface
-    {
-        return $this->date_updated;
-    }
-
-    public function setDateUpdated(\DateTimeInterface $date_updated): static
-    {
-        $this->date_updated = $date_updated;
 
         return $this;
     }
@@ -147,6 +128,23 @@ class Plant
                 $plantHistory->setPlantId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRecolte(): ?Recolte
+    {
+        return $this->recolte;
+    }
+
+    public function setRecolte(Recolte $recolte): static
+    {
+        // set the owning side of the relation if necessary
+        if ($recolte->getPlant() !== $this) {
+            $recolte->setPlant($this);
+        }
+
+        $this->recolte = $recolte;
 
         return $this;
     }

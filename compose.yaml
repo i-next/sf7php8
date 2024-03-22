@@ -65,6 +65,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: 6974
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+    depends_on: 
+      - database
   redis:
     image: redis:5-alpine
   mailcatcher:
