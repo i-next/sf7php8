@@ -6,6 +6,6 @@ use App\Entity\User;
 
 interface PlantServiceInterface
 {
-    public function getCountByState(User $user);
+    public function getCountByState();
 
 }

@@ -5,49 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc0e7fa-0053-43bf-b525-0c1f12c6e8dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/newone.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.php-cs-fixer.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.php-cs-fixer.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/plants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/plants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/plants.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/plants.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EnumStates.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EnumStates.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Plant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Plant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/PlantHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PlantHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seed.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PlantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlantRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/SeedRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeedRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DashboardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DashboardService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PlantService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seed/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seed/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seed/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seed/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeder/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +206,8 @@
       <workItem from="1710917468080" duration="1617000" />
       <workItem from="1710919813910" duration="6361000" />
       <workItem from="1711005734088" duration="864000" />
-      <workItem from="1711090879772" duration="5279000" />
+      <workItem from="1711090879772" duration="8290000" />
+      <workItem from="1711177253263" duration="1737000" />
     </task>
     <servers />
   </component>

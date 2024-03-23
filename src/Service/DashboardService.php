@@ -6,7 +6,7 @@ use App\Entity\User;
 use App\Repository\PlantRepository;
 use App\Repository\SeederRepository;
 use App\Repository\SeedRepository;
-Use App\Service\PlantServiceInterface;
+use App\Service\PlantServiceInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\SecurityBundle\Security;
 
@@ -19,19 +19,17 @@ class DashboardService
         private readonly PlantServiceInterface $plantService,
         private readonly RequestStack $requestStack,
         private readonly Security $security,
-    )
-    {}
+    ) {
+    }
     public function getDashboardData(): array
     {
         $user = $this->security->getUser();
-        $this->requestStack->getSession()->getFlashBag()->add('notice','test notice');
-        $this->requestStack->getSession()->save();
 
         $data = [];
-        $data['plants'] = $this->plantService->getCountByState($user);
+        $data['plants'] = $this->plantService->getCountByState();
         $data['seeders'] = $this->seederRepository->count();
         $data['seed_type'] = $this->seedRepository->count(['userid' => $user->getId()]);
-        $data['seed_count'] = $this->seedRepository->getCountSeed($user->getId());
+        $data['seed_count'] = $this->seedRepository->getCountSeed();
         return $data;
     }
 }

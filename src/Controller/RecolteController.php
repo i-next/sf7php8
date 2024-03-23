@@ -25,7 +25,7 @@ class RecolteController extends AbstractController
     }
 
     #[Route('/new/{id}', name: 'app_recolte_add', methods: ['GET', 'POST'])]
-    public function new(Plant $plant,Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Plant $plant, Request $request, EntityManagerInterface $entityManager): Response
     {
 
         $recolte = new Recolte();

@@ -14,7 +14,6 @@ use App\Entity\Recolte;
 #[ORM\HasLifecycleCallbacks]
 class Plant
 {
-
     use TimeStampableTrait;
 
     #[ORM\Id]
@@ -40,7 +39,7 @@ class Plant
     #[ORM\OneToMany(targetEntity: PlantHistory::class, mappedBy: 'plant_id')]
     private Collection $plantHistories;
 
-    #[ORM\OneToOne(targetEntity: Recolte::class,mappedBy: 'plant', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(targetEntity: Recolte::class, mappedBy: 'plant', cascade: ['persist', 'remove'])]
     private ?Recolte $recolte = null;
 
     public function __construct()

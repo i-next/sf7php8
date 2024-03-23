@@ -27,7 +27,7 @@ class IndexController extends AbstractController
     #[Route('/header/{nav}', name: 'app_header', methods: ['GET'])]
     public function getHeader(string $nav): Response
     {
-        return $this->render('blocks\header.html.twig',[
+        return $this->render('blocks\header.html.twig', [
             'states'    => EnumStates::cases(),
             'nav'       => $nav
         ]);

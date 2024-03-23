@@ -55,15 +55,15 @@ class PlantController extends AbstractController
         if ($plant instanceof Plant) {
             $plant->setState($state);
             $now = new \DateTimeImmutable();
-            if($state === EnumStates::FLO){
-                $durationDays = $plant->getSeedid()->getDuration()*7;
+            if($state === EnumStates::FLO) {
+                $durationDays = $plant->getSeedid()->getDuration() * 7;
                 $dateFlo = $now->add(new DateInterval('P'.$durationDays.'D'));
                 $plant->setDateFlo($dateFlo);
             }
             $entityManager->persist($plant);
             $entityManager->flush();
 
-            if( $state === EnumStates::REC){
+            if($state === EnumStates::REC) {
                 return $this->redirectToRoute('app_recolte_add', ['slug' => $plant], Response::HTTP_SEE_OTHER);
             }
         }

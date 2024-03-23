@@ -13,7 +13,7 @@ enum EnumStates: string
     public static function toArray(): array
     {
         $res = [];
-        foreach(self::cases() as $type){
+        foreach(self::cases() as $type) {
             $res[$type->name] = $type->value;
         }
         return $res;

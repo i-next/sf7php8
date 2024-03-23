@@ -24,7 +24,7 @@ class PlantExtension extends AbstractExtension
             new TwigFunction('function_remain', [ PlantExtensionRuntime::class, 'remainDuration' ]),
             new TwigFunction('function_count', [ PlantExtensionRuntime::class, 'countPlant']),
             new TwigFunction('function_step', [ PlantExtensionRuntime::class, 'stepPlant']),
-            new twigFunction('function_days_remained',[ PlantExtensionRuntime::class, 'getDaysRemained']),
+            new twigFunction('function_days_remained', [ PlantExtensionRuntime::class, 'getDaysRemained']),
         ];
     }
 }

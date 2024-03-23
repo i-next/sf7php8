@@ -86,10 +86,10 @@ class SeedController extends AbstractController
         return $this->redirectToRoute('app_seed_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/change/{id}',name: 'app_seed_change')]
+    #[Route('/change/{id}', name: 'app_seed_change')]
     public function change(Seed $seed, EntityManagerInterface $entityManager): Response
     {
-        if($seed instanceof Seed){
+        if($seed instanceof Seed) {
             $seed->setQuantity($seed->getQuantity() - 1);
             $entityManager->persist($seed);
             $plant = new Plant();
@@ -99,7 +99,7 @@ class SeedController extends AbstractController
             $plant->setDateCreated(new \DateTimeImmutable());
             $entityManager->persist($plant);
             $entityManager->flush();
-            return  $this->redirectToRoute('app_plant_list',['slug'=>EnumStates::GERM->value],Response::HTTP_SEE_OTHER);
+            return  $this->redirectToRoute('app_plant_list', ['slug' => EnumStates::GERM->value], Response::HTTP_SEE_OTHER);
         }
         return $this->redirectToRoute('app_seed_index', [], Response::HTTP_SEE_OTHER);
     }

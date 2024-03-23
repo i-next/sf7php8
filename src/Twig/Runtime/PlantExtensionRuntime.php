@@ -40,15 +40,17 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
     public function stepPlant(Plant $plant): string
     {
         $nbDays = $this->getDaysRemained($plant);
-        if($nbDays < 8){ return 'step4'; }
-        $delta = $nbDays/($plant->getSeedid()->getDuration()*7);
-        if($delta > 0.75){
+        if($nbDays < 8) {
+            return 'step4';
+        }
+        $delta = $nbDays / ($plant->getSeedid()->getDuration() * 7);
+        if($delta > 0.75) {
             return 'step1';
-        }elseif($delta > 0.5){
+        } elseif($delta > 0.5) {
             return 'step2';
-        }elseif($delta > 0.25){
+        } elseif($delta > 0.25) {
             return 'step3';
-        }else{
+        } else {
             return 'step4';
         }
     }

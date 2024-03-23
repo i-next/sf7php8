@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Seed;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Bundle\SecurityBundle\Security;
 
 /**
  * @extends ServiceEntityRepository<Seed>
@@ -16,17 +17,17 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class SeedRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, private readonly Security $security)
     {
         parent::__construct($registry, Seed::class);
     }
 
-    public function getCountSeed(int $userId): int
+    public function getCountSeed(): int
     {
         $res = $this->createQueryBuilder('s')
             ->select('SUM(s.Quantity)')
             ->where('s.userid = :userid')
-            ->setParameter('userid', $userId)
+            ->setParameter('userid', $this->security->getUser()->getId())
             ->getQuery()
             ->execute();
         return reset($res[array_key_first($res)]);

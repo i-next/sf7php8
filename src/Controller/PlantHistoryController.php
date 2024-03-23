@@ -12,9 +12,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class PlantHistoryController extends AbstractController
 {
     #[Route('/{id}', name: 'app_plant_history')]
-    public function getOne(Plant $plant,PlantHistoryRepository $plantHistoryRepository): Response
+    public function getOne(Plant $plant, PlantHistoryRepository $plantHistoryRepository): Response
     {
-        $plantHistories = $plantHistoryRepository->findBy(['plant_id' => $plant],['date' => 'DESC']);
+        $plantHistories = $plantHistoryRepository->findBy(['plant_id' => $plant], ['date' => 'DESC']);
         return $this->render('plant_history/index.html.twig', [
             'planthistories' => $plantHistories,
         ]);
