@@ -7,14 +7,6 @@ $(document).ready(function(){
     language,
     lengthMenu: [10, 25, 50, { label: 'All', value: -1 }],
     pageLength: -1,
-
-    /*columnDefs: [
-      {
-        targets: -1,
-        searchable: false,
-        orderable: false
-      }
-    ]*/
   });
 })
 

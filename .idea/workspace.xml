@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5cc0e7fa-0053-43bf-b525-0c1f12c6e8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SeedRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeedRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DashboardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DashboardService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PlantService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/plants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/plants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/HomeControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controller/HomeControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +204,7 @@
       <workItem from="1710919813910" duration="6361000" />
       <workItem from="1711005734088" duration="864000" />
       <workItem from="1711090879772" duration="8290000" />
-      <workItem from="1711177253263" duration="1737000" />
+      <workItem from="1711177253263" duration="3131000" />
     </task>
     <servers />
   </component>

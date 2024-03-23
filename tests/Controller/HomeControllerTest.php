@@ -20,7 +20,7 @@ class HomeControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-
+        dd($userRepository->findOneByEmail('test@test.fr'));
         // retrieve the test user
         $testUser = $userRepository->findOneByEmail('test@test.fr');
 
