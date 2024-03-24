@@ -4,6 +4,7 @@ when@dev:
     twig:
         paths:
             '%kernel.project_dir%/vendor/symfony/web-profiler-bundle/Resources/views': WebProfilerBundle
+        form_themes: ['bootstrap_5_layout.html.twig']
 
 when@test:
     twig:

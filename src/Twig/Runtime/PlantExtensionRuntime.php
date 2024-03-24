@@ -57,6 +57,9 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
 
     public function getDaysRemained(Plant $plant): int
     {
+        if(!$plant->getDateFlo()){
+            return 0;
+        }
         $now = new \DateTimeImmutable();
         $nbDays = $plant->getDateFlo()->diff($now)->days;
         return (int) $nbDays;

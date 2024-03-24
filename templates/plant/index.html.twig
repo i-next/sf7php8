@@ -29,7 +29,7 @@
                 <td>{{ plant.state.value }}</td>
                 <td>{{ plant.dateCreated ? plant.dateCreated|date('d/m/Y') : '' }}</td>
                 <td>{{ plant.dateUpdated ? plant.dateUpdated|date('d/m/Y') : '' }}</td>
-                <td>{{ plant.dateFlo ? plant.dateFlo|date('d/m/Y') : '' }} {% if constant('App\\Entity\\EnumStates::REC') != plant.state %}(-{{ function_days_remained(plant) }}j){% endif %}</td>
+                <td>{% if constant('App\\Entity\\EnumStates::REC') != plant.state and constant('App\\Entity\\EnumStates::FLO') == plant.state %}{{ plant.dateFlo ? plant.dateFlo|date('d/m/Y') : '' }} (-{{ function_days_remained(plant) }}j){% endif %}</td>
             </tr>
         {% endfor %}
         </tbody>
