@@ -52,6 +52,7 @@ services:
       - 5432:5432
     expose:
       - 5432
+    command: postgres -c listen_addresses='*';
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
@@ -65,8 +66,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: 6974
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-    depends_on: 
-      - database
   redis:
     image: redis:5-alpine
   mailcatcher:
@@ -82,9 +81,4 @@ volumes:
   caddy_data:
   caddy_config:
   pgadmin-data:
-###> symfony/mercure-bundle ###
-###< symfony/mercure-bundle ###
-
-###> doctrine/doctrine-bundle ###
-  database_data:
-###< doctrine/doctrine-bundle ###
+  database_data:  

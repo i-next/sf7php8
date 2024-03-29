@@ -1,0 +1,17 @@
+{% extends 'plant/base.html.twig' %}
+
+{% block title %}Plantes{% endblock %}
+
+{% block body %}
+
+    <table>
+    {% for planthistory in planthistories %}
+        <tr>
+            <td>{{ planthistory.plantId.seedid.name }}</td>
+            <td>{{ planthistory.state.value }}</td>
+            <td>{{ planthistory.date|date('d/m/Y') }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

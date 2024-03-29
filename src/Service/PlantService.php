@@ -2,8 +2,11 @@
 
 namespace App\Service;
 
+use App\Entity\EnumStates;
+use App\Entity\Plant;
 use App\Entity\User;
 use App\Repository\PlantRepository;
+use DateInterval;
 use Symfony\Bundle\SecurityBundle\Security;
 
 class PlantService implements PlantServiceInterface
@@ -21,5 +24,18 @@ class PlantService implements PlantServiceInterface
 
         }
         return $arrayPlants;
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function setDateFlo(Plant $plant): Plant
+    {
+        $now = new \DateTimeImmutable();
+        $durationDays = $plant->getSeedid()->getDuration() * 7;
+        $dateFlo = $now->add(new DateInterval('P'.$durationDays.'D'));
+        $plant->setDateFlo($dateFlo);
+        $plant->setState(EnumStates::FLO);
+        return $plant;
     }
 }

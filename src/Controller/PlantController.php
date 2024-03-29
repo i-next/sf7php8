@@ -7,6 +7,7 @@ use App\Entity\Plant;
 use App\Form\PlantType;
 use App\Repository\PlantRepository;
 use App\Repository\SeedRepository;
+use App\Service\PlantServiceInterface;
 use DateInterval;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
@@ -47,18 +48,15 @@ class PlantController extends AbstractController
      * @throws Exception
      */
     #[Route('/change/{id}/{state}', name: 'app_plant_change', methods: ['GET'])]
-    public function change(int $id, EnumStates $state, PlantRepository $plantRepository, EntityManagerInterface $entityManager): Response
+    public function change(int $id, EnumStates $state, PlantRepository $plantRepository, EntityManagerInterface $entityManager, PlantServiceInterface $plantService): Response
     {
 
         $plant = $plantRepository->find($id);
 
         if ($plant instanceof Plant) {
             $plant->setState($state);
-            $now = new \DateTimeImmutable();
             if($state === EnumStates::FLO) {
-                $durationDays = $plant->getSeedid()->getDuration() * 7;
-                $dateFlo = $now->add(new DateInterval('P'.$durationDays.'D'));
-                $plant->setDateFlo($dateFlo);
+                $plantService->setDateFlo($plant);
             }
             $entityManager->persist($plant);
             $entityManager->flush();

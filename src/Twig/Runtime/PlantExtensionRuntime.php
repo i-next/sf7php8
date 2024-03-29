@@ -18,7 +18,7 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
     {
         $now = new \DateTimeImmutable();
         $diff = $now->diff($plant->getDateUpdated());
-        $nbWeekPassed = ceil($diff->d / 7);
+        $nbWeekPassed = ceil($diff->days / 7);
         $className = 'step4';
         if($nbWeekPassed < 2) {
             $className = 'step1';
