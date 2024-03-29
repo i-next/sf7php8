@@ -23,7 +23,7 @@ class PlantPrefloChangeToFloHandler
         foreach($plantsPreFlo as $plantPreFlo){
             $diff = $now->diff($plantPreFlo->getDateUpdated());
             if($diff->days >= 10){
-                $this->plantService->setDateFlo($plantPreFlo);
+                $plantPreFlo = $this->plantService->setDateFlo($plantPreFlo);
                 $plantPreFlo->setState(EnumStates::FLO);
                 $this->entityManager->persist($plantPreFlo);
                 $this->entityManager->flush();

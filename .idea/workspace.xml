@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PlantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PlantHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlantHistoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PlantService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PlantServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711694700436</updated>
-      <workItem from="1711694706324" duration="6032000" />
+      <workItem from="1711694706324" duration="7155000" />
     </task>
     <servers />
   </component>
