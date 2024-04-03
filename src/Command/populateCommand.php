@@ -30,6 +30,7 @@ class populateCommand extends Command
             $breeder->setName($breederData['name']);
             $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/'.$breederData['name'].'/'.$breederData['logo']);
             $this->entityManager->persist($breeder);
+            $this->entityManager->flush();
             foreach($breederData['strains'] as $name_strain_id => $strain){
                 $strainAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/strain.json?br='.$name_breeder_id.'&str='.$name_strain_id.'&lng=fr&ac=2b9ff84d30c910dbd1b988a176107f49');
                 $strainData =$strainAPI->toArray();
@@ -43,8 +44,9 @@ class populateCommand extends Command
                 $strain->setAuto($strainData['brinfo']['flowering']['auto']);
                 $strain->setDescription($strainData['brinfo']['descr']);
                 $this->entityManager->persist($strain);
+                $this->entityManager->flush();
             }
-            $this->entityManager->flush();
+
         }
         return Command::SUCCESS;
     }
