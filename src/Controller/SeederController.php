@@ -19,7 +19,7 @@ class SeederController extends AbstractController
     #[Route('', name: 'app_seeder_index', methods: ['GET'])]
     public function index(SeederRepository $seederRepository, HttpClientInterface $httpClient): Response
     {
-        $response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1');
+        $response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
         $statusCode = $response->getStatusCode();
         $contentType = $response->getHeaders()['content-type'][0];
         $content = $response->getContent();
