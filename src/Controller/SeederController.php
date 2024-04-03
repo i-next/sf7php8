@@ -10,14 +10,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[Route('/seeder')]
 #[IsGranted('ROLE_USER')]
 class SeederController extends AbstractController
 {
     #[Route('', name: 'app_seeder_index', methods: ['GET'])]
-    public function index(SeederRepository $seederRepository): Response
+    public function index(SeederRepository $seederRepository, HttpClientInterface $httpClient): Response
     {
+        $response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1');
+        $statusCode = $response->getStatusCode();
+        $contentType = $response->getHeaders()['content-type'][0];
+        $content = $response->getContent();
+        dd($statusCode, $contentType, $content);
         return $this->render('seeder/index.html.twig', [
             'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
             'nav'       => 'seeder'
