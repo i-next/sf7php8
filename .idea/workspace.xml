@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/migrations/Version20240403124506.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240403124506.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/populateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/populateCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SeederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeederController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Breeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Breeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/SeedRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeedRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/DashboardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DashboardService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/seeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/index.html.twig" afterDir="false" />
@@ -229,7 +230,7 @@
       <workItem from="1711794179230" duration="147000" />
       <workItem from="1711864939271" duration="20000" />
       <workItem from="1712123710763" duration="166000" />
-      <workItem from="1712123879591" duration="13148000" />
+      <workItem from="1712123879591" duration="16239000" />
     </task>
     <servers />
   </component>

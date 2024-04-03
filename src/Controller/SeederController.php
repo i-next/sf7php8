@@ -47,7 +47,6 @@ class SeederController extends AbstractController
         return $this->render('seeder/index.html.twig', [
             'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
             'nav'       => 'seeder',
-            'strain'    => $strain,
         ]);
     }
 

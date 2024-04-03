@@ -24,9 +24,6 @@ class Breeder
     #[ORM\Column(length: 255)]
     private ?string $name_id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $img = null;
-
     #[ORM\OneToMany(targetEntity: Strain::class, mappedBy: 'breeder', orphanRemoval: true)]
     private Collection $strains;
 
@@ -72,18 +69,6 @@ class Breeder
     public function setNameId(string $name_id): static
     {
         $this->name_id = $name_id;
-
-        return $this;
-    }
-
-    public function getImg(): ?string
-    {
-        return $this->img;
-    }
-
-    public function setImg(?string $img): static
-    {
-        $this->img = $img;
 
         return $this;
     }
