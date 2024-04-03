@@ -27,7 +27,7 @@ class SeederController extends AbstractController
         $contentType = $response->getHeaders()['content-type'][0];
         $content = $response->getContent();
         dd($statusCode, $contentType, $content);*/
-        $breeder = new Breeder();
+        /*$breeder = new Breeder();
         $breeder->setName('test');
         $breeder->setNameId('test_test');
         $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/00breeder/csf.jpg');
@@ -42,7 +42,7 @@ class SeederController extends AbstractController
         $strain->setDescription('ceci est la description de testb de test');
         $entityManager->persist($strain);
 
-        $entityManager->flush();
+        $entityManager->flush();*/
 
         return $this->render('seeder/index.html.twig', [
             'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
