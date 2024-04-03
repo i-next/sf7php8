@@ -26,10 +26,10 @@ class DashboardService
         $user = $this->security->getUser();
 
         $data = [];
-        $data['plants'] = $this->plantService->getCountByState();
-        $data['seeders'] = $this->seederRepository->count();
-        $data['seed_type'] = $this->seedRepository->count(['userid' => $user->getId()]);
-        $data['seed_count'] = $this->seedRepository->getCountSeed();
+        $data['plants'] = $this->plantService->getCountByState() ?? 0;
+        $data['seeders'] = $this->seederRepository->count() ?? 0;
+        $data['seed_type'] = $this->seedRepository->count(['userid' => $user->getId()]) ?? 0;
+        $data['seed_count'] = $this->seedRepository->getCountSeed() ?? 0;
         return $data;
     }
 }
