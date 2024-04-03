@@ -45,7 +45,7 @@ class populateCommand extends Command
                     $strain->setType($strainData['brinfo']['type']);
                     $strain->setDuration($strainData['brinfo']['flowering']['days']);
                     $strain->setAuto($strainData['brinfo']['flowering']['auto']);
-                    $strain->setDescription((string) $strainData['brinfo']['descr']);
+                    $strain->setDescription(mb_convert_encoding($strainData['brinfo']['descr'], 'UTF-8', 'ISO-8859-1'));
                     $this->entityManager->persist($strain);
                     $this->entityManager->flush();
                 }
