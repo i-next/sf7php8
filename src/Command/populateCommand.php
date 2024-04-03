@@ -8,7 +8,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-#[AsCommand(name: 'app-populate')]
+#[AsCommand(name: 'app:populate', description: 'Populate breeder strain',
+    hidden: false,)]
 class populateCommand extends Command
 {
 
