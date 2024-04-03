@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Seeder;
 use App\Form\SeederType;
 use App\Repository\SeederRepository;
+use App\Entity\Breeder;
+use App\Entity\Strain;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,21 +14,40 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+
 #[Route('/seeder')]
 #[IsGranted('ROLE_USER')]
 class SeederController extends AbstractController
 {
     #[Route('', name: 'app_seeder_index', methods: ['GET'])]
-    public function index(SeederRepository $seederRepository, HttpClientInterface $httpClient): Response
+    public function index(EntityManagerInterface $entityManager, SeederRepository $seederRepository, HttpClientInterface $httpClient): Response
     {
-        $response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
+        /*$response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
         $statusCode = $response->getStatusCode();
         $contentType = $response->getHeaders()['content-type'][0];
         $content = $response->getContent();
-        dd($statusCode, $contentType, $content);
+        dd($statusCode, $contentType, $content);*/
+        $breeder = new Breeder();
+        $breeder->setName('test');
+        $breeder->setNameId('test_test');
+        $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/00breeder/csf.jpg');
+        $entityManager->persist($breeder);
+        $strain = new Strain();
+        $strain->setBreeder($breeder);
+        $strain->setName('testb');
+        $strain->setNameId('test_testb');
+        $strain->setAuto(false);
+        $strain->setType('sativa');
+        $strain->setDuration(8);
+        $strain->setDescription('ceci est la description de testb de test');
+        $entityManager->persist($strain);
+
+        $entityManager->flush();
+
         return $this->render('seeder/index.html.twig', [
             'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
-            'nav'       => 'seeder'
+            'nav'       => 'seeder',
+            'strain'    => $strain,
         ]);
     }
 
