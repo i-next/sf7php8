@@ -24,6 +24,7 @@ class populateCommand extends Command
     {
         $breedersAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
         foreach ($breedersAPI->toArray() as $name_breeder_id => $breederData){
+            $output->writeln('Breeder: '.$breederData['name']);
             $breeder = new Breeder();
             $breeder->setNameId($name_breeder_id);
             $breeder->setName($breederData['name']);
@@ -33,6 +34,7 @@ class populateCommand extends Command
                 $strainAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/strain.json?br='.$name_breeder_id.'&str='.$name_strain_id.'&lng=fr&ac=2b9ff84d30c910dbd1b988a176107f49');
                 $strainData =$strainAPI->toArray();
                 $strain = new Strain();
+                $output->writeln('Strain: '.$strainData['name']);
                 $strain->setBreeder($breeder);
                 $strain->setName($strainData['name']);
                 $strain->setNameId($strainData['id']);
@@ -44,14 +46,6 @@ class populateCommand extends Command
             }
             $this->entityManager->flush();
         }
-
-        /*$contentType = $breedersAPI->getHeaders()['content-type'][0];
-        $content = $response->getContent();*/
-        $contentArray = $breedersAPI->toArray();
-
-        dd(array_key_first($contentArray),$contentArray[array_key_first($contentArray)]);
-
-        $output->writeln($breedersAPI->getStatusCode());
         return Command::SUCCESS;
     }
 
