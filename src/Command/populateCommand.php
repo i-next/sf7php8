@@ -31,7 +31,7 @@ class populateCommand extends Command
                 $breeder = new Breeder();
                 $breeder->setNameId($name_breeder_id);
                 $breeder->setName($breederData['name']);
-                $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/'.$breederData['name'].'/'.$breederData['logo']);
+                $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/00breeder/'.$breederData['logo']);
                 $this->entityManager->persist($breeder);
                 $this->entityManager->flush();
                 foreach($breederData['strains'] as $name_strain_id => $strain){
@@ -45,7 +45,7 @@ class populateCommand extends Command
                     $strain->setType($strainData['brinfo']['type']);
                     $strain->setDuration($strainData['brinfo']['flowering']['days']);
                     $strain->setAuto($strainData['brinfo']['flowering']['auto']);
-                    $strain->setDescription(mb_convert_encoding($strainData['brinfo']['descr'], 'UTF-8', 'ISO-8859-1'));
+                    $strain->setDescription(mb_convert_encoding($strainData['brinfo']['descr'], 'UTF-8', 'ISO-8859-1')??'');
                     $this->entityManager->persist($strain);
                     $this->entityManager->flush();
                 }
