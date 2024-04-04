@@ -3,24 +3,25 @@
 {% block title %}Seeder index{% endblock %}
 
 {% block body %}
-    <img src="https://fr.seedfinder.eu/pics/00breeder/csf.jpg" />
     <table class="table datatables stripe">
         <thead>
         <tr>
+            <th class="header_action"></th>
             <th class="header_action"></th>
             <th>Name</th>
         </tr>
         </thead>
         <tbody>
-        {% for seeder in seeders %}
-            <tr>
+        {% for breeder in breeders %}
+            <tr style="height: 100px; vertical-align: middle;">
                 <td class="table_col_action">
-                    <a href="{{ path('app_seeder_show', {'id': seeder.id}) }}"><i
+                    <a href="{{ path('app_seeder_show', {'id': breeder.id}) }}"><i
                             class="bi bi-eye button_action"></i></a>
-                    <a href="{{ path('app_seeder_edit', {'id': seeder.id}) }}"><i
+                    <a href="{{ path('app_seeder_edit', {'id': breeder.id}) }}"><i
                             class="bi bi-pencil-square button_action"></i></a>
                 </td>
-                <td>{{ seeder.name }}</td>
+                <td><img src="{{ breeder.urlPhoto }}" alt="" style="max-width: 100px;"></td>
+                <td>{{ breeder.name }}</td>
             </tr>
         {% else %}
             <tr>

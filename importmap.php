@@ -22,6 +22,10 @@ return [
         'path' => './assets/plants.js',
         'entrypoint' => true,
     ],
+    'seeders' =>[
+        'path' => './assets/seeder.js',
+        'entrypoint' => true,
+    ],
     'bootstrap' => [
         'version' => '5.3.3',
     ],

@@ -7,6 +7,7 @@ use App\Form\SeederType;
 use App\Repository\SeederRepository;
 use App\Entity\Breeder;
 use App\Entity\Strain;
+use App\Repository\BreederRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +21,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class SeederController extends AbstractController
 {
     #[Route('', name: 'app_seeder_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager, SeederRepository $seederRepository, HttpClientInterface $httpClient): Response
+    public function index(EntityManagerInterface $entityManager, BreederRepository $breederRepository, HttpClientInterface $httpClient): Response
     {
         /*$response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
         $statusCode = $response->getStatusCode();
@@ -45,7 +46,7 @@ class SeederController extends AbstractController
         $entityManager->flush();*/
 
         return $this->render('seeder/index.html.twig', [
-            'seeders'   => $seederRepository->findBy([], ['name' => 'asc']),
+            'breeders'   => $breederRepository->findBy([], ['name' => 'asc']),
             'nav'       => 'seeder',
         ]);
     }
