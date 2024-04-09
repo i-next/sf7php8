@@ -43,7 +43,7 @@ services:
     image: mysql:${MYSQL_VERSION:-8}
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-jdc}
-      MYSQL_ROOT_PASSWORD: "Zenpz8oy"
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
       # You should definitely change the password in production
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-kchnrmik}
       MYSQL_USER: ${MYSQL_USER:-jdc}
