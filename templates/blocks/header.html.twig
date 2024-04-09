@@ -13,6 +13,15 @@
                 </li>
                 {% if is_granted('ROLE_USER') %}
                     <li class="nav-item">
+                        <a class="nav-link {% if nav is defined and nav == 'breeder' %}active{% endif %}" href="{{ path('app_breeder_index') }}"><i class="bi bi-shop"></i> Banques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if nav is defined and nav == 'strain' %}active{% endif %}" href="{{ path('app_strain_index') }}"><i class="bi bi-egg-fill"></i> Strains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if nav is defined and nav == 'myseeds' %}active{% endif %}" href="{{ path('app_my_seeds_index') }}"><i class="bi bi-egg-fill"></i> Seeds</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if nav is defined and nav == 'seeder' %}active{% endif %}" href="{{ path('app_seeder_index') }}"><i class="bi bi-shop"></i> Seeders</a>
                     </li>
                     <li class="nav-item">

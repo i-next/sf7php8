@@ -64,4 +64,9 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
         $nbDays = $plant->getDateFlo()->diff($now)->days;
         return (int) $nbDays;
     }
+
+    public function formatDescription(string $description): string
+    {
+        return html_entity_decode($description);
+    }
 }

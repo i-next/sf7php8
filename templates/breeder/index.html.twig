@@ -1,6 +1,6 @@
-{% extends 'seeder/base.html.twig' %}
+{% extends 'breeder/base.html.twig' %}
 
-{% block title %}Seeder index{% endblock %}
+{% block title %}Breeder{% endblock %}
 
 {% block body %}
     <table class="table datatables stripe">
@@ -15,12 +15,12 @@
         {% for breeder in breeders %}
             <tr style="height: 100px; vertical-align: middle;">
                 <td class="table_col_action">
-                    <a href="{{ path('app_seeder_show', {'id': breeder.id}) }}"><i
+                    {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('app_breeder_del',{'id': breeder.id }) }}"><i class="bi bi-trash button_action"></i></a>{% endif %}
+                    {{ breeder.id }}<a href="{{ path('app_breeder_show', {'id': breeder.id }) }}"><i
                             class="bi bi-eye button_action"></i></a>
-                    <a href="{{ path('app_seeder_edit', {'id': breeder.id}) }}"><i
-                            class="bi bi-pencil-square button_action"></i></a>
+
                 </td>
-                <td><img src="{{ breeder.urlPhoto }}" alt="" style="max-width: 100px;"></td>
+                <td><img src="{{ breeder.urlPhoto }}" alt="" class="logo"></td>
                 <td>{{ breeder.name }} ({{ breeder.strains|length }})</td>
             </tr>
         {% else %}

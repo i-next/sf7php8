@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/assets/seeder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frankenphp/conf.d/app.ini" beforeDir="false" afterPath="$PROJECT_DIR$/frankenphp/conf.d/app.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/importmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/populateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/populateCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SeederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeederController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeder/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/seeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,6 +198,8 @@
       <path value="$PROJECT_DIR$/tools/php-cs-fixer/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/tools/php-cs-fixer/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/tools/php-cs-fixer/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/dynamic-forms" />
+      <path value="$PROJECT_DIR$/vendor/symfony/ux-autocomplete" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -235,7 +245,15 @@
       <workItem from="1711864939271" duration="20000" />
       <workItem from="1712123710763" duration="166000" />
       <workItem from="1712123879591" duration="18981000" />
-      <workItem from="1712213661695" duration="11292000" />
+      <workItem from="1712213661695" duration="13563000" />
+      <workItem from="1712296103398" duration="5648000" />
+      <workItem from="1712304122154" duration="4665000" />
+      <workItem from="1712324187606" duration="12285000" />
+      <workItem from="1712382222632" duration="6400000" />
+      <workItem from="1712414558909" duration="3011000" />
+      <workItem from="1712468339068" duration="3511000" />
+      <workItem from="1712553485486" duration="8321000" />
+      <workItem from="1712640996570" duration="674000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -245,11 +263,30 @@
       <option name="project" value="LOCAL" />
       <updated>1712177238521</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1712239855071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712239855071</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />

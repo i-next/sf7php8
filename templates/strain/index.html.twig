@@ -1,0 +1,35 @@
+{% extends 'strain/base.html.twig' %}
+
+{% block title %}Strain{% endblock %}
+
+{% block body %}
+    <table class="table datatables stripe">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Breeder</th>
+            <th>Auto</th>
+            <th>Duration</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for strain in strains %}
+            <tr>
+                <td>{{ strain.name }}</td>
+                <td>{{ strain.breeder.name }}</td>
+                <td>{%  if strain.auto %}Auto{% endif %}</td>
+                <td>{{ strain.duration }} jours</td>
+                <td>{{ strain.type }}</td>
+                <td>{{ function_format_description(strain.description)|raw }}</td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+{% endblock %}

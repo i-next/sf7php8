@@ -3,7 +3,7 @@ DOCKER_COMP = docker compose
 
 # Docker containers
 PHP_CONT = $(DOCKER_COMP) exec php
-POSTGRESQL_CONT = $(DOCKER_COMP) exec database
+MYSQL_CONT = $(DOCKER_COMP) exec mysql
 # Executables
 PHP      = $(PHP_CONT) php
 COMPOSER = $(PHP_CONT) composer
@@ -23,6 +23,9 @@ build: ## Builds the Docker images
 	@$(DOCKER_COMP) build --pull --no-cache
 
 up: ## Start the docker hub in detached mode (no logs)
+	@$(DOCKER_COMP) up --force-recreate ##--detach
+
+upd: ## Start the docker hub in detached mode (no logs)
 	@$(DOCKER_COMP) up --force-recreate --detach
 
 start: build up ## Build and start the containers
@@ -34,7 +37,7 @@ logs: ## Show live logs
 	@$(DOCKER_COMP) logs --tail=0 --follow
 
 sh: ## Connect to the FrankenPHP container
-	@$(PHP_CONT) sh
+	@$(PHP_CONT) sh -vv
 
 test: ## Start tests with phpunit, pass the parameter "c=" to add options to phpunit, example: make test c="--group e2e --stop-on-failure"
 	@$(eval c ?=)
@@ -58,8 +61,8 @@ sf: ## List all Symfony commands or pass the parameter "c=" to run a given comma
 cc: c=c:c ## Clear the cache
 cc: sf
 
-pg: ##shell postgresql
-	@$(POSTGRESQL_CONT) sh
+mysql: ##shell mysql
+	@$(MYSQL_CONT) sh
 
 cs-fixer: ## php-cs-fixer fix src
 	@$(PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src

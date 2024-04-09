@@ -50,11 +50,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
     #[ORM\OneToMany(targetEntity: Recolte::class, mappedBy: 'userid', orphanRemoval: true)]
     private Collection $recoltes;
 
+    #[ORM\OneToMany(targetEntity: MySeeds::class, mappedBy: 'userid', orphanRemoval: true)]
+    private Collection $mySeeds;
+
     public function __construct()
     {
         $this->seeds = new ArrayCollection();
         $this->plants = new ArrayCollection();
         $this->recoltes = new ArrayCollection();
+        $this->mySeeds = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -240,6 +244,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
             // set the owning side to null (unless already changed)
             if ($recolte->getUserid() === $this) {
                 $recolte->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MySeeds>
+     */
+    public function getMySeeds(): Collection
+    {
+        return $this->mySeeds;
+    }
+
+    public function addMySeed(MySeeds $mySeed): static
+    {
+        if (!$this->mySeeds->contains($mySeed)) {
+            $this->mySeeds->add($mySeed);
+            $mySeed->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMySeed(MySeeds $mySeed): static
+    {
+        if ($this->mySeeds->removeElement($mySeed)) {
+            // set the owning side to null (unless already changed)
+            if ($mySeed->getUserid() === $this) {
+                $mySeed->setUserid(null);
             }
         }
 

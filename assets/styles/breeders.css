@@ -1,0 +1,17 @@
+table.datatables{
+    table-layout: auto;
+    font-size: smaller;
+    width: fit-content;
+}
+img.logo{
+    max-width: 75px;
+}
+.table_col_action{
+    text-align: right;
+}
+.header_action{
+    width: 100px;
+}
+i.button_action{
+    font-size: large;
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit MySeeds{% endblock %}
+
+{% block body %}
+    <h1>Edit MySeeds</h1>
+
+    {{ include('my_seeds/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_my_seeds_index') }}">back to list</a>
+
+    {{ include('my_seeds/_delete_form.html.twig') }}
+{% endblock %}
