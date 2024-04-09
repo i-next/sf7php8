@@ -5,21 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frankenphp/conf.d/app.ini" beforeDir="false" afterPath="$PROJECT_DIR$/frankenphp/conf.d/app.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/importmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.override.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frankenphp/docker-entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/frankenphp/docker-entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240220081521.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240229133011.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240229143539.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240302132913.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240304153444.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240306143549.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240307095917.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240311061830.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240311062116.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240311062306.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240314104122.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240315071656.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240315103306.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240323080453.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240327080148.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240403124506.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240406145551.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240408085649.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +263,7 @@
       <workItem from="1712414558909" duration="3011000" />
       <workItem from="1712468339068" duration="3511000" />
       <workItem from="1712553485486" duration="8321000" />
-      <workItem from="1712640996570" duration="674000" />
+      <workItem from="1712640996570" duration="3938000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

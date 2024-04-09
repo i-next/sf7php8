@@ -9,7 +9,7 @@ services:
       TRUSTED_PROXIES: ${TRUSTED_PROXIES:-127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16}
       TRUSTED_HOSTS: ^${SERVER_NAME:-example\.com|localhost}|php$$
       # Run "composer require symfony/orm-pack" to install and configure Doctrine ORM
-      DATABASE_URL: postgresql://${POSTGRES_USER:-manu}:${POSTGRES_PASSWORD:-kchnrmik}@database:5432/${POSTGRES_DB:-manu}?serverVersion=${POSTGRES_VERSION:-15}&charset=${POSTGRES_CHARSET:-utf8}
+      DATABASE_URL: mysql://${MYSQL_USER:-jdc}:${MYSQL_PASSWORD:-kchnrmik}@database:3306/${MYSQL_DATABASE:-jdc}?serverVersion=${MYSQL_VERSION:-8}&charset=${MYSQL_CHARSET:-utf8mb4}
       # Run "composer require symfony/mercure-bundle" to install and configure the Mercure integration
       MERCURE_URL: ${CADDY_MERCURE_URL:-http://php/.well-known/mercure}
       MERCURE_PUBLIC_URL: https://${SERVER_NAME:-localhost}/.well-known/mercure
@@ -37,35 +37,38 @@ services:
 # Mercure is installed as a Caddy module, prevent the Flex recipe from installing another service
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###
-
-###> doctrine/doctrine-bundle ###
+  
+  ###> doctrine/doctrine-bundle ###
   database:
-    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    image: mysql:${MYSQL_VERSION:-8}
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-manu}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-jdc}
+      MYSQL_ROOT_PASSWORD: "Zenpz8oy"
       # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-kchnrmik}
-      POSTGRES_USER: ${POSTGRES_USER:-manu}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-kchnrmik}
+      MYSQL_USER: ${MYSQL_USER:-jdc}
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
     volumes:
-      - database_data:/var/lib/postgresql/data:rw
-    ports:
-      - 5432:5432
-    expose:
-      - 5432
-    command: postgres -c listen_addresses='*';
+      - database_data:/var/lib/mysql:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
-  pgadmin:
-    image: dpage/pgadmin4
-    restart: always
-    ports:
-      - "8888:80"
+      # - ./docker/db/data:/var/lib/mysql:rw
+  ###< doctrine/doctrine-bundle ###
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    
     environment:
-      PGADMIN_DEFAULT_EMAIL: test@test.fr
-      PGADMIN_DEFAULT_PASSWORD: 6974
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      PMA_HOST: database
+      PMA_PORT: 3306
+    ports:
+      - 8080:80
+    links:
+      - database
+  
+  
   redis:
     image: redis:5-alpine
   mailcatcher:
@@ -80,5 +83,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
-  pgadmin-data:
   database_data:  
