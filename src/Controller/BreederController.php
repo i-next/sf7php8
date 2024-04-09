@@ -16,10 +16,6 @@ class BreederController extends AbstractController
     #[Route('/', name: 'app_breeder_index')]
     public function index(BreederRepository $breederRepository,EntityManagerInterface $entityManager): Response
     {
-        $user = $this->getUser();
-        $user->setRoles(['ROLE_ADMIN']);
-        $entityManager->persist($user);
-        $entityManager->flush();
         return $this->render('breeder/index.html.twig', [
             'breeders' => $breederRepository->findBy([]),
             'nav' => 'breeder',
