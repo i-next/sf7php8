@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.override.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frankenphp/docker-entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/frankenphp/docker-entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240220081521.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240229133011.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240229143539.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240302132913.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240304153444.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240306143549.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240307095917.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240311061830.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240311062116.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240311062306.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240314104122.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240315071656.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240315103306.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240323080453.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240327080148.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240403124506.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240406145551.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20240408085649.php" beforeDir="false" />
-    </list>
+    <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="first commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,6 +184,7 @@
       <path value="$PROJECT_DIR$/tools/php-cs-fixer/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/dynamic-forms" />
       <path value="$PROJECT_DIR$/vendor/symfony/ux-autocomplete" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
