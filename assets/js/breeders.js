@@ -1,11 +1,54 @@
 import '../app.js';
 import $ from 'jquery';
-import language from 'datatables.net-plugins/i18n/fr-FR.mjs';
 import '../styles/breeders.css';
+
 $(document).ready(function(){
-  $('.datatables').DataTable({
-    language,
-    lengthMenu: [10, 25, 50, { label: 'All', value: -1 }],
-    pageLength: 50,
-  });
+  let options = {
+    pageLength: 10,
+    order: [[1, 'asc']],
+    columns: [
+      {
+        name: 'urlPhoto',
+        orderable: false,
+        data: 'url_photo'
+      },
+      {
+        name: 'name',
+        data: 'name'
+      }],
+    columnDefs: [
+      {
+        targets: 0,
+        render: function(data, type, row) {
+          if(data == ''){
+            return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" />'
+          }
+          return '<img src="'+data+'" alt="nologo" class="logo" />'
+        }
+      },
+      {
+        targets: 1,
+        render: function(data, type, row) {
+          let route = '';
+          if($(this).DataTable.settings[0].json.admin){
+            route = '<a href="/breeder/del/' + row['id'] + '"><i class="bi bi-trash button_action"></i></a>';
+          }
+
+          return '<a href="/breeder/' + row['id'] + '">' + data + ' (' + row['quantity'] + ')</a>'+ route;
+        }
+      },
+      {
+        "targets": 'no-sort',
+        "orderable": false,
+      }
+    ],
+    ajax: {
+      url: $(".datatables").data('url'),
+      type: 'POST',
+    },
+    processing: true,
+    serverSide: true
+
+  }
+  $('.datatables').DataTable(options);
 })

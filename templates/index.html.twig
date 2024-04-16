@@ -7,8 +7,8 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-4">
-                        <div class="card info-card blue-card">
-                            <div class="card-body">
+                        <div class="card info-card blue-card bg-transparent">
+                            <div class="card-body ">
                                 <h3 class="card-title"><a href="{{ path('app_seeder_index') }}">Seeders</a></h3>
                                 <div class="d-flex align-items-center">
                                     <div
@@ -23,8 +23,8 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card info-card green-card">
-                            <div class="card-body">
+                        <div class="card info-card green-card bg-transparent">
+                            <div class="card-body ">
                                 <h5 class="card-title"><a href="{{ path('app_seed_index') }}">Variétés de graines</a></h5>
                                 <div class="d-flex align-items-center">
                                     <div
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card info-card orange-card">
+                        <div class="card info-card orange-card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('app_seed_index') }}">Nombre de graines</a></h5>
                                 <div class="d-flex align-items-center">
@@ -59,7 +59,7 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col">
-                        <div class="card info-card blue-card">
+                        <div class="card info-card blue-card bg-transparent">
                             <div class="card-body">
                                 <h3 class="card-title"><a href="{{ path('app_plant_list', {'slug': 'Germination'}) }}">Germinations</a></h3>
                                 <div class="d-flex align-items-center">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card info-card green-card">
+                        <div class="card info-card green-card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('app_plant_list', {'slug': 'Croissance'}) }}">Croissances</a></h5>
                                 <div class="d-flex align-items-center">
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card info-card orange-card">
+                        <div class="card info-card orange-card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('app_plant_list', {'slug': 'Prefloraison'}) }}">Préfloraisons</a></h5>
                                 <div class="d-flex align-items-center">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card info-card red-card">
+                        <div class="card info-card red-card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('app_plant_list', {'slug': 'Floraison'}) }}">Floraisons</a></h5>
                                 <div class="d-flex align-items-center">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card info-card darkred-card">
+                        <div class="card info-card darkred-card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{{ path('app_plant_list', {'slug': 'Recolte'}) }}">Recoltes</a></h5>
                                 <div class="d-flex align-items-center">
@@ -169,12 +169,7 @@
         </div>
     </section>
     {% endif %}
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-        <div class="copyright">
-            &copy; Copyright <strong><span>i-next</span></strong>. All Rights Reserved
-        </div>
-    </footer><!-- End Footer -->
+
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 {% endblock %}

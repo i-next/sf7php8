@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Seeder;
+use App\Repository\BaseTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,12 +15,14 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Seeder[]    findAll()
  * @method Seeder[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SeederRepository extends ServiceEntityRepository
+class SeederRepository  extends ServiceEntityRepository
 {
+    use BaseTrait;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Seeder::class);
     }
+
 
     //    /**
     //     * @return Seeder[] Returns an array of Seeder objects

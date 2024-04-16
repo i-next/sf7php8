@@ -1,10 +1,6 @@
-table.datatables{
-    table-layout: auto;
-    font-size: smaller;
-    width: fit-content;
-}
 img.logo{
-    max-width: 75px;
+    max-width: 100px;
+    min-height: 50px;
 }
 .table_col_action{
     text-align: right;
@@ -14,4 +10,8 @@ img.logo{
 }
 i.button_action{
     font-size: large;
+}
+div.content_breeder{
+    margin-left: 50px;
+    margin-right: 50px;
 }

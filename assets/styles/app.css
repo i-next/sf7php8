@@ -25,3 +25,14 @@ body {
 .rec{
     color: darkred;
 }
+table.datatables{
+    table-layout: auto;
+    font-size: smaller;
+    width: fit-content;
+
+    td, tr, th{
+        background: transparent !important;
+        height: 60px;
+        vertical-align: middle;
+    }
+}

@@ -8,50 +8,30 @@ use App\Repository\SeederRepository;
 use App\Entity\Breeder;
 use App\Entity\Strain;
 use App\Repository\BreederRepository;
+use App\Service\DatatablesServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 
-#[Route('/seeder')]
+#[Route('/seeder',name: 'app_seeder_')]
 #[IsGranted('ROLE_USER')]
 class SeederController extends AbstractController
 {
-    #[Route('', name: 'app_seeder_index', methods: ['GET'])]
+    #[Route('', name: 'index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager, BreederRepository $breederRepository, HttpClientInterface $httpClient): Response
     {
-        /*$response = $httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
-        $statusCode = $response->getStatusCode();
-        $contentType = $response->getHeaders()['content-type'][0];
-        $content = $response->getContent();
-        dd($statusCode, $contentType, $content);*/
-        /*$breeder = new Breeder();
-        $breeder->setName('test');
-        $breeder->setNameId('test_test');
-        $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/00breeder/csf.jpg');
-        $entityManager->persist($breeder);
-        $strain = new Strain();
-        $strain->setBreeder($breeder);
-        $strain->setName('testb');
-        $strain->setNameId('test_testb');
-        $strain->setAuto(false);
-        $strain->setType('sativa');
-        $strain->setDuration(8);
-        $strain->setDescription('ceci est la description de testb de test');
-        $entityManager->persist($strain);
-
-        $entityManager->flush();*/
-
         return $this->render('seeder/index.html.twig', [
             'breeders'   => $breederRepository->findBy([], ['name' => 'asc']),
             'nav'       => 'seeder',
         ]);
     }
 
-    #[Route('/new', name: 'app_seeder_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $seeder = new Seeder();
@@ -72,7 +52,18 @@ class SeederController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_seeder_show', methods: ['GET'])]
+    #[Route('/ajaxseeders', name: 'ajax')]
+    public function ajaxSeeders(Request $request, DatatablesServiceInterface $datatablesService): JsonResponse
+    {
+        $queryResult = $datatablesService->getData('Breeder',$request);
+        $queryResult['admin'] = false;
+        if (in_array('ROLE_ADMIN', $this->getUser()->getRoles(), true)) {
+            $queryResult['admin'] = true;
+        }
+        return new JsonResponse($queryResult);
+    }
+
+    #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Seeder $seeder): Response
     {
         return $this->render('seeder/show.html.twig', [
@@ -81,7 +72,7 @@ class SeederController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_seeder_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Seeder $seeder, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SeederType::class, $seeder);
@@ -100,7 +91,7 @@ class SeederController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_seeder_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'delete', methods: ['POST'])]
     public function delete(Request $request, Seeder $seeder, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$seeder->getId(), $request->request->get('_token'))) {
@@ -110,4 +101,6 @@ class SeederController extends AbstractController
 
         return $this->redirectToRoute('app_seeder_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 }

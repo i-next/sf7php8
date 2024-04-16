@@ -17,11 +17,11 @@ return [
         'entrypoint' => true,
     ],
     'plants' => [
-        'path' => './assets/plants.js',
+        'path' => './assets/js/plants.js',
         'entrypoint' => true,
     ],
     'seeders' => [
-        'path' => './assets/seeder.js',
+        'path' => './assets/js/seeder.js',
         'entrypoint' => true,
     ],
     'breeders' => [
@@ -30,6 +30,10 @@ return [
     ],
     'strains' => [
         'path' => './assets/js/strains.js',
+        'entrypoint' => true,
+    ],
+    'myseeds' => [
+        'path' => './assets/js/myseeds.js',
         'entrypoint' => true,
     ],
     'bootstrap' => [
@@ -261,5 +265,6 @@ return [
     ],
     'tom-select' => [
         'version' => '2.3.1',
-    ],
+    ]
+
 ];

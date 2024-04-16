@@ -27,6 +27,9 @@ class Breeder
     #[ORM\OneToMany(targetEntity: Strain::class, mappedBy: 'breeder', orphanRemoval: true)]
     private Collection $strains;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $quantity = null;
+
     public function __construct()
     {
         $this->strains = new ArrayCollection();
@@ -99,6 +102,18 @@ class Breeder
                 $strain->setBreeder(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity(?int $quantity): static
+    {
+        $this->quantity = $quantity;
 
         return $this;
     }

@@ -29,6 +29,10 @@
       <excludeFolder url="file://$MODULE_DIR$/tools/php-cs-fixer/vendor/symfony/string" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/ux-autocomplete" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfonycasts/dynamic-forms" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/apache-pack" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omines/datatables-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

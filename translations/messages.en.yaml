@@ -1,0 +1,28 @@
+common:
+    email: Email
+    password: Password
+    navigation:
+        backtolist: Back to list
+header:
+    menu:
+        dashboard: Dashboard
+        breeders: Breeders
+        strains: Strains
+        seeds: Seeds
+        plants: Plants
+        harvests: Harvests
+    user:
+        logout: Logout
+security:
+    login: 
+        submit: Sign in
+        head: Please sign in
+    register:
+        signin: Sign in
+        agreement: Agree terms
+        error:
+            login: 'There is already an account with this email'
+breeder:
+    index:
+        table:
+            name: Name

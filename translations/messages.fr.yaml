@@ -1,0 +1,28 @@
+common:
+    email: Courriel
+    password: Mot de passe
+    navigation:
+        backtolist: Retour à la liste
+header:
+    menu:
+        dashboard: Tableau de bord
+        breeders: Banques
+        strains: Graines
+        seeds: Graines
+        plants: Plantes
+        harvests: Recolte
+    user:
+        logout: Déconnexion
+security:
+    login: 
+        submit: Connecter
+        head: Veuillez vous connecter
+    register:
+        signin: "S'inscrire"
+        agreement: 'Accepter les conditions'
+        error:
+            login: 'Il y a déjà un compte avec ce courriel!'
+breeder:
+    index:
+        table:
+            name: Nom

@@ -15,7 +15,12 @@
     </head>
     <body>
         {% block header %}{{ render(path('app_header',{'nav': nav})) }}{% endblock %}
-        <main id="main" class="main">{% block body %}{% endblock %}</main>
+        <main id="main" class="main">{% block body %}{% endblock %}
+        <footer id="footer" class="footer">
+            <div class="copyright container">
+                &copy; Copyright <strong><span>i-next</span></strong>. All Rights Reserved
+            </div>
+        </footer></main>
     </body>
 </html>
 

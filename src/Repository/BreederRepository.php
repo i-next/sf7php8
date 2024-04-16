@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Breeder;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Repository\BaseTrait;
 
 /**
  * @extends ServiceEntityRepository<Breeder>
@@ -16,6 +17,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BreederRepository extends ServiceEntityRepository
 {
+    use BaseTrait;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Breeder::class);

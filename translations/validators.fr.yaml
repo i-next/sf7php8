@@ -1,0 +1,9 @@
+security:
+    register:
+        error:
+            login: Il y a déjà un compte avec ce courriel!
+            min:
+                password: Votre mot de passe doit contenir au minimum %limit% caractères
+                uppercase: Votre mot de passe doit contenir au moins une majuscule
+                integer: Votre mot de passe doit contenir au moins un chiffre
+            agreement: Vous devez accepter nos conditions

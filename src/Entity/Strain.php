@@ -36,6 +36,12 @@ class Strain
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $url_photo = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $descriptionen = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -115,12 +121,36 @@ class Strain
 
     public function getDescription(): ?string
     {
-        return $this->description;
+        return html_entity_decode($this->description);
     }
 
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getUrlPhoto(): ?string
+    {
+        return $this->url_photo;
+    }
+
+    public function setUrlPhoto(?string $url_photo): static
+    {
+        $this->url_photo = $url_photo;
+
+        return $this;
+    }
+
+    public function getDescriptionen(): ?string
+    {
+        return $this->descriptionen;
+    }
+
+    public function setDescriptionen(?string $descriptionen): static
+    {
+        $this->descriptionen = $descriptionen;
 
         return $this;
     }

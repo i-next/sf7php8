@@ -16,6 +16,8 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class StrainRepository extends ServiceEntityRepository
 {
+    use BaseTrait;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Strain::class);

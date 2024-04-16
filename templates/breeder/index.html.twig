@@ -3,33 +3,14 @@
 {% block title %}Breeder{% endblock %}
 
 {% block body %}
-    <table class="table datatables stripe">
-        <thead>
-        <tr>
-            <th class="header_action"></th>
-            <th class="header_action"></th>
-            <th>Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for breeder in breeders %}
-            <tr style="height: 100px; vertical-align: middle;">
-                <td class="table_col_action">
-                    {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('app_breeder_del',{'id': breeder.id }) }}"><i class="bi bi-trash button_action"></i></a>{% endif %}
-                    {{ breeder.id }}<a href="{{ path('app_breeder_show', {'id': breeder.id }) }}"><i
-                            class="bi bi-eye button_action"></i></a>
-
-                </td>
-                <td><img src="{{ breeder.urlPhoto }}" alt="" class="logo"></td>
-                <td>{{ breeder.name }} ({{ breeder.strains|length }})</td>
-            </tr>
-        {% else %}
+    <div class="content_breeder">
+        <table class="table datatables bg-transparent" data-url="{{ path('app_breeder_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}">
+            <thead>
             <tr>
-                <td colspan="3">no records found</td>
+                <th class="header_action no-sort"></th>
+                <th>{{ 'breeder.index.table.name'|trans }}</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_seeder_new') }}">Create new</a>
+            </thead>
+        </table>
+    </div>
 {% endblock %}

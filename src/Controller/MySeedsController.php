@@ -10,16 +10,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Omines\DataTablesBundle\Adapter\ArrayAdapter;
+use Omines\DataTablesBundle\Column\TextColumn;
+use Omines\DataTablesBundle\DataTableFactory;
 
 #[Route('/myseeds')]
 class MySeedsController extends AbstractController
 {
     #[Route('/', name: 'app_my_seeds_index', methods: ['GET'])]
-    public function index(MySeedsRepository $mySeedsRepository): Response
+    public function index(Request $request, MySeedsRepository $mySeedsRepository, DataTableFactory $dataTableFactory): Response
     {
+        $table = $dataTableFactory->create()
+            ->add('firstName', TextColumn::class)
+            ->add('lastName', TextColumn::class)
+            ->createAdapter(ArrayAdapter::class, [
+                ['firstName' => 'Donald', 'lastName' => 'Trump'],
+                ['firstName' => 'Barack', 'lastName' => 'Obama'],
+            ])
+            ->handleRequest($request);
+
+        if ($table->isCallback()) {
+            return $table->getResponse();
+        }
         return $this->render('my_seeds/index.html.twig', [
             'my_seeds'  => $mySeedsRepository->findAll(),
-            'nav'       => 'myseeds'
+            'nav'       => 'myseeds',
+            'datatable' => $table
         ]);
     }
 

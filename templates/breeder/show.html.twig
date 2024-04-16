@@ -1,32 +1,23 @@
-{% extends('breeder/base.html.twig') %}
+{% extends('strain/base.html.twig') %}
 {% block title %}Breeder{% endblock %}
 {% block body %}
-    <h1>Breeder {{ breeder.name }}</h1>
-
-    <table class="table datatables stripe">
+    <h1><img src="{{ breeder.urlPhoto }}" alt="nologo" class="logo" /> {{ breeder.name }}</h1>
+    <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
+    <table class="table datatables stripe" data-url="{{ path('app_strain_ajaxbreederstrains') }}" data-breederid="{{ breeder.id }}" data-noimg="{{ asset('img/no-img.png') }}">
         <thead>
             <tr>
+                <th></th>
+                <th></th>
                 <th>Name</th>
                 <th>Auto</th>
                 <th>Duration</th>
                 <th>Type</th>
-                <th>Description</th>
+                {#<th>Description</th>#}
             </tr>
         </thead>
-        <tbody>
-        {% for strain in breeder.strains %}
-            <tr>
-                <td>{{ strain.name }}</td>
-                <td>{{ strain.auto }}</td>
-                <td>{{ strain.duration }} jours</td>
-                <td>{{ strain.type }}</td>
-                <td>{{ function_format_description(strain.description)|raw }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
     </table>
 
-    <a href="{{ path('app_breeder_index') }}">back to list</a>
+    <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
 
     {#<a href="{{ path('app_seeder_edit', {'id': seeder.id}) }}">edit</a>
 

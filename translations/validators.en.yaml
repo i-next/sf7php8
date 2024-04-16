@@ -1,0 +1,9 @@
+security:
+    register:
+        error:
+            login: 'There is already an account with this email'
+            min:
+                password: Your password should be at least %limit% characters
+                uppercase: Your password should have at least an uppercase
+                integer: Your password should have at least a number
+            agreement: You should agree to our terms

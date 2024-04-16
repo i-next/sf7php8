@@ -45,22 +45,24 @@ class populateCommand extends Command
             $output->writeln(memory_get_usage());
             $output->writeln(memory_get_peak_usage());
             $oldBreeder = $this->breederRepository->findBy(['name' => $breederData['name']]);
-            if(!$oldBreeder && array_key_exists('name',$breederData)){
+            //if(!$oldBreeder && array_key_exists('name',$breederData)){
                 $breeder = new Breeder();
 
                 $breeder->setNameId($name_breeder_id);
                 $breeder->setName($breederData['name']);
                 $breeder->setUrlPhoto('https://fr.seedfinder.eu/pics/00breeder/'.$breederData['logo']);
-                $this->entityManager->persist($breeder);
+                $breeder->setQuantity(count($breederData['strains']));
+                //$this->entityManager->persist($breeder);
 
                 foreach($breederData['strains'] as $name_strain_id => $strain){
 
-                    $strainAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/strain.json?br='.$name_breeder_id.'&str='.$name_strain_id.'&lng=fr&ac=2b9ff84d30c910dbd1b988a176107f49');
+                    $strainAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/strain.json?br='.$name_breeder_id.'&str='.$name_strain_id.'&lng=fr&reviews=1&ac=2b9ff84d30c910dbd1b988a176107f49');
                     try{
                         $strainData = $strainAPI->toArray();
                     }catch (\Throwable $t){
                         continue;
                     }
+                    if($strainData['reviews']){dd($strainData['reviews']);};
                     if(array_key_exists('name',$strainData)){
                         $strain = new Strain();
                         $output->writeln('Strain: '.$strainData['name']);
@@ -70,21 +72,29 @@ class populateCommand extends Command
                         $strain->setType($strainData['brinfo']['type']);
                         $strain->setDuration($strainData['brinfo']['flowering']['days']);
                         $strain->setAuto($strainData['brinfo']['flowering']['auto']);
-                        $strain->setDescription(mb_convert_encoding(json_encode($strainData['brinfo']['descr'], JSON_INVALID_UTF8_IGNORE), 'UTF-8', 'UTF-8')??'');
-                        $this->entityManager->persist($strain);
+                        $strain->setDescription(html_entity_decode($strainData['brinfo']['descr']));
+                        $strain->setUrlPhoto($strainData['brinfo']['pic']);
+                        /*$this->entityManager->persist($strain);
+                        $strainAPIen = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/strain.json?br='.$name_breeder_id.'&str='.$name_strain_id.'&lng=en&ac=2b9ff84d30c910dbd1b988a176107f49');
+                        try{
+                            $strainDataen = $strainAPIen->toArray();
+                            $strain->setDescriptionen(html_entity_decode($strainDataen['brinfo']['descr']));
+                            $this->entityManager->persist($strain);
+                        }catch (\Throwable $t){
+                            continue;
+                        }*/
+
 
                         $strain = $strainData = null;
                     }
 
                 }
-                $this->entityManager->flush();
+                //$this->entityManager->flush();
                 $this->entityManager->detach($breeder);
                 $this->entityManager->clear();
                 $breeder = null;
                 gc_collect_cycles();
-            }
-
-
+            //}
         }
         return Command::SUCCESS;
     }

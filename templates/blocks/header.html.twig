@@ -8,24 +8,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0  nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link {% if nav is defined and nav == 'dashboard' %}active{% endif %}" aria-current="page" href="{{ path('app_index') }}">Dashboard</a>
-                </li>
                 {% if is_granted('ROLE_USER') %}
                     <li class="nav-item">
-                        <a class="nav-link {% if nav is defined and nav == 'breeder' %}active{% endif %}" href="{{ path('app_breeder_index') }}"><i class="bi bi-shop"></i> Banques</a>
+                        <a class="nav-link {% if nav is defined and nav == 'dashboard' %}active{% endif %}" aria-current="page" href="{{ path('app_index') }}">{{ 'header.menu.dashboard'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if nav is defined and nav == 'strain' %}active{% endif %}" href="{{ path('app_strain_index') }}"><i class="bi bi-egg-fill"></i> Strains</a>
+                        <a class="nav-link {% if nav is defined and nav == 'breeder' %}active{% endif %}" href="{{ path('app_breeder_index') }}"><i class="bi bi-shop"></i> {{ 'header.menu.breeders'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if nav is defined and nav == 'myseeds' %}active{% endif %}" href="{{ path('app_my_seeds_index') }}"><i class="bi bi-egg-fill"></i> Seeds</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if nav is defined and nav == 'seeder' %}active{% endif %}" href="{{ path('app_seeder_index') }}"><i class="bi bi-shop"></i> Seeders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if nav is defined and nav == 'seed' %}active{% endif %}" href="{{ path('app_seed_index') }}"><i class="bi bi-egg-fill"></i> Seeds</a>
+                        <a class="nav-link {% if nav is defined and nav == 'myseeds' %}active{% endif %}" href="{{ path('app_my_seeds_index') }}"><i class="bi bi-egg-fill"></i> {{ 'header.menu.seeds'|trans }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <span class="nav-link dropdown-toggle {% if nav is defined and nav == 'plant' %}active{% endif %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,12 +27,24 @@
                             {% for state in states %}
                                 <li><a class="dropdown-item {% if not function_count(state.value) %}disabled{% endif %}" href="{{ path('app_plant_list', {'slug': state.value}) }}">{{ state.value }} ({{ render(path('app_plant_count', {state: state.value})) }})</a></li>
                             {% endfor %}
-
                         </ul>
                     </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link {% if nav is defined and nav == 'recoltes' %}active{% endif %}" href="{{ path('app_recolte') }}"><i class="bi bi-archive"></i> Recoltes</a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {% if nav is defined and nav == 'recoltes' %}active{% endif %}" href="{{ path('app_recolte') }}"><i class="bi bi-archive"></i> Recoltes</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if nav is defined and nav == 'strain' %}active{% endif %}" href="{{ path('app_strain_index') }}"><i class="bi bi-egg-fill"></i> {{ 'header.menu.strains'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if nav is defined and nav == 'seeder' %}active{% endif %}" href="{{ path('app_seeder_index') }}"><i class="bi bi-shop"></i> {{ 'header.menu.breeders'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if nav is defined and nav == 'seed' %}active{% endif %}" href="{{ path('app_seed_index') }}"><i class="bi bi-egg-fill"></i> {{ 'header.menu.harvests'|trans }}</a>
+                        </li>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ path('app_login') }}"><i class="bi bi-person-check-fill icons" ></i> &nbsp;&nbsp;</a><a href="{{ path('app_register') }}"><i class="bi bi-person-fill-add icons"></i></a>
                 {% endif %}
             </ul>
             {% if is_granted('ROLE_USER') %}
@@ -58,8 +61,6 @@
                         <li><a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a></li>
                     </ul>
                 </div>
-            {% else %}
-                <a href="{{ path('app_login') }}"><i class="bi bi-person-check-fill icons" ></i> &nbsp;&nbsp;</a><a href="{{ path('app_register') }}"><i class="bi bi-person-fill-add icons"></i></a>
             {% endif %}
         </div>
     </div>

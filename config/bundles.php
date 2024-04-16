@@ -14,4 +14,5 @@ return [
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true],
     Symfony\UX\Autocomplete\AutocompleteBundle::class => ['all' => true],
+    Omines\DataTablesBundle\DataTablesBundle::class => ['all' => true],
 ];

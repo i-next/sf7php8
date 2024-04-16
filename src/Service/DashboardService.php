@@ -6,11 +6,11 @@ use App\Entity\User;
 use App\Repository\PlantRepository;
 use App\Repository\SeederRepository;
 use App\Repository\SeedRepository;
-use App\Service\PlantServiceInterface;
+use App\Service\DashboardServiceInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\SecurityBundle\Security;
 
-class DashboardService
+class DashboardService implements DashboardServiceInterface
 {
     public function __construct(
         private readonly PlantRepository $plantRepository,

@@ -3,15 +3,14 @@
 {% block title %}Seeder index{% endblock %}
 
 {% block body %}
-    <table class="table datatables stripe">
+    <table class="table datatables stripe" data-url="{{ path('app_seeder_ajax') }}">
         <thead>
         <tr>
-            <th class="header_action"></th>
             <th class="header_action"></th>
             <th>Name</th>
         </tr>
         </thead>
-        <tbody>
+        {#<tbody>
         {% for breeder in breeders %}
             <tr style="height: 100px; vertical-align: middle;">
                 <td class="table_col_action">
@@ -28,7 +27,7 @@
                 <td colspan="3">no records found</td>
             </tr>
         {% endfor %}
-        </tbody>
+        </tbody>#}
     </table>
 
     <a href="{{ path('app_seeder_new') }}">Create new</a>
