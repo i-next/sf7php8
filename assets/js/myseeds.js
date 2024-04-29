@@ -34,7 +34,7 @@ $(document).ready(function(){
       {
         name: 'strain.urlPhoto',
         orderable: false,
-        data: 'strain.url_photo'
+        data: 'strain.logo'
       },
       {
         name: 'strain.name',
@@ -76,10 +76,11 @@ $(document).ready(function(){
       {
         targets: 1,
         render: function(data, type, row) {
+          console.log(data);
           if(data == ''){
             return ''
           }
-          return '<img src="'+data+'" alt="nologo" class="logo" />'
+          return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo" />'
         }
       },
       {

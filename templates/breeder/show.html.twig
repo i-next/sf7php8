@@ -1,7 +1,7 @@
 {% extends('strain/base.html.twig') %}
 {% block title %}Breeder{% endblock %}
 {% block body %}
-    <h1><img src="{{ breeder.urlPhoto }}" alt="nologo" class="logo" /> {{ breeder.name }}</h1>
+    <h1><img src="{{ absolute_url(asset(breeder.logo)) }}" alt="nologo" class="logo" /> {{ breeder.name }}</h1>
     <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
     <table class="table datatables stripe" data-url="{{ path('app_strain_ajaxbreederstrains') }}" data-breederid="{{ breeder.id }}" data-noimg="{{ asset('img/no-img.png') }}">
         <thead>

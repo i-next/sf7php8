@@ -10,7 +10,7 @@ $(document).ready(function(){
       {
         name: 'urlPhoto',
         orderable: false,
-        data: 'url_photo'
+        data: 'logo'
       },
       {
         name: 'name',
@@ -23,7 +23,8 @@ $(document).ready(function(){
           if(data == ''){
             return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" />'
           }
-          return '<img src="'+data+'" alt="nologo" class="logo" />'
+
+          return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo" />'
         }
       },
       {

@@ -45,6 +45,9 @@ class Strain
     #[ORM\ManyToOne(inversedBy: 'strains')]
     private ?User $user_id = null;
 
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $logo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +174,18 @@ class Strain
     public function setUserId(?User $user_id): static
     {
         $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?string $logo): static
+    {
+        $this->logo = $logo;
 
         return $this;
     }
