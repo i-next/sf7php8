@@ -1,0 +1,68 @@
+.form-select{
+    background: transparent!important;
+}
+h1{
+    color: var(--default-color)!important;
+}
+.ts-dropdown{
+    color: white !important;
+    .active {
+        color: var(--default-color) !important;
+    }
+}
+.ts-control input{
+    color: white !important;
+}
+
+.ts-control{
+    color: white !important;
+}
+fieldset
+{
+    /*border: solid var(--default-color)!important;*/
+    padding:16px;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    border-color: var(--default-color) !important;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+}
+.newseed {
+    display: none;
+    padding-top: 5px !important;
+}
+.newbreeder {
+    display: none;
+}
+.hidenewseed{
+    display: none;
+}
+.cke_contents{
+    background-color:var(--bs-body-bg) !important;
+}
+.ts-dropdown .create{
+    color: var(--default-color-light) !important;
+}
+
+.shortfield{
+    width: 40em !important;
+}
+.input-group{
+    width: 109px !important;
+}
+.input-group-text{
+    padding: .175rem .75rem !important;
+}
+.quantityseeds{
+    font-size: small !important;
+    color:  var(--default-color) !important;
+    text-align: center;
+}
+div.dt-container .dt-input * {
+    background-color: var(--default-color) !important;
+}
+
+

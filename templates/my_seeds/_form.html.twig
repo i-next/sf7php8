@@ -1,4 +1,29 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'id': 'my_seeds'}) }}
+<div class="my-custom-class-for-errors">
+    {{ form_errors(form) }}
+</div>
+    <span class="searchseed">{{ form_row(form.strain) }}</span>
+{#    <a href="#" class="addnewseed"><i class="bi bi-plus-circle-fill"></i> {{ 'form.button.addnewseed'|trans }}</a>
+    <a href="#" class="hidenewseed"><i class="bi bi-dash-circle-fill"></i> {{ 'form.button.hidenewseed'|trans }}</a>#}
+    <fieldset class="border rounded newseed" style="border-color: #73B64F !important">
+        {{ form_row(form.newstrain.breeder) }}
+        <fieldset class="border rounded newbreeder" style="border-color: #73B64F !important">
+            {{ form_row(form.newstrain.newbreeder.url_photo) }}
+        </fieldset>
+        {{ form_row(form.newstrain.auto) }}
+        {{ form_row(form.newstrain.duration) }}
+        {{ form_row(form.newstrain.type) }}
+        {{ form_row(form.newstrain.url_photo) }}
+        {% if form.newstrain.description is defined%}
+            {{ form_row(form.newstrain.description) }}
+        {% else %}
+            {{ form_row(form.newstrain.descriptionEN) }}
+        {% endif %}
+
+    </fieldset>
+        {{ form_row(form.quantity) }}
+        {#<button type="submit" class="btn btn-success">{{'form.button.add'|trans }}</button>#}
+        {{ form_row(form.submit) }}
 {{ form_end(form) }}
+
+

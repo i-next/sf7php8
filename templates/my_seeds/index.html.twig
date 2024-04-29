@@ -3,41 +3,23 @@
 {% block title %}MySeeds index{% endblock %}
 
 {% block body %}
-    <h1>MySeeds index</h1>
-
-    <table class="table">
+    <h1>{{ 'strain.index.title'|trans }}</h1>
+    <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
+    <table class="table datatables bg-transparent"  data-url="{{ path('app_my_seeds_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}">
         <thead>
             <tr>
-                <th>Id</th>
+                <th></th>
+                <th></th>
                 <th>Name</th>
                 <th>Seeder</th>
                 <th>Quantity</th>
                 <th>Duration</th>
+                <th>Auto</th>
+                <th>Type</th>
                 <th>Description</th>
-                <th>actions</th>
             </tr>
         </thead>
-        <tbody>
-        {% for my_seed in my_seeds %}
-            <tr>
-                <td>{{ my_seed.id }}</td>
-                <td>{{ my_seed.name }}</td>
-                <td>{{ my_seed.seeder }}</td>
-                <td>{{ my_seed.quantity }}</td>
-                <td>{{ my_seed.duration }}</td>
-                <td>{{ my_seed.description }}</td>
-                <td>
-                    <a href="{{ path('app_my_seeds_show', {'id': my_seed.id}) }}">show</a>
-                    <a href="{{ path('app_my_seeds_edit', {'id': my_seed.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
     </table>
 
-    <a href="{{ path('app_my_seeds_new') }}">Create new</a>
+    <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
 {% endblock %}

@@ -6,6 +6,7 @@ use App\Service\DatatablesServiceInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Parameter;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,22 +19,26 @@ class DatatablesService implements DatatablesServiceInterface
     {
     }
 
-    public function getData(string $repositoryName,Request $request): array
+    public function getData(string $repositoryName,Request $request, array $join = []): array
     {
         $dataRequest = $request->request->all();
 
         $result = [];
         $result['draw'] = $dataRequest['draw'];
         $repository = $this->getRepository($repositoryName);
-        $queryBuilder = $this->queryBuilder($repository,$dataRequest);
+        $queryBuilder = $this->queryBuilder($repository,$dataRequest,$join);
+
         if($this->recordTotal === 0){
             $recordsTotal = count($repository->findAll());
         }
 
         $result['recordsTotal'] = $this->recordTotal;
+
         $result['recordsFiltered'] = count($queryBuilder->getQuery()->getArrayResult());
         $queryBuilder = $this->queryPagination($queryBuilder,null,$dataRequest);
+
         $result['data'] = $queryBuilder->getQuery()->getArrayResult();
+
         return $result;
     }
 
@@ -43,26 +48,47 @@ class DatatablesService implements DatatablesServiceInterface
         return $this->entityManager->getRepository($repo);
     }
 
-    private function queryBuilder(EntityRepository $repository,array $data): QueryBuilder
+    private function queryBuilder(EntityRepository $repository,array $data, array $join): QueryBuilder
     {
 
         $qb = $repository->getQueryBuilder();
+        if($qb instanceof QueryBuilder && $join){
+            foreach($join as $tablejoin){
 
-            $qb = $this->queryFilters($qb, $data);
-
-            if("" !== $data['search']['value']){
-                $qb = $this->querySearch($qb,null,$data['search']['value']);
+                $qb->leftJoin('q.'.$tablejoin,$tablejoin)->where($tablejoin.' = q.'.$tablejoin)->addSelect($tablejoin);
+                if($tablejoin === 'strain'){
+                    $qb->leftJoin('strain.breeder', 'breeder')->where('breeder = strain.breeder')->addSelect('breeder');
+                }
             }
-            if(array_key_exists('order',$data) && $orders = $data['order']){
-                foreach($orders as $order){
+        }
+
+        $qb = $this->queryFilters($qb, $data);
+
+        if("" !== $data['search']['value']){
+            $qb = $this->querySearch($qb,null,$data['search']['value']);
+        }
+
+        if(array_key_exists('order',$data) && $orders = $data['order']){
+            foreach($orders as $order){
+
+                if($order['name']){
                     if($order = $orders[array_key_first($orders)]){
-                        $qb->orderBy('q.'.$order['name'],$order['dir']);
+                        if(str_contains($order['name'],'.')){
+                            $qb->orderBy($order['name'],$order['dir']);
+                        }else{
+                            $qb->orderBy('q.'.$order['name'],$order['dir']);
+                        }
                     }else{
-                        $qb->addOrderBy('q.'.$order['name'],$order['dir']);
+                        if(str_contains('.',$order['name'])){
+                            $qb->addOrderBy($order['name'],$order['dir']);
+                        }else{
+                            $qb->addOrderBy('q.'.$order['name'],$order['dir']);
+                        }
                     }
                 }
             }
-          return $qb;
+        }
+      return $qb;
     }
 
     private function querySearch(?QueryBuilder $builder,?EntityRepository $repository,string $search): QueryBuilder
@@ -103,14 +129,36 @@ class DatatablesService implements DatatablesServiceInterface
         if(array_key_exists('filters',$data)){
             foreach ($data['filters'] as $keyfilter => $filter){
                 if(!$this->filter){
-                    $builder->where('q.'.$keyfilter.' = '.$filter);
+                    if(is_array($filter)){
+                        $builder = $this->multifiters($keyfilter,$filter,$builder);
+                    }else{
+                        $builder->where('q.'.$keyfilter.' = '.$filter);
+                    }
                     $this->filter = true;
+
                 }else{
                     $builder->andWhere('q.'.$keyfilter.' = '.$filter);
                 }
             }
         }
         $this->recordTotal = count($builder->getQuery()->getArrayResult());
+        return $builder;
+    }
+
+    private function multifiters(string $key,array $filters, QueryBuilder $builder): QueryBuilder
+    {
+        foreach($filters as $keyfilter => $filter){
+            //$filter = $filter == "null" ? null : $filter;
+            if($keyfilter === array_key_first($filters)){
+                if($filter == "null"){
+                    $builder->where('q.'.$key.' IS NULL');
+                }else{
+                    $builder->where('q.'.$key.' = '.$filter);
+                }
+            }else{
+                $builder->orWhere('q.'.$key.' = '.$filter);
+            }
+        }
         return $builder;
     }
 

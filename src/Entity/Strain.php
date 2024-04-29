@@ -42,6 +42,9 @@ class Strain
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $descriptionen = null;
 
+    #[ORM\ManyToOne(inversedBy: 'strains')]
+    private ?User $user_id = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -151,6 +154,23 @@ class Strain
     public function setDescriptionen(?string $descriptionen): static
     {
         $this->descriptionen = $descriptionen;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): static
+    {
+        $this->user_id = $user_id;
 
         return $this;
     }

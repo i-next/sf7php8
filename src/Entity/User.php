@@ -53,12 +53,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
     #[ORM\OneToMany(targetEntity: MySeeds::class, mappedBy: 'userid', orphanRemoval: true)]
     private Collection $mySeeds;
 
+    /**
+     * @var Collection<int, Strain>
+     */
+    #[ORM\OneToMany(targetEntity: Strain::class, mappedBy: 'user_id')]
+    private Collection $strains;
+
+    /**
+     * @var Collection<int, Breeder>
+     */
+    #[ORM\OneToMany(targetEntity: Breeder::class, mappedBy: 'user_id')]
+    private Collection $breeders;
+
     public function __construct()
     {
         $this->seeds = new ArrayCollection();
         $this->plants = new ArrayCollection();
         $this->recoltes = new ArrayCollection();
         $this->mySeeds = new ArrayCollection();
+        $this->strains = new ArrayCollection();
+        $this->breeders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -274,6 +288,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
             // set the owning side to null (unless already changed)
             if ($mySeed->getUserid() === $this) {
                 $mySeed->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Strain>
+     */
+    public function getStrains(): Collection
+    {
+        return $this->strains;
+    }
+
+    public function addStrain(Strain $strain): static
+    {
+        if (!$this->strains->contains($strain)) {
+            $this->strains->add($strain);
+            $strain->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStrain(Strain $strain): static
+    {
+        if ($this->strains->removeElement($strain)) {
+            // set the owning side to null (unless already changed)
+            if ($strain->getUserId() === $this) {
+                $strain->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Breeder>
+     */
+    public function getBreeders(): Collection
+    {
+        return $this->breeders;
+    }
+
+    public function addBreeder(Breeder $breeder): static
+    {
+        if (!$this->breeders->contains($breeder)) {
+            $this->breeders->add($breeder);
+            $breeder->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBreeder(Breeder $breeder): static
+    {
+        if ($this->breeders->removeElement($breeder)) {
+            // set the owning side to null (unless already changed)
+            if ($breeder->getUserId() === $this) {
+                $breeder->setUserId(null);
             }
         }
 

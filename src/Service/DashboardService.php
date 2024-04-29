@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Entity\User;
+use App\Repository\MySeedsRepository;
 use App\Repository\PlantRepository;
 use App\Repository\SeederRepository;
 use App\Repository\SeedRepository;
@@ -16,6 +17,7 @@ class DashboardService implements DashboardServiceInterface
         private readonly PlantRepository $plantRepository,
         private readonly SeederRepository $seederRepository,
         private readonly SeedRepository $seedRepository,
+        private readonly MySeedsRepository $mySeedsRepository,
         private readonly PlantServiceInterface $plantService,
         private readonly RequestStack $requestStack,
         private readonly Security $security,
@@ -30,6 +32,7 @@ class DashboardService implements DashboardServiceInterface
         $data['seeders'] = $this->seederRepository->count() ?? 0;
         $data['seed_type'] = $this->seedRepository->count(['userid' => $user->getId()]) ?? 0;
         $data['seed_count'] = $this->seedRepository->getCountSeed() ?? 0;
+        $data['my_seeds_count'] = $this->mySeedsRepository->getCountSeed() ?? 0;
         return $data;
     }
 }

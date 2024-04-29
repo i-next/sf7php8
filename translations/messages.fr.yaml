@@ -8,7 +8,7 @@ header:
         dashboard: Tableau de bord
         breeders: Banques
         strains: Graines
-        seeds: Graines
+        seeds: Stock de Graines
         plants: Plantes
         harvests: Recolte
     user:
@@ -26,3 +26,23 @@ breeder:
     index:
         table:
             name: Nom
+strain:
+    index:
+        title: Votre stock de graines
+form:
+    title:
+        strain:
+            new: Ajouter une variété de graine à votre stock
+    label:
+        strain:
+            strain: Rechercher une graine
+    placeholder:
+        strain:
+            strain: Choisir ou créer votre graine
+        breeder:
+            breeder: Choisir ou créer votre banque
+    button:
+        next: Suivant
+        add: Ajouter 
+        addnewseed: Ajouter une nouvelle graine
+        hidenewseed: Chercher une graine

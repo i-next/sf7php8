@@ -4,52 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/seeder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="dff1960d-faa8-468c-99f0-220db25f60c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/breeders.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/breeders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/strains.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/strains.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/plants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/seeder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/myseeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myseeds.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/breeders.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/breeders.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/myseeds.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myseeds.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/strains.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/strains.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/vendor/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/installed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/importmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/populateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/populateCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BreederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BreederController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MySeedsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MySeedsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SeederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeederController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StrainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Breeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Breeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MySeeds.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MySeeds.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Strain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Strain.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BreederRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BreederRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SeederRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeederRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/StrainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/StrainRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MySeedsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MySeedsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MySeedsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MySeedsRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/DashboardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DashboardService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DatatablesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DatatablesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DatatablesServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DatatablesServiceInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/breeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/breeder/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_seeds/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seeder/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_seeds/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,18 +51,18 @@
   </component>
   <component name="ComposerConfigs">
     <option name="configs">
+      <option value="$PROJECT_DIR$/public/bundles/fosckeditor/composer.json" />
       <option value="$PROJECT_DIR$/tools/php-cs-fixer/composer.json" />
     </option>
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -234,42 +227,35 @@
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/omines/datatables-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stimulus-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2eLrSObcE7QoF0XUrNBR2MSVC6o" />
+  <component name="ProjectId" id="2fUIrPdDkspsuB4Q6EmGQ4et0sa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.aeffacer.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu-22.04/home/manu/web/sf7php8/translations&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl.localhost\Ubuntu-22.04\home\manu\web\sf7php8\translations" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="\\wsl.localhost\Ubuntu-22.04\home\manu\web\sf7php8\assets\styles" />
-      <recent name="\\wsl.localhost\Ubuntu-22.04\home\manu\web\sf7php8\assets\js" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -280,72 +266,23 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eb9ad9f0-9ea4-4330-875b-c6ab873f1287" name="Changes" comment="" />
-      <created>1711694700436</created>
+      <changelist id="dff1960d-faa8-468c-99f0-220db25f60c1" name="Changes" comment="" />
+      <created>1713849430795</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711694700436</updated>
-      <workItem from="1711694706324" duration="9489000" />
-      <workItem from="1711794179230" duration="147000" />
-      <workItem from="1711864939271" duration="20000" />
-      <workItem from="1712123710763" duration="166000" />
-      <workItem from="1712123879591" duration="18981000" />
-      <workItem from="1712213661695" duration="13563000" />
-      <workItem from="1712296103398" duration="5648000" />
-      <workItem from="1712304122154" duration="4665000" />
-      <workItem from="1712324187606" duration="12285000" />
-      <workItem from="1712382222632" duration="6400000" />
-      <workItem from="1712414558909" duration="3011000" />
-      <workItem from="1712468339068" duration="3511000" />
-      <workItem from="1712553485486" duration="8321000" />
-      <workItem from="1712640996570" duration="10004000" />
-      <workItem from="1712725322439" duration="1300000" />
-      <workItem from="1712726825302" duration="6807000" />
-      <workItem from="1712811617278" duration="7895000" />
-      <workItem from="1712821360285" duration="2122000" />
-      <workItem from="1712829348596" duration="9361000" />
-      <workItem from="1712897812212" duration="23179000" />
-      <workItem from="1712985329670" duration="12684000" />
-      <workItem from="1713074822960" duration="6939000" />
-      <workItem from="1713109548533" duration="1191000" />
-      <workItem from="1713159009430" duration="13167000" />
-      <workItem from="1713243443008" duration="11620000" />
+      <updated>1713849430795</updated>
+      <workItem from="1713849435862" duration="9773000" />
+      <workItem from="1713963899152" duration="2973000" />
+      <workItem from="1714021976282" duration="9513000" />
+      <workItem from="1714108728957" duration="14484000" />
+      <workItem from="1714194804982" duration="18438000" />
+      <workItem from="1714283026473" duration="16010000" />
+      <workItem from="1714367166319" duration="5784000" />
+      <workItem from="1714378276204" duration="673000" />
     </task>
-    <task id="LOCAL-00001" summary="first commit">
-      <option name="closed" value="true" />
-      <created>1712177238521</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1712177238521</updated>
-    </task>
-    <task id="LOCAL-00002" summary="first commit">
-      <option name="closed" value="true" />
-      <created>1712239855071</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1712239855071</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>

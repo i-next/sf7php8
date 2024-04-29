@@ -1,11 +1,22 @@
 body {
-    background-color: skyblue;
+   /* background-color: skyblue;*/
+    font-size: 0.80rem !important;
 }
 
 .main {
 /*    margin-left: 5px;
     margin-right: 5px;*/
 }
+
+/* *******************************************************
+                         Nav
+******************************************************* */
+.btn-secondary{
+    background-color: var(--default-color) !important;
+    border: 2px solid var(--default-color) !important;
+}
+
+
 
 .germ{
     color: blue;
@@ -27,12 +38,76 @@ body {
 }
 table.datatables{
     table-layout: auto;
-    font-size: smaller;
     width: fit-content;
 
     td, tr, th{
         background: transparent !important;
-        height: 60px;
+        height: 40px;
         vertical-align: middle;
     }
 }
+.btn-success{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--default-color) !important;
+    --bs-btn-border-color: var(--default-color) !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #157347;
+    --bs-btn-hover-border-color: #146c43;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #146c43;
+    --bs-btn-active-border-color: #13653f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--default-color) !important;
+    --bs-btn-disabled-border-color: var(--default-color) !important;
+}
+
+::placeholder{
+    color: var(--default-color) !important;
+}
+h1{
+    font-size: 1.2rem !important;
+}
+
+label{
+    color: var(--label-color);
+}
+/* *******************************************************
+                          Datatables
+******************************************************* */
+table.datatables{
+    table-layout: auto;
+    width: fit-content;
+    thead{
+        color: white;
+    }
+    tbody tr td{
+        color: var(--default-color) !important;
+    }
+}
+.button_action{
+    color: var(--action-color);
+}
+
+/* *******************************************************
+                          forms
+******************************************************* */
+.form-control:focus {
+    border-color: var(--default-color) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
+}
+
+.form-check-input:checked {
+    background-color:var(--default-color) !important;
+    border-color:var(--default-color) !important;
+}
+
+input, textarea{
+    background: transparent !important;
+}
+.focus .ts-control {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
+}
+

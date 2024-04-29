@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\StrainRepository;
+use App\Service\AutoCompleteServiceInterface;
 use App\Service\DatatablesServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -32,5 +33,11 @@ class StrainController extends AbstractController
             $queryResult['admin'] = true;
         }
         return new JsonResponse($queryResult);
+    }
+
+    #[Route('/autocompletestrain', name: 'autocomplestrain')]
+    public function autoCompleteStrains(Request $request, AutoCompleteServiceInterface $autoCompleteService): JsonResponse
+    {
+        return new JsonResponse($autoCompleteService->getStrainsQuery($request->query->all()));
     }
 }

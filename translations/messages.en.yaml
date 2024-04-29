@@ -8,7 +8,7 @@ header:
         dashboard: Dashboard
         breeders: Breeders
         strains: Strains
-        seeds: Seeds
+        seeds: Seeds stock
         plants: Plants
         harvests: Harvests
     user:
@@ -26,3 +26,24 @@ breeder:
     index:
         table:
             name: Name
+strain:
+    index:
+        title: Your seed stock            
+form:
+    title:
+        strain:
+            new: Add a seed variety to your stock
+            list: 
+    label:
+        strain:
+            strain: Search for a seed
+    placeholder:
+        strain:
+            strain: Choose or create your seed
+        breeder:
+            breeder: Choose or create your breeder
+    button:
+        next: Next
+        add: Add
+        addnewseed: Add new seed
+        hidenewseed: Search for a seed

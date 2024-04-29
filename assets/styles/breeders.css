@@ -1,12 +1,12 @@
 img.logo{
-    max-width: 100px;
-    min-height: 50px;
+    max-width: 50px;
+    min-height: 30px;
 }
 .table_col_action{
     text-align: right;
 }
 .header_action{
-    width: 100px;
+    width: 50px;
 }
 i.button_action{
     font-size: large;

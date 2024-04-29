@@ -30,6 +30,12 @@ class Breeder
     #[ORM\Column(nullable: true)]
     private ?int $quantity = null;
 
+    #[ORM\ManyToOne(inversedBy: 'breeders')]
+    private ?User $user_id = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $logo = null;
+
     public function __construct()
     {
         $this->strains = new ArrayCollection();
@@ -114,6 +120,35 @@ class Breeder
     public function setQuantity(?int $quantity): static
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): static
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?string $logo): static
+    {
+        $this->logo = $logo;
 
         return $this;
     }

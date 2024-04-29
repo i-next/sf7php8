@@ -855,4 +855,24 @@
     array (
     ),
   ),
+  'tom-select/dist/css/tom-select.default.css' => 
+  array (
+    'version' => '2.3.1',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'tom-select/dist/css/tom-select.bootstrap5.css' => 
+  array (
+    'version' => '2.3.1',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
 );

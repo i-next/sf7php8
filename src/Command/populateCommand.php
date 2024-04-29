@@ -41,6 +41,7 @@ class populateCommand extends Command
         $this->entityManager->getConnection()->getConfiguration()->setMiddlewares([new Middleware(new NullLogger())]);
         $breedersAPI = $this->httpClient->request('GET','https://fr.seedfinder.eu/api/json/ids.json?br=all&strains=1&ac=2b9ff84d30c910dbd1b988a176107f49');
         foreach ($breedersAPI->toArray() as $name_breeder_id => $breederData){
+            dd($breederData);
             $output->writeln('Breeder: '.$breederData['name']);
             $output->writeln(memory_get_usage());
             $output->writeln(memory_get_peak_usage());
@@ -62,6 +63,7 @@ class populateCommand extends Command
                     }catch (\Throwable $t){
                         continue;
                     }
+                    dd($strainData);
                     if($strainData['reviews']){dd($strainData['reviews']);};
                     if(array_key_exists('name',$strainData)){
                         $strain = new Strain();

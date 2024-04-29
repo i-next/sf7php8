@@ -14,6 +14,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.0",
         "dragonmantank/cron-expression": "^3.3",
+        "friendsofsymfony/ckeditor-bundle": "^2.5",
         "omines/datatables-bundle": "^0.8.2",
         "predis/predis": "^2.2",
         "runtime/frankenphp-symfony": "^0.2.0",
@@ -36,6 +37,7 @@
         "symfony/scheduler": "7.0.*",
         "symfony/security-bundle": "7.0.*",
         "symfony/security-csrf": "7.0.*",
+        "symfony/stimulus-bundle": "^2.14",
         "symfony/translation": "7.0.*",
         "symfony/twig-bundle": "7.0.*",
         "symfony/ux-autocomplete": "^2.16",
@@ -78,7 +80,8 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "importmap:install": "symfony-cmd"
+            "importmap:install": "symfony-cmd",
+            "ckeditor:install": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"

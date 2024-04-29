@@ -1,10 +1,8 @@
-table.datatables{
-    table-layout: auto;
-    font-size: smaller;
-    width: fit-content;
-}
+
+
 img.logo{
-    max-width: 75px;
+    max-width: 50px;
+    min-height: 30px;
 }
 .table_col_action{
     text-align: right;
@@ -15,3 +13,10 @@ img.logo{
 i.button_action{
     font-size: large;
 }
+table.dataTable td.dt-control:before{
+    display:inline-block;
+    box-sizing:border-box;content:"";
+    border-top:10px solid transparent !important;
+    border-left:20px solid var(--default-color) !important;
+    border-bottom:10px solid transparent !important;
+    border-right:0px solid transparent}
