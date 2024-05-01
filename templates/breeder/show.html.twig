@@ -1,5 +1,5 @@
 {% extends('strain/base.html.twig') %}
-{% block title %}Breeder{% endblock %}
+{% block title %}{{ 'breeder.index.page_title'|trans }}{% endblock %}
 {% block body %}
     <h1><img src="{{ absolute_url(asset(breeder.logo)) }}" alt="nologo" class="logo" /> {{ breeder.name }}</h1>
     <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
@@ -12,14 +12,10 @@
                 <th>Auto</th>
                 <th>Duration</th>
                 <th>Type</th>
-                {#<th>Description</th>#}
             </tr>
         </thead>
     </table>
 
     <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
 
-    {#<a href="{{ path('app_seeder_edit', {'id': seeder.id}) }}">edit</a>
-
-    {{ include('seeder/_delete_form.html.twig') }}#}
 {% endblock %}

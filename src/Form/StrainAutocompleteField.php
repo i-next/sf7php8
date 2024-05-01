@@ -38,6 +38,9 @@ class StrainAutocompleteField extends AbstractType
                 'class' => 'selstrain shortfield form-control',
                 'data-controller' => 'autocomplete_strain',
                 ],
+            'tom_select_options' => [
+                'maxOptions' => null,
+                ]
             /*'tom_select_options' => [
                 'create' => true,
                 'render' => [

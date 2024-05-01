@@ -20,3 +20,7 @@ table.dataTable td.dt-control:before{
     border-left:20px solid var(--default-color) !important;
     border-bottom:10px solid transparent !important;
     border-right:0px solid transparent}
+
+i.bi{
+    font-size: var(--font-size-buttons);
+}

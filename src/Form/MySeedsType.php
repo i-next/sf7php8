@@ -34,7 +34,9 @@ class MySeedsType extends AbstractType
             ->add('quantity',IntegerType::class,[
                 'attr' => [
                     'required' => true,
-                ]
+                    'class' => 'smallnumber',
+                ],
+                'data' => 1
             ])
 
             ->add('submit',SubmitType::class,[

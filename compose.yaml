@@ -63,6 +63,7 @@ services:
     environment:
       PMA_HOST: database
       PMA_PORT: 3306
+      UPLOAD_LIMIT: 128M
     ports:
       - 8080:80
     links:

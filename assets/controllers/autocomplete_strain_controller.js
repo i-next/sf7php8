@@ -46,7 +46,9 @@ export default class extends Controller {
     //console.log(event);
     event.detail.sort = [{'text': 'asc'}]
     event.detail.options.min_characters = 3;
-    event.detail.options.maxOptions = null;
+    event.detail.options.maxOptions = 100;
+    event.detail.options.max_options = 100;
+    event.detail.options.maxItems = 1;
     //event.detail.tomSelect.openOnFocus = false;
    /* event.detail.options.onChange = (value) => {
       console.log(value);

@@ -1,11 +1,5 @@
 body {
-   /* background-color: skyblue;*/
-    font-size: 0.80rem !important;
-}
-
-.main {
-/*    margin-left: 5px;
-    margin-right: 5px;*/
+     font-size: 0.80rem !important;
 }
 
 /* *******************************************************
@@ -15,8 +9,6 @@ body {
     background-color: var(--default-color) !important;
     border: 2px solid var(--default-color) !important;
 }
-
-
 
 .germ{
     color: blue;
@@ -36,16 +28,60 @@ body {
 .rec{
     color: darkred;
 }
+
+h1{
+    font-size: 1.2rem !important;
+}
+
+label{
+    color: var(--label-color);
+}
+/* *******************************************************
+                          Datatables
+******************************************************* */
 table.datatables{
     table-layout: auto;
-    width: fit-content;
-
+    /*width: fit-content;*/
+    thead{
+        color: white;
+    }
+    tbody tr td{
+        color: var(--default-color) !important;
+    }
     td, tr, th{
         background: transparent !important;
         height: 40px;
         vertical-align: middle;
     }
 }
+.button_action{
+    color: var(--action-color);
+}
+div.dt-container .dt-info{
+    color: var(--action-color) !important;
+}
+/* *******************************************************
+                          forms
+******************************************************* */
+.form-control:focus {
+    border-color: var(--default-color) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
+}
+
+.form-check-input:checked {
+    background-color:var(--default-color) !important;
+    border-color:var(--default-color) !important;
+}
+
+input, textarea{
+    background: transparent !important;
+}
+
+.focus .ts-control {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
+}
+
 .btn-success{
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--default-color) !important;
@@ -66,48 +102,3 @@ table.datatables{
 ::placeholder{
     color: var(--default-color) !important;
 }
-h1{
-    font-size: 1.2rem !important;
-}
-
-label{
-    color: var(--label-color);
-}
-/* *******************************************************
-                          Datatables
-******************************************************* */
-table.datatables{
-    table-layout: auto;
-    width: fit-content;
-    thead{
-        color: white;
-    }
-    tbody tr td{
-        color: var(--default-color) !important;
-    }
-}
-.button_action{
-    color: var(--action-color);
-}
-
-/* *******************************************************
-                          forms
-******************************************************* */
-.form-control:focus {
-    border-color: var(--default-color) !important;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
-}
-
-.form-check-input:checked {
-    background-color:var(--default-color) !important;
-    border-color:var(--default-color) !important;
-}
-
-input, textarea{
-    background: transparent !important;
-}
-.focus .ts-control {
-    outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
-}
-

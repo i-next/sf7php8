@@ -65,4 +65,7 @@ div.dt-container .dt-input * {
     background-color: var(--default-color) !important;
 }
 
-
+.smallnumber{
+    width: 109px !important;
+    color: var(--default-color-light) !important;
+}

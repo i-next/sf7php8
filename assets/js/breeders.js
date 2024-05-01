@@ -3,6 +3,7 @@ import $ from 'jquery';
 import '../styles/breeders.css';
 
 $(document).ready(function(){
+
   let options = {
     pageLength: 10,
     order: [[1, 'asc']],

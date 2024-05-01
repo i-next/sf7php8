@@ -1,6 +1,6 @@
 {% extends 'my_seeds/base.html.twig' %}
 
-{% block title %}MySeeds index{% endblock %}
+{% block title %}{{ 'myseeds.index.page_title'|trans }}{% endblock %}
 
 {% block body %}
     <h1>{{ 'strain.index.title'|trans }}</h1>
@@ -10,11 +10,11 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th>Name</th>
-                <th>Seeder</th>
-                <th>Quantity</th>
-                <th>Duration</th>
-                <th>Auto</th>
+                <th>{{ 'myseeds.index.table.head.name'|trans }}</th>
+                <th>{{ 'myseeds.index.table.head.seeder'|trans }}</th>
+                <th>{{ 'myseeds.index.table.head.quantity'|trans }}</th>
+                <th>{{ 'myseeds.index.table.head.duration'|trans }}</th>
+                <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
                 <th>Type</th>
                 <th>Description</th>
             </tr>

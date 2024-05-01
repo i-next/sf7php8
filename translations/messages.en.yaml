@@ -26,9 +26,21 @@ breeder:
     index:
         table:
             name: Name
+        page_title: Banques            
 strain:
     index:
-        title: Your seed stock            
+        title: Your seed stock     
+myseeds:
+    index:
+        table:
+            head:
+                name: Name
+                seeder: Breeder
+                quantity: Quantity
+                auto: Auto Flowering
+                duration: Duration In Days
+        page_title: My Seeds
+        
 form:
     title:
         strain:

@@ -14,7 +14,7 @@ class AutoCompleteService implements AutoCompleteServiceInterface
     public function getStrainsQuery(array $data):array
     {
         if($data['query']){
-            $query = $this->em->createQuery("SELECT s.id as value, CONCAT(s.name,' (',b.name,')(',s.duration,')') as text FROM App\Entity\Strain s, App\Entity\Breeder b WHERE s.breeder = b.id AND s.name LIKE '%".$data['query']."%' ORDER BY trim(s.name) ASC");
+            $query = $this->em->createQuery("SELECT s.id as value, CONCAT(s.name,' (',b.name,')(',s.duration,')') as text FROM App\Entity\Strain s, App\Entity\Breeder b WHERE s.breeder = b.id AND s.name LIKE '%".ucwords($data['query'])."%' ORDER BY trim(s.name) ASC");
             $query->setMaxResults(count($query->getArrayResult()));
             return ['results' => $query->getArrayResult()];
         }else{

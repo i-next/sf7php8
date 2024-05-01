@@ -5,12 +5,10 @@ import '../styles/strains.css';
 import TomSelect from 'tom-select';
 $(document).ready(function(){
 
-/*  $(".minus-seeds").on('click',function(){
-    console.log('toto');
-  })*/
+
   $('.qtyplus').click(function (e) {
     e.preventDefault();
-    console.log($(this));
+
   });
   $(".plus-seeds").on('click',function(){
     console.log($(this),$(this.data('id')))
@@ -76,8 +74,8 @@ $(document).ready(function(){
       {
         targets: 1,
         render: function(data, type, row) {
-          console.log(data);
-          if(data == ''){
+
+          if(data == null){
             return ''
           }
           return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo" />'
@@ -89,7 +87,7 @@ $(document).ready(function(){
           if(data.url_photo == ''){
             return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" /> '+data.name;
           }
-          return '<img src="'+data.url_photo+'" alt="nologo" class="logo" /> '+data.name;
+          return '<img src="'+window.location.origin+'/'+data.logo+'" alt="nologo" class="logo" /> '+data.name;
         }
       },
       {
@@ -100,12 +98,6 @@ $(document).ready(function(){
             '                  <input type="text" class="form-control quantityseeds'+row.id+'" value="'+data+'" disabled>\n' +
             '                  <span class="input-group-text changemyseeds" data-id="'+row.id+'" data-type="plus">+</span>\n' +
             '                </div>'
-
-          /*'<div class="">' +
-            '<span class="input-group-btn"><button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">-</button></span>'
-            + data +
-            '<span class="input-group-btn"><button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="plus" data-field="quant[1]">+</button></span>'
-            +'</div>';*/
         }
       }
     ],

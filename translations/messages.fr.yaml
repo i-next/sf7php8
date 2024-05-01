@@ -26,9 +26,21 @@ breeder:
     index:
         table:
             name: Nom
+        page_title: Banques
 strain:
     index:
         title: Votre stock de graines
+myseeds:
+    index:
+        table:
+            head:
+                name: Nom
+                seeder: Banque
+                quantity: Quantité
+                auto: Auto Floraison
+                duration: Durée En Jours
+        page_title: JDC Mes graines
+        
 form:
     title:
         strain:
