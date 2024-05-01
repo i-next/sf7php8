@@ -7,7 +7,7 @@
 
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/public/upload/images/*
+/public/upload/images/
 /var/
 /vendor/
 
@@ -27,7 +27,7 @@
 ###> symfony/asset-mapper ###
 /public/assets/
 ###< symfony/asset-mapper ###
-/.idea/*
+/.idea/
 
 /*.sql
 /*.zip
