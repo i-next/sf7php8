@@ -14,12 +14,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[AsEntityAutocompleteField]
 class BreederAutocompleteField extends AbstractType
 {
-
     public function __construct(private readonly TranslatorInterface $translator, private readonly Security $security)
     {
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'class' => Breeder::class,
@@ -34,10 +33,6 @@ class BreederAutocompleteField extends AbstractType
             },
             'preload' => true,
             'maxOptions' => null,
-            /*'attr' => [
-                'data-controller' => 'hello',
-                ],*/
-            // 'security' => 'ROLE_SOMETHING',
         ]);
     }
 
@@ -46,8 +41,5 @@ class BreederAutocompleteField extends AbstractType
         return BaseEntityAutocompleteType::class;
     }
 
-    private function test(): void
-    {
-        dd('test');
-    }
+
 }

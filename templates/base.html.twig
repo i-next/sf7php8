@@ -16,6 +16,8 @@
     <body>
         {% block header %}{{ render(path('app_header',{'nav': nav})) }}{% endblock %}
         <main id="main" class="main">{% block body %}{% endblock %}
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                    class="bi bi-arrow-up-short"></i></a>
         {{ include('blocks/footer.html.twig') }}
         </main>
     </body>

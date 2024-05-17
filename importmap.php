@@ -16,26 +16,7 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
-    'plants' => [
-        'path' => './assets/js/plants.js',
-        'entrypoint' => true,
-    ],
-    'seeders' => [
-        'path' => './assets/js/seeder.js',
-        'entrypoint' => true,
-    ],
-    'breeders' => [
-        'path' => './assets/js/breeders.js',
-        'entrypoint' => true,
-    ],
-    'strains' => [
-        'path' => './assets/js/strains.js',
-        'entrypoint' => true,
-    ],
-    'myseeds' => [
-        'path' => './assets/js/myseeds.js',
-        'entrypoint' => true,
-    ],
+
     'bootstrap' => [
         'version' => '5.3.3',
     ],
@@ -49,9 +30,9 @@ return [
     'jquery' => [
         'version' => '3.7.1',
     ],
-    'apexcharts' => [
+    /*'apexcharts' => [
         'version' => '3.46.0',
-    ],
+    ],*/
     'boxicons' => [
         'version' => '2.1.4',
     ],
@@ -237,9 +218,9 @@ return [
         'version' => '9.0.0',
         'type' => 'css',
     ],
-    'tinymce' => [
+    /*'tinymce' => [
         'version' => '6.8.3',
-    ],
+    ],*/
     'zrender' => [
         'version' => '5.5.0',
     ],
@@ -277,4 +258,28 @@ return [
         'version' => '2.3.1',
         'type' => 'css',
     ],
+    'plants' => [
+        'path' => './assets/js/plants.js',
+        'entrypoint' => true,
+    ],
+    'seeders' => [
+        'path' => './assets/js/seeder.js',
+        'entrypoint' => true,
+    ],
+    'breeders' => [
+        'path' => './assets/js/breeders.js',
+        'entrypoint' => true,
+    ],
+    'strains' => [
+        'path' => './assets/js/strains.js',
+        'entrypoint' => true,
+    ],
+    'myseeds' => [
+        'path' => './assets/js/myseeds.js',
+        'entrypoint' => true,
+    ],
+    'myplants' => [
+        'path' => './assets/js/myplants.js',
+        'entrypoint' => true,
+    ]
 ];

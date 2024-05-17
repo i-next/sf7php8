@@ -3,23 +3,43 @@
 {% block title %}{{ 'myseeds.index.page_title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ 'strain.index.title'|trans }}</h1>
-    <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
-    <table class="table datatables bg-transparent"  data-url="{{ path('app_my_seeds_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>{{ 'myseeds.index.table.head.name'|trans }}</th>
-                <th>{{ 'myseeds.index.table.head.seeder'|trans }}</th>
-                <th>{{ 'myseeds.index.table.head.quantity'|trans }}</th>
-                <th>{{ 'myseeds.index.table.head.duration'|trans }}</th>
-                <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-    </table>
+    {#<div class="modal fade" id="basicModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ 'form.title.strain.new'|trans }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'form.button.close'|trans }}</button>
+                    <button type="button" class="btn btn-primary add_plant">{{ 'form.button.add'|trans }}</button>
+                </div>
+            </div>
+        </div>
+    </div>#}
+    {% include('/modals/modal_add_plant.html.twig') %}
+    <div class="content-base">
+        <h1>{{ 'strain.index.title'|trans }}</h1>
+        <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
+        <table class="table datatables bg-transparent" data-url="{{ path('app_my_seeds_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>{{ 'myseeds.index.table.head.name'|trans }}</th>
+                    <th>{{ 'myseeds.index.table.head.seeder'|trans }}</th>
+                    <th>{{ 'myseeds.index.table.head.quantity'|trans }}</th>
+                    <th>{{ 'myseeds.index.table.head.duration'|trans }}</th>
+                    <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
+                    <th>Type</th>
+                    <th>{{ 'myseeds.index.table.head.comment'|trans }}</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+        </table>
 
-    <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
+        <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
+    </div>
 {% endblock %}

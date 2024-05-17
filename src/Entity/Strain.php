@@ -43,7 +43,7 @@ class Strain
     private ?string $descriptionen = null;
 
     #[ORM\ManyToOne(inversedBy: 'strains')]
-    private ?User $user_id = null;
+    private ?User $userid = null;
 
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $logo = null;
@@ -127,7 +127,7 @@ class Strain
 
     public function getDescription(): ?string
     {
-        return html_entity_decode($this->description);
+        return $this->description;
     }
 
     public function setDescription(?string $description): static
@@ -168,12 +168,12 @@ class Strain
 
     public function getUserId(): ?User
     {
-        return $this->user_id;
+        return $this->userid;
     }
 
-    public function setUserId(?User $user_id): static
+    public function setUserId(?User $userid): static
     {
-        $this->user_id = $user_id;
+        $this->userid = $userid;
 
         return $this;
     }

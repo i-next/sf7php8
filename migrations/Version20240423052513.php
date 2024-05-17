@@ -20,9 +20,9 @@ final class Version20240423052513 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE breeder ADD user_id_id INT DEFAULT NULL');
+        /*$this->addSql('ALTER TABLE breeder ADD user_id_id INT DEFAULT NULL');
         $this->addSql('ALTER TABLE breeder ADD CONSTRAINT FK_73DA3D7A9D86650F FOREIGN KEY (user_id_id) REFERENCES `user` (id)');
-        $this->addSql('CREATE INDEX IDX_73DA3D7A9D86650F ON breeder (user_id_id)');
+        $this->addSql('CREATE INDEX IDX_73DA3D7A9D86650F ON breeder (user_id_id)');*/
     }
 
     public function down(Schema $schema): void

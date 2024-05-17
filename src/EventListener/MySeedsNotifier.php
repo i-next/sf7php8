@@ -12,8 +12,6 @@ use Symfony\Bundle\SecurityBundle\Security;
 #[AsEntityListener(event: Events::prePersist, method: 'prePersist', entity: MySeeds::class)]
 readonly class MySeedsNotifier
 {
-
-
     public function __construct(private EntityManagerInterface $entityManager, private readonly Security $security)
     {
     }

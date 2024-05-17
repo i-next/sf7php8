@@ -14,7 +14,7 @@ $(document).ready(function(){
     console.log($(this),$(this.data('id')))
   })
   function format(d) {
-    if(navigator.language != 'fr-FR' && d.descriptionen != '') {
+    if(navigator.language != 'fr-FR' && navigator.language != 'fr' && d.descriptionen != '') {
       return ( d.descriptionen);
     }else{
       return ( d.description);
@@ -59,6 +59,10 @@ $(document).ready(function(){
         data: 'strain.type'
       },
       {
+        name: 'comment',
+        data: 'comment'
+      },
+      {
         className: 'view',
         orderable: false,
         data: null,
@@ -66,13 +70,20 @@ $(document).ready(function(){
       }],
     columnDefs: [
       {
-        targets: 0,
+        targets: 'actions:name',
         render: function (data, type, row) {
-          return '<a href="/myseeds/delete/'+data+'"><i class="bi bi-trash button_action"></i></a>'
+
+          return '<a href="/myseeds/delete/'+data+'"><i class="bi bi-trash button_action"></i></a> <i class="bi bi-node-plus-fill button_action add-to-germination" title="Germination" data-id='+data+' data-bs-toggle="modal" data-bs-target="#addplantModal"></i>'
         }
-      },
+      },{
+        targets: 'strain.name:name',
+        render: function(data){
+          return '<span class="dt-content-name">'+data+'</span>'
+        }
+      }
+      ,
       {
-        targets: 1,
+        targets: 'strain.urlPhoto:name',
         render: function(data, type, row) {
 
           if(data == null){
@@ -82,7 +93,7 @@ $(document).ready(function(){
         }
       },
       {
-        targets: 3,
+        targets: 'strain.breeder:name',
         render: function (data, type, row) {
           if(data.url_photo == ''){
             return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" /> '+data.name;
@@ -91,13 +102,32 @@ $(document).ready(function(){
         }
       },
       {
-        targets: 4,
+        targets: 'quantity:name',
         render: function (data, type, row) {
           return '<div class="input-group">\n' +
-            '                  <span class="input-group-text changemyseeds" data-id="'+row.id+'" data-type="minus">-</span>\n' +
-            '                  <input type="text" class="form-control quantityseeds'+row.id+'" value="'+data+'" disabled>\n' +
-            '                  <span class="input-group-text changemyseeds" data-id="'+row.id+'" data-type="plus">+</span>\n' +
+            /*'                  <span class="input-group-text changemyseeds" data-id="'+row.id+'" data-type="minus">-</span>\n' +*/
+            '                  <input type="number" name="qty" class="form-control quantityseeds" value="'+data+'" data-id="'+row.id+'">\n' +
+            '<span class="dt-column-order"></span>'+
+            /*'                  <span class="input-group-text changemyseeds" data-id="'+row.id+'" data-type="plus">+</span>\n' +*/
             '                </div>'
+        }
+      },
+      {
+        targets: 'strain.auto:name',
+        render: function (data){
+          if (data == true){
+            return '<i class="bi bi-patch-check-fill"></i>';
+          }
+          return '';
+        }
+      },{
+        targets: 'comment:name',
+        render: function(data,type,row){
+          let val = "";
+          if(data != null){
+            val = data;
+          }
+          return '<input type="text" name="comment" class="form-control commentseeds" value="'+val+'" data-id="'+row.id+'">'
         }
       }
     ],
@@ -105,13 +135,15 @@ $(document).ready(function(){
       url: $(".datatables").data('url'),
       type: 'POST',
       data: {
-        user_id: 451
+        /*user_id: 451*/
       }
     },
     processing: true,
-    serverSide: true
+    serverSide: true,
 
   }
+
+
   let datatablesMySeeds = $('.datatables').DataTable(options);
   datatablesMySeeds.on('click', 'td.view', function (e) {
     let tr = e.target.closest('tr');
@@ -154,16 +186,42 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopPropagation()
   });
-  datatablesMySeeds.on('click', '.changemyseeds', function (e) {
-    let mytag = $('.quantityseeds'+$(this).data('id'));
+  datatablesMySeeds.on('change keyup', 'input[name="qty"]', function (e) {
     $.ajax({
       method: 'POST',
       url: '/myseeds/changeqty',
-      data: {type:$(this).data('type'), id: $(this).data('id')},
+      data: {val:$(this).val(), id: $(this).data('id')},
     }).done(function(qty){
-      mytag.val(qty.result);
+      $(this).val(qty.result);
     });
 
   });
 
+  $(document).on('show.bs.modal','#addplantModal', function(e) {
+    let idseed = $(e.relatedTarget).data('id');
+    $.ajax({
+      method: 'POST',
+      url: '/myplants/add',
+      data:{id:idseed},
+      success: function (res) {
+        $('.modal-body').html(res.form);
+        $('.add_plant').on('click',function(){
+          $('form[name="my_plants"]').submit();
+        })
+      }
+    });
+  });
+  datatablesMySeeds.on('change keyup', 'input[name="comment"]', function (e) {
+    console.log($(this).val());
+    if($(this).val().length > 3){
+      $.ajax({
+        method: 'POST',
+        url: '/myseeds/changecomment',
+        data: {val:$(this).val(), id: $(this).data('id')},
+      }).done(function(comment){
+        $(this).val(comment.result);
+      });
+    }
+
+  });
 });

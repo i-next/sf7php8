@@ -1,64 +1,91 @@
+/* *******************************************************
+                         Global
+******************************************************* */
 body {
-     font-size: 0.80rem !important;
+    font-size: 0.80rem !important;
 }
-
+div.content-base{
+    margin-left: 50px;
+    margin-right: 50px;
+}
 /* *******************************************************
                          Nav
 ******************************************************* */
-.btn-secondary{
+.btn-secondary {
     background-color: var(--default-color) !important;
     border: 2px solid var(--default-color) !important;
 }
 
-.germ{
+.germ {
     color: blue;
 }
-.crois{
+
+.crois {
     color: green;
 }
 
-.preflo{
+.preflo {
     color: orange;
 }
 
-.flo{
+.flo {
     color: red;
 }
 
-.rec{
+.rec {
     color: darkred;
 }
 
-h1{
+h1 {
     font-size: 1.2rem !important;
 }
 
-label{
+label {
     color: var(--label-color);
 }
+
 /* *******************************************************
                           Datatables
 ******************************************************* */
-table.datatables{
+table.datatables {
     table-layout: auto;
     /*width: fit-content;*/
-    thead{
+
+    thead {
         color: white;
+        background-color: var(--head-background-color);
     }
-    tbody tr td{
-        color: var(--default-color) !important;
+
+    tbody tr td {
+        color: var(--default-color);
     }
-    td, tr, th{
+
+    td, tr, th {
         background: transparent !important;
         height: 40px;
         vertical-align: middle;
     }
 }
-.button_action{
+
+.button_action {
     color: var(--action-color);
+    font-size: 1.2rem;
+    cursor: pointer;
 }
-div.dt-container .dt-info{
+
+div.dt-container .dt-info {
     color: var(--action-color) !important;
+}
+table.dataTable thead>tr>th.dt-ordering-asc span.dt-column-order:before,
+table.dataTable thead>tr>th.dt-ordering-desc span.dt-column-order:after{
+    opacity: 1;
+}
+span.dt-content-name{
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.changestate{
+    color: var(--label-color) !important;
 }
 /* *******************************************************
                           forms
@@ -69,11 +96,11 @@ div.dt-container .dt-info{
 }
 
 .form-check-input:checked {
-    background-color:var(--default-color) !important;
-    border-color:var(--default-color) !important;
+    background-color: var(--default-color) !important;
+    border-color: var(--default-color) !important;
 }
 
-input, textarea{
+input, textarea {
     background: transparent !important;
 }
 
@@ -82,7 +109,7 @@ input, textarea{
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(102, 153, 73) !important;
 }
 
-.btn-success{
+.btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--default-color) !important;
     --bs-btn-border-color: var(--default-color) !important;
@@ -99,6 +126,116 @@ input, textarea{
     --bs-btn-disabled-border-color: var(--default-color) !important;
 }
 
-::placeholder{
+::placeholder {
     color: var(--default-color) !important;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+}
+
+span.changestate{
+    color: var(--label-color);
+    font-size: 1rem;
+}
+/* *******************************************************
+                          dashboard
+******************************************************* */
+
+.carddashboard {
+    min-width: 15rem;
+}
+
+.dashboard-body-content {
+    color: var(--default-color);
+    font-size: var(--font-size-buttons);
+}
+
+.headercarddashboarddefault {
+    background-color: var(--default-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.headercarddashboardgermination {
+    background-color: var(--germination-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.headercarddashboardgrowth {
+    background-color: var(--growth-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.headercarddashboardprebloom {
+    background-color: var(--prebloom-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.headercarddashboardbloom {
+    background-color: var(--bloom-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.headercarddashboardharvest {
+    background-color: var(--harvest-color);
+    color: var(--label-color);
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.btn-close {
+    width: 2rem;
+}
+
+/* *******************************************************
+                          modals
+******************************************************* */
+.modal-header {
+    background-color: var(--default-color);
+    color: var(--label-color);
+}
+.modal-body-info{
+    padding: 5px;
+    color: var(--label-color);
+}
+
+.labelbreedermodal{
+    vertical-align: middle;
+    min-height: inherit;
+}
+/* *******************************************************
+                          images
+******************************************************* */
+
+img.logo{
+    max-width: 50px;
+    min-height: 30px;
+}
+
+/* *******************************************************
+                          cards
+******************************************************* */
+.card-diary{
+    width: 5rem;
+    padding: 0px !important;
+}
+
+.card-header-diary{
+    /*padding: 0px !important;*/
+}
+
+.card-body-diary{
+    /*padding: 0px !important;*/
+
 }

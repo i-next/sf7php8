@@ -17,7 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationFormType extends AbstractType
 {
-    const MIN_PASSWORD_LENGTH = 6;
+    public const MIN_PASSWORD_LENGTH = 6;
 
     public function __construct(private readonly TranslatorInterface $translator)
     {
@@ -55,11 +55,11 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Regex([
                         'pattern'   => "/[A-Z]/",
-                        'message'   => $this->translator->trans('security.register.error.min.uppercase',[],'validators'),
+                        'message'   => $this->translator->trans('security.register.error.min.uppercase', [], 'validators'),
                     ]),
                     new Regex([
                         'pattern'   => "/\d/",
-                        'message'   => $this->translator->trans('security.register.error.min.integer',[],'validators'),
+                        'message'   => $this->translator->trans('security.register.error.min.integer', [], 'validators'),
                     ])
                 ],
             ]);

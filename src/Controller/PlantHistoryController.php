@@ -11,8 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/planthistory')]
 class PlantHistoryController extends AbstractController
 {
-
-    #[Route('',name: 'app_plant_history_list')]
+    #[Route('', name: 'app_plant_history_list')]
     public function index(PlantHistoryRepository $plantHistoryRepository): Response
     {
         $plantHistories = $plantHistoryRepository->findAll();

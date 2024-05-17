@@ -17,8 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-
-#[Route('/seeder',name: 'app_seeder_')]
+#[Route('/seeder', name: 'app_seeder_')]
 #[IsGranted('ROLE_USER')]
 class SeederController extends AbstractController
 {
@@ -55,7 +54,7 @@ class SeederController extends AbstractController
     #[Route('/ajaxseeders', name: 'ajax')]
     public function ajaxSeeders(Request $request, DatatablesServiceInterface $datatablesService): JsonResponse
     {
-        $queryResult = $datatablesService->getData('Breeder',$request);
+        $queryResult = $datatablesService->getData('Breeder', $request);
         $queryResult['admin'] = false;
         if (in_array('ROLE_ADMIN', $this->getUser()->getRoles(), true)) {
             $queryResult['admin'] = true;

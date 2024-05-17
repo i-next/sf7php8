@@ -14,7 +14,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class MySeedsType extends AbstractType
 {
-
     public function __construct(private readonly StrainRepository $strainRepository, private readonly BreederRepository $breederRepository, private readonly TranslatorInterface $translator)
     {
     }
@@ -22,24 +21,24 @@ class MySeedsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('strain',StrainAutocompleteField::class,[
+            ->add('strain', StrainAutocompleteField::class, [
                 'label_attr' => [
                     'class' => 'required',
                 ]
             ])
-            ->add('newstrain',StrainType::class,[
+            ->add('newstrain', StrainType::class, [
                 'mapped' => false,
                 'label' => false,
             ])
-            ->add('quantity',IntegerType::class,[
+            ->add('quantity', IntegerType::class, [
                 'attr' => [
                     'required' => true,
                     'class' => 'smallnumber',
                 ],
                 'data' => 1
             ])
-
-            ->add('submit',SubmitType::class,[
+            ->add('comment')
+            ->add('submit', SubmitType::class, [
                 'attr' => ['class' => 'btn btn-success'],
                 'label' => 'submit'
             ]);

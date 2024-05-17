@@ -16,7 +16,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'security.register.error.login')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface, PasswordUpgraderInterface
 {
-    //strategy: "SEQUENCE"
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -56,14 +55,50 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
     /**
      * @var Collection<int, Strain>
      */
-    #[ORM\OneToMany(targetEntity: Strain::class, mappedBy: 'user_id')]
+    #[ORM\OneToMany(targetEntity: Strain::class, mappedBy: 'userid')]
     private Collection $strains;
 
     /**
      * @var Collection<int, Breeder>
      */
-    #[ORM\OneToMany(targetEntity: Breeder::class, mappedBy: 'user_id')]
+    #[ORM\OneToMany(targetEntity: Breeder::class, mappedBy: 'userid')]
     private Collection $breeders;
+
+    /**
+     * @var Collection<int, Germination>
+     */
+    #[ORM\OneToMany(targetEntity: Germination::class, mappedBy: 'userid', orphanRemoval: true)]
+    private Collection $germinations;
+
+    /**
+     * @var Collection<int, MyPlants>
+     */
+    #[ORM\OneToMany(targetEntity: MyPlants::class, mappedBy: 'userid', orphanRemoval: true)]
+    private Collection $myPlants;
+
+    /**
+     * @var Collection<int, Growths>
+     */
+    #[ORM\OneToMany(targetEntity: Growths::class, mappedBy: 'userid')]
+    private Collection $growths;
+
+    /**
+     * @var Collection<int, Preblooms>
+     */
+    #[ORM\OneToMany(targetEntity: Preblooms::class, mappedBy: 'userid')]
+    private Collection $preblooms;
+
+    /**
+     * @var Collection<int, Blooms>
+     */
+    #[ORM\OneToMany(targetEntity: Blooms::class, mappedBy: 'userid')]
+    private Collection $blooms;
+
+    /**
+     * @var Collection<int, Harvests>
+     */
+    #[ORM\OneToMany(targetEntity: Harvests::class, mappedBy: 'userid')]
+    private Collection $harvests;
 
     public function __construct()
     {
@@ -73,6 +108,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
         $this->mySeeds = new ArrayCollection();
         $this->strains = new ArrayCollection();
         $this->breeders = new ArrayCollection();
+        $this->germinations = new ArrayCollection();
+        $this->myPlants = new ArrayCollection();
+        $this->growths = new ArrayCollection();
+        $this->preblooms = new ArrayCollection();
+        $this->blooms = new ArrayCollection();
+        $this->harvests = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -348,6 +389,186 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Passwor
             // set the owning side to null (unless already changed)
             if ($breeder->getUserId() === $this) {
                 $breeder->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Germination>
+     */
+    public function getGerminations(): Collection
+    {
+        return $this->germinations;
+    }
+
+    public function addGermination(Germination $germination): static
+    {
+        if (!$this->germinations->contains($germination)) {
+            $this->germinations->add($germination);
+            $germination->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGermination(Germination $germination): static
+    {
+        if ($this->germinations->removeElement($germination)) {
+            // set the owning side to null (unless already changed)
+            if ($germination->getUserid() === $this) {
+                $germination->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MyPlants>
+     */
+    public function getMyPlants(): Collection
+    {
+        return $this->myPlants;
+    }
+
+    public function addMyPlant(MyPlants $myPlant): static
+    {
+        if (!$this->myPlants->contains($myPlant)) {
+            $this->myPlants->add($myPlant);
+            $myPlant->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMyPlant(MyPlants $myPlant): static
+    {
+        if ($this->myPlants->removeElement($myPlant)) {
+            // set the owning side to null (unless already changed)
+            if ($myPlant->getUserid() === $this) {
+                $myPlant->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Growths>
+     */
+    public function getGrowths(): Collection
+    {
+        return $this->growths;
+    }
+
+    public function addGrowth(Growths $growth): static
+    {
+        if (!$this->growths->contains($growth)) {
+            $this->growths->add($growth);
+            $growth->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGrowth(Growths $growth): static
+    {
+        if ($this->growths->removeElement($growth)) {
+            // set the owning side to null (unless already changed)
+            if ($growth->getUserid() === $this) {
+                $growth->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Preblooms>
+     */
+    public function getPreblooms(): Collection
+    {
+        return $this->preblooms;
+    }
+
+    public function addPrebloom(Preblooms $prebloom): static
+    {
+        if (!$this->preblooms->contains($prebloom)) {
+            $this->preblooms->add($prebloom);
+            $prebloom->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrebloom(Preblooms $prebloom): static
+    {
+        if ($this->preblooms->removeElement($prebloom)) {
+            // set the owning side to null (unless already changed)
+            if ($prebloom->getUserid() === $this) {
+                $prebloom->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Blooms>
+     */
+    public function getBlooms(): Collection
+    {
+        return $this->blooms;
+    }
+
+    public function addBloom(Blooms $bloom): static
+    {
+        if (!$this->blooms->contains($bloom)) {
+            $this->blooms->add($bloom);
+            $bloom->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBloom(Blooms $bloom): static
+    {
+        if ($this->blooms->removeElement($bloom)) {
+            // set the owning side to null (unless already changed)
+            if ($bloom->getUserid() === $this) {
+                $bloom->setUserid(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Harvests>
+     */
+    public function getHarvests(): Collection
+    {
+        return $this->harvests;
+    }
+
+    public function addHarvest(Harvests $harvest): static
+    {
+        if (!$this->harvests->contains($harvest)) {
+            $this->harvests->add($harvest);
+            $harvest->setUserid($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHarvest(Harvests $harvest): static
+    {
+        if ($this->harvests->removeElement($harvest)) {
+            // set the owning side to null (unless already changed)
+            if ($harvest->getUserid() === $this) {
+                $harvest->setUserid(null);
             }
         }
 

@@ -4,5 +4,5 @@ namespace App\Service;
 
 interface AutoCompleteServiceInterface
 {
-    public function getStrainsQuery(array $data):array;
+    public function getStrainsQuery(array $data): array;
 }

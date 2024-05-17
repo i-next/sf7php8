@@ -26,10 +26,7 @@ fieldset
     border-color: var(--default-color) !important;
 }
 
-.required::after {
-    content: ' *';
-    color: red;
-}
+
 .newseed {
     display: none;
     padding-top: 5px !important;
@@ -51,7 +48,7 @@ fieldset
     width: 40em !important;
 }
 .input-group{
-    width: 109px !important;
+    width: 4rem !important;
 }
 .input-group-text{
     padding: .175rem .75rem !important;
@@ -68,4 +65,11 @@ div.dt-container .dt-input * {
 .smallnumber{
     width: 109px !important;
     color: var(--default-color-light) !important;
+}
+.dt-layout-cell .dt-end{
+    color: var(--label-color);
+}
+
+.commentseeds{
+    width: 10rem !important;
 }

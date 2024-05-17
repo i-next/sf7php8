@@ -5,10 +5,10 @@ namespace App\Entity;
 enum EnumStates: string
 {
     case GERM = 'Germination';
-    case CROIS = 'Croissance';
-    case PREFLO = 'Prefloraison';
-    case FLO = 'Floraison';
-    case REC = 'Recolte';
+    case CROIS = 'Growths';
+    case PREFLO = 'Preblooms';
+    case FLO = 'Blooms';
+    case REC = 'Harvests';
 
     public static function toArray(): array
     {

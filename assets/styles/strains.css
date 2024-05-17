@@ -1,17 +1,17 @@
-
-
 img.logo{
     max-width: 50px;
     min-height: 30px;
 }
+
 .table_col_action{
     text-align: right;
 }
+
 .header_action{
     width: 100px;
 }
 i.button_action{
-    font-size: large;
+    font-size: 1.2rem;
 }
 table.dataTable td.dt-control:before{
     display:inline-block;
@@ -21,6 +21,10 @@ table.dataTable td.dt-control:before{
     border-bottom:10px solid transparent !important;
     border-right:0px solid transparent}
 
-i.bi{
-    font-size: var(--font-size-buttons);
+.modal-header {
+    background-color: var(--default-color);
+    color: var(--label-color);
 }
+/*i.bi{
+    font-size: var(--font-size-buttons);
+}*/

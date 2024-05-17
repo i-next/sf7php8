@@ -41,6 +41,7 @@ class PlantRepository extends ServiceEntityRepository
 
     public function countPlantsAllStates(int $userId): array
     {
+
         $res = $this->createQueryBuilder('p')
             ->select('p.state, count(p.id)')
             ->groupBy('p.state')

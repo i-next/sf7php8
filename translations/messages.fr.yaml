@@ -1,16 +1,25 @@
 common:
+    dashboard: Tableau de bord
+    breeders: Banques
+    strains: Variétés de Graines
+    seeds: Stock de Graines
+    plants: Plantes
+    harvests: Recolte
     email: Courriel
     password: Mot de passe
+    germinations: Germinations
+    growths: Croissances
+    preblooms: Préfloraisons
+    blooms: Floraisons
+    harvest: Récoltes
+    germination: Germinations
+    bloom: Floraison
+    all: Toutes
+    days: jours
     navigation:
         backtolist: Retour à la liste
+        logout: Déconnexion
 header:
-    menu:
-        dashboard: Tableau de bord
-        breeders: Banques
-        strains: Graines
-        seeds: Stock de Graines
-        plants: Plantes
-        harvests: Recolte
     user:
         logout: Déconnexion
 security:
@@ -29,7 +38,7 @@ breeder:
         page_title: Banques
 strain:
     index:
-        title: Votre stock de graines
+        title: Votre stock de graines    
 myseeds:
     index:
         table:
@@ -38,13 +47,26 @@ myseeds:
                 seeder: Banque
                 quantity: Quantité
                 auto: Auto Floraison
-                duration: Durée En Jours
+                duration: Durée Floraison
+                comment: Commentaire
+                started: Démarré le
         page_title: JDC Mes graines
-        
+myplants:
+    index:
+        table:
+            head:
+                name: Nom
+                seeder: Banque
+                auto: Auto Floraison
+                duration: Durée En Jours
+                state: Etat
+                started: Démarré le
 form:
     title:
         strain:
             new: Ajouter une variété de graine à votre stock
+        plant:
+            new: Germination
     label:
         strain:
             strain: Rechercher une graine
@@ -55,6 +77,37 @@ form:
             breeder: Choisir ou créer votre banque
     button:
         next: Suivant
-        add: Ajouter 
+        add: Ajouter
+        close: Fermer
+        validate: Valider
+        delete: Supprimer
         addnewseed: Ajouter une nouvelle graine
         hidenewseed: Chercher une graine
+    info:
+        breeder: Banque
+        strain: Graine
+email:
+    verify:
+        subject: Veuillez confirmer votre e-mail
+        content:
+            head: Salut! S’il vous plaît confirmer votre e-mail!
+            text1: 'Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant :'
+            text2: Ce lien expirera dans
+            linktext: Confirmer mon adresse e-mail
+        error: Votre email n'est pas valide
+dashboard:
+    yourvaritystock: Variétés dans votre stock
+    yourseedsstock: Graines dans votre stock
+modals:
+    changestate:
+        title: Changer de status        
+        to: en
+        pass: Passer
+    deletestate: 
+        title: Supprimer cette plante
+    myplantsinfo:
+        title: Détails
+        bloomduration: "Durée Floraison: "
+        qtyremain: "Nombre de graines restantes: "
+        
+    

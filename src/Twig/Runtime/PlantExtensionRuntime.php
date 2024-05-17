@@ -2,6 +2,8 @@
 
 namespace App\Twig\Runtime;
 
+use App\Entity\MyPlants;
+use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\RuntimeExtensionInterface;
 use Symfony\Bundle\SecurityBundle\Security;
 use App\Entity\Plant;
@@ -9,7 +11,7 @@ use App\Repository\PlantRepository;
 
 class PlantExtensionRuntime implements RuntimeExtensionInterface
 {
-    public function __construct(private readonly PlantRepository $plantRepository, private readonly Security $security)
+    public function __construct(private readonly PlantRepository $plantRepository, private readonly Security $security, private readonly EntityManagerInterface $entityManager)
     {
         // Inject dependencies if needed
     }
@@ -32,9 +34,13 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
 
     public function countPlant(string $state): bool
     {
-        $user = $this->security->getUser();
-        $count = $this->plantRepository->countPlantsByState($state, $user->getId());
-        return (bool) $count;
+        if(class_exists("App\\Entity\\" .$state)) {
+            $user = $this->security->getUser();
+            $repo = $this->entityManager->getRepository("App\\Entity\\" . $state);
+            $count = $repo->countPlantsByState($user->getId());
+            return (bool)$count;
+        }
+        return false;
     }
 
     public function stepPlant(Plant $plant): string
@@ -57,7 +63,7 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
 
     public function getDaysRemained(Plant $plant): int
     {
-        if(!$plant->getDateFlo()){
+        if(!$plant->getDateFlo()) {
             return 0;
         }
         $now = new \DateTimeImmutable();
@@ -68,5 +74,15 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
     public function formatDescription(string $description): string
     {
         return html_entity_decode($description);
+    }
+
+    public function getName(MyPlants $myPlant): string
+    {
+        $strainName = $myPlant->getMySeeds()->getStrain()->getName();
+        if(str_contains($strainName,$myPlant->getName())){
+            return $myPlant->getName();
+        }else{
+            return $myPlant->getName()." (".$strainName.")";
+        }
     }
 }

@@ -10,7 +10,8 @@ use Doctrine\ORM\Events;
 use Symfony\Bundle\SecurityBundle\Security;
 
 #[AsEntityListener(event: Events::prePersist, method: 'prePersist', entity: Strain::class)]
-readonly class StrainNotifier{
+readonly class StrainNotifier
+{
     public function __construct(private EntityManagerInterface $entityManager, private readonly Security $security)
     {
     }

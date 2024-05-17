@@ -4,7 +4,156 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dff1960d-faa8-468c-99f0-220db25f60c1" name="Changes" comment="" />
+    <list default="true" id="dff1960d-faa8-468c-99f0-220db25f60c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php-cs-fixer.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.php-cs-fixer.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/breeders.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/breeders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/myseeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myseeds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/strains.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/strains.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/breeders.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/breeders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/myseeds.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myseeds.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/strains.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/strains.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/importmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240420055127.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240420055127.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240422061420.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240422061420.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240423052513.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240423052513.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240429054747.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240429054747.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240429093553.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240429093553.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1038.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/1038.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1040.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/1040.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1094.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1125.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/1125.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1152.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/1152.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1270.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1271.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1272.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1276.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1278.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1279.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1280.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1283.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1286.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1287.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1288.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1291.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1292.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1295.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1296.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1299.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1301.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1303.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1304.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1305.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1307.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1308.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1309.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1310.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1313.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1314.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1315.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1316.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1318.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1319.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1320.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1323.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1324.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1325.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1327.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1328.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1330.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1333.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1334.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1335.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1336.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1337.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1338.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1339.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1340.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1341.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1342.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1343.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1344.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1345.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1346.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1347.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1348.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1349.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1351.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1352.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1354.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1356.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1357.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/1578.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/1578.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/images/breeder/770.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/images/breeder/770.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/breederPicturesUpdateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/breederPicturesUpdateCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/breederUpdateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/breederUpdateCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/populateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/populateCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/strainPicturesUpdateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/strainPicturesUpdateCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BreederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BreederController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MySeedsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MySeedsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PlantHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlantHistoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SeederController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeederController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StrainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Breeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Breeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EnumStates.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EnumStates.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MySeeds.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MySeeds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Strain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Strain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Traits/UserTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Traits/UserTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/MySeedsNotifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/MySeedsNotifier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/StrainNotifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/StrainNotifier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BreederAutocompleteField.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BreederAutocompleteField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BreederType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BreederType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MySeedsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MySeedsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/StrainType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/StrainType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BreederRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BreederRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MySeedsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MySeedsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PlantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlantRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SeedRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeedRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SeederRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SeederRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/StrainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/StrainRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scheduler/Handler/PlantPrefloChangeToFloHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler/Handler/PlantPrefloChangeToFloHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scheduler/Message/PlantPrefloChangeToFlo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler/Message/PlantPrefloChangeToFlo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scheduler/PlantProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler/PlantProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Authentication/AuthenticationSuccessHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/EmailVerifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/EmailVerifier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/SeederVoter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AutoCompleteService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AutoCompleteService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AutoCompleteServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/AutoCompleteServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DashboardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DashboardService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DatatablesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DatatablesService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DatatablesServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DatatablesServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/MySeedsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/MySeedsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/MySeedsServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/MySeedsServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/SeederSErvice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/SeederSErvice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/SeederServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/SeederServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/breeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/breeder/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/confirmation_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/confirmation_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,6 +347,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2fUIrPdDkspsuB4Q6EmGQ4et0sa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -208,15 +360,22 @@
     &quot;JavaScript Debug.aeffacer.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu-22.04/home/manu/web/sf7php8/templates/blocks&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.6\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu-22.04\home\manu\web\sf7php8\templates\blocks" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -241,7 +400,28 @@
       <workItem from="1714367166319" duration="5784000" />
       <workItem from="1714378276204" duration="12990000" />
       <workItem from="1714454028685" duration="14285000" />
-      <workItem from="1714539876486" duration="496000" />
+      <workItem from="1714539876486" duration="14354000" />
+      <workItem from="1714627308823" duration="12369000" />
+      <workItem from="1714688906307" duration="17000" />
+      <workItem from="1714716513031" duration="14698000" />
+      <workItem from="1714800259925" duration="17289000" />
+      <workItem from="1714886525773" duration="6969000" />
+      <workItem from="1714972530387" duration="5741000" />
+      <workItem from="1714984355456" duration="16117000" />
+      <workItem from="1715058534565" duration="9716000" />
+      <workItem from="1715145023579" duration="16713000" />
+      <workItem from="1715231365539" duration="14858000" />
+      <workItem from="1715317880708" duration="12880000" />
+      <workItem from="1715403945506" duration="8984000" />
+      <workItem from="1715463152035" duration="959000" />
+      <workItem from="1715492491919" duration="9299000" />
+      <workItem from="1715577867272" duration="13893000" />
+      <workItem from="1715665320406" duration="1669000" />
+      <workItem from="1715674994602" duration="5857000" />
+      <workItem from="1715750402866" duration="599000" />
+      <workItem from="1715752590959" duration="7725000" />
+      <workItem from="1715774652463" duration="3429000" />
+      <workItem from="1715845632849" duration="3221000" />
     </task>
     <servers />
   </component>

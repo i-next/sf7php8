@@ -1,16 +1,25 @@
 common:
+    dashboard: Dashboard
+    breeders: Breeders
+    strains: Seed varieties
+    seeds: Seeds stock
+    plants: Plants
+    harvests: Harvests
     email: Email
     password: Password
+    germinations: Germinations
+    growths: Growths
+    preblooms: Preflowering
+    blooms: Flowering
+    harvest: Harvest
+    germination: Germination
+    bloom: Florewing
+    all: All
+    days: days
     navigation:
         backtolist: Back to list
+        logout: Logout
 header:
-    menu:
-        dashboard: Dashboard
-        breeders: Breeders
-        strains: Strains
-        seeds: Seeds stock
-        plants: Plants
-        harvests: Harvests
     user:
         logout: Logout
 security:
@@ -38,9 +47,20 @@ myseeds:
                 seeder: Breeder
                 quantity: Quantity
                 auto: Auto Flowering
-                duration: Duration In Days
+                duration: Flowering duration
+                comment: Comment
+                started: Started at
         page_title: My Seeds
-        
+myplants:
+    index:
+        table:
+            head:
+                name: Name
+                seeder: Breeder
+                auto: Auto Flowering
+                duration: Duration
+                state: State
+                started: Started at
 form:
     title:
         strain:
@@ -57,5 +77,32 @@ form:
     button:
         next: Next
         add: Add
+        close: Close
+        delete: Delete
         addnewseed: Add new seed
         hidenewseed: Search for a seed
+        validate: Validate
+email:
+    verify:
+        subject: Please Confirm your Email
+        content:
+            head: Hi! Please confirm your email!
+            text1: 'Please confirm your email address by clicking the following link:'
+            linktext: Confirm my Email
+            text2: This link will expire in
+            cheer: Cheers!
+        error: Your email is invalid
+dashboard:
+    yourvaritystock: Varieties in your stock
+    yourseedsstock: Seeds in your stock
+modals:
+    changestate:
+        title: State change
+        to: to
+        pass: Pass
+    deletestate:
+        title: Delete this plant
+    myplantsinfo:
+        title: Details
+        bloomduration: "Flowering duration: "
+        qtyremain: "Number of seeds remaining: "

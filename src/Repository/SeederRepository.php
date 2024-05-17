@@ -15,7 +15,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Seeder[]    findAll()
  * @method Seeder[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SeederRepository  extends ServiceEntityRepository
+class SeederRepository extends ServiceEntityRepository
 {
     use BaseTrait;
     public function __construct(ManagerRegistry $registry)

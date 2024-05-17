@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Strain;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Bundle\SecurityBundle\Security;
 
 /**
  * @extends ServiceEntityRepository<Strain>
@@ -18,11 +19,21 @@ class StrainRepository extends ServiceEntityRepository
 {
     use BaseTrait;
 
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, private readonly Security $security)
     {
         parent::__construct($registry, Strain::class);
     }
 
+
+    public function countStrains(): int
+    {
+        return $this->createQueryBuilder('s')
+            ->select('count(s.id)')
+            ->where('s.userid is NULL')
+            ->orWhere('s.userid = :iduser')
+            ->setParameter('iduser', $this->security->getUser()->getId())
+            ->getQuery()->getSingleScalarResult();
+    }
     //    /**
     //     * @return Strain[] Returns an array of Strain objects
     //     */

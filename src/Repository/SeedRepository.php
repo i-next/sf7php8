@@ -30,7 +30,7 @@ class SeedRepository extends ServiceEntityRepository
             ->setParameter('userid', $this->security->getUser()->getId())
             ->getQuery()
             ->execute();
-        return reset($res[array_key_first($res)])??0;
+        return reset($res[array_key_first($res)]) ?? 0;
 
     }
 

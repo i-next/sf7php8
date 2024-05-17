@@ -3,16 +3,16 @@ import '../app.js';
 import '../styles/strains.css';
 
 $(document).ready(function(){
-  console.log('iii')
+
   function format(d) {
-    if(navigator.language != 'fr-FR' && d.descriptionen != '') {
-      return ( d.descriptionen);
+    if(navigator.language != 'fr-FR' && navigator.language != 'fr' && d.descriptionen != '') {
+      return ( $.parseHTML(d.descriptionen) );
     }else{
-      return ( d.description);
+      return ( $.parseHTML(d.description) );
     }
   }
   let addyourstock = ''
-  if(navigator.language != 'fr-FR' && d.descriptionen != '') {
+  if(navigator.language != 'fr-FR'  && navigator.language != 'fr') {
     addyourstock = "Add to your stock";
   }else{
     addyourstock = "Ajouter dans votre stock";
@@ -52,13 +52,13 @@ $(document).ready(function(){
       {
         targets: 0,
         render: function (data,type,row) {
-          return '<i class="bi bi-eye button_view" title="Description"></i> <i class="bi bi-bookmark-plus-fill button_add_my_seeds" title="'+addyourstock+'" data_seed_id="'+row.id+'"></i>'
+          return '<i class="bi bi-eye button_view button_action" title="Description"></i> <i class="bi bi-bookmark-plus-fill button_add_my_seeds button_action" data-bs-toggle="modal" data-bs-target="#addSeedModal" title="'+addyourstock+'" data-strain-id="'+row.id+'"></i>'
         }
       },
       {
         targets: 1,
         render: function(data, type, row) {
-          if(data == ''){
+          if(data == '' || data == null){
             return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" />'
           }
           return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo" />'
@@ -99,5 +99,22 @@ $(document).ready(function(){
       // Open this row
       row.child(format(row.data()),'details').show();
     }
+  });
+  $(document).on('show.bs.modal','#addSeedModal', function(e) {
+    let strainId = $(e.relatedTarget).data('strain-id');
+    let url = $("#DataTables_Table_0").data("url-add");
+    $.ajax({
+      type: "POST",
+      url: url,
+      dataType: 'json',
+      data: {'strainId':strainId},
+      success: function (res) {
+        $('.modal-body').html(res.form);
+        $('.add_seed').on('click',function(){
+
+          $('form[name="add_my_seeds"]').submit();
+        })
+      }
+    });
   });
 })

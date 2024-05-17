@@ -24,7 +24,7 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 # target: app_any_route
-                    
+            user_checker: App\Security\UserChecker
             # configure the maximum login attempts
             login_throttling:
                 max_attempts: 3          # per minute ...
@@ -48,6 +48,7 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
+        - { path: ^/verify/email, roles: PUBLIC_ACCESS }
         - { path: ^/, roles: ROLE_USER }
         - { path: ^, roles: ROLE_USER }
 

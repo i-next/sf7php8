@@ -6,6 +6,7 @@ use App\Entity\Breeder;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BaseTrait;
+use Symfony\Bundle\SecurityBundle\Security;
 
 /**
  * @extends ServiceEntityRepository<Breeder>
@@ -18,9 +19,21 @@ use App\Repository\BaseTrait;
 class BreederRepository extends ServiceEntityRepository
 {
     use BaseTrait;
-    public function __construct(ManagerRegistry $registry)
+
+
+    public function __construct(private readonly ManagerRegistry $registry, private readonly Security $security)
     {
         parent::__construct($registry, Breeder::class);
+    }
+
+    public function countBreeders(): int
+    {
+        return $this->createQueryBuilder('b')
+            ->select('count(b.id)')
+            ->where('b.userid is NULL')
+            ->orWhere('b.userid = :iduser')
+            ->setParameter('iduser', $this->security->getUser()->getId())
+            ->getQuery()->getSingleScalarResult();
     }
 
     //    /**

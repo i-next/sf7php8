@@ -18,6 +18,7 @@ use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+
 #[AsCommand(name: 'app:strain:pictures', description: 'upload strain image', hidden: false)]
 class strainPicturesUpdateCommand extends Command
 {
@@ -37,10 +38,10 @@ class strainPicturesUpdateCommand extends Command
     {
         $this->entityManager->getConnection()->getConfiguration()->setMiddlewares([new Middleware(new NullLogger())]);
         $folderDest = $this->kernel->getProjectDir();
-        foreach($this->strainRepository->findAll() as $strain){
+        foreach($this->strainRepository->findAll() as $strain) {
             $urlPhoto = $strain->getUrlPhoto();
 
-            if($urlPhoto){
+            if($urlPhoto) {
                 $output->writeln('Breeder: ' . $urlPhoto);
                 $tmpfile = explode('.', $strain->getUrlPhoto());
                 $destfile = $folderDest . '/public/upload/images/strain/' . $strain->getId() . '.' . end($tmpfile);
@@ -55,7 +56,7 @@ class strainPicturesUpdateCommand extends Command
                 fclose($fp);
                 $strain->setLogo($destname);
                 $this->entityManager->persist($strain);
-                if(($strain->getId() % 100) == 0){
+                if(($strain->getId() % 100) == 0) {
                     $this->entityManager->flush();
                 }
             }

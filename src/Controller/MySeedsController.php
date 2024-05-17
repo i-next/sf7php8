@@ -3,13 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\MySeeds;
+use App\Form\AddMySeedsType;
 use App\Form\MySeedsType;
+use App\Repository\StrainRepository;
 use App\Service\DatatablesServiceInterface;
 use App\Service\MySeedsServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -33,12 +36,12 @@ class MySeedsController extends AbstractController
         $form = $this->createForm(MySeedsType::class, $mySeed);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted()) {
             $data = $request->request->all();
-            $mySeed = $mySeedsService->create($data['my_seeds'],$mySeed);
-            if(!$mySeed){
+            $mySeed = $mySeedsService->create($data['my_seeds'], $mySeed);
+            if(!$mySeed) {
                 $form->addError(new FormError('Invalid Form'));
-            }else{
+            } else {
                 $entityManager->persist($mySeed);
                 $entityManager->flush();
                 return $this->redirectToRoute('app_my_seeds_index', [], Response::HTTP_SEE_OTHER);
@@ -51,11 +54,45 @@ class MySeedsController extends AbstractController
             'nav'       => 'myseeds'
         ]);
     }
+
+
+    #[Route('/add', name: 'add')]
+    public function add(Request $request, StrainRepository $strainRepository, EntityManagerInterface $entityManager): JsonResponse|RedirectResponse
+    {
+        $newSeed = new MySeeds();
+
+        if($strainId = array_key_exists('add_my_seeds',$request->request->all()) ? $request->request->all()['add_my_seeds']['strainId'] : $request->request->get('strainId')) {
+            $strain = $strainRepository->find($strainId);
+            $newSeed->setStrain($strain);
+        } else {
+            return new JsonResponse(['error' => 'error']);
+        }
+
+        $form = $this->createForm(AddMySeedsType::class, $newSeed, [
+            'require_strain_id' => $strainId,
+            'action' => $this->generateUrl('app_my_seeds_add'),
+            'method' => 'POST',
+        ]);
+
+
+        $form->handleRequest($request);
+        if($form->isSubmitted()) {
+            $entityManager->persist($newSeed);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_my_seeds_index', [], Response::HTTP_SEE_OTHER);
+        }
+        $viewForm = $this->render('my_seeds/_add.html.twig', [
+            'form' => $form->createView(),
+            'strain' => $strain
+        ]);
+        return new JsonResponse(['form' => $viewForm->getContent()]);
+    }
+
     #[Route('/ajaxmyseeds', name: 'ajax')]
     public function ajaxMySeeds(Request $request, DatatablesServiceInterface $datatablesService): JsonResponse
     {
 
-        $queryResult = $datatablesService->getData('MySeeds',$request, ['strain']);
+        $queryResult = $datatablesService->getData('MySeeds', $request, ['strain']);
 
         $queryResult['admin'] = false;
         if (in_array('ROLE_ADMIN', $this->getUser()->getRoles(), true)) {
@@ -97,8 +134,8 @@ class MySeedsController extends AbstractController
     public function delete(Request $request, MySeeds $mySeed, EntityManagerInterface $entityManager): Response
     {
         //if ($this->isCsrfTokenValid('delete'.$mySeed->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($mySeed);
-            $entityManager->flush();
+        $entityManager->remove($mySeed);
+        $entityManager->flush();
         //}
 
         return $this->redirectToRoute('app_my_seeds_index', [], Response::HTTP_SEE_OTHER);
@@ -108,6 +145,14 @@ class MySeedsController extends AbstractController
     public function changeqty(Request $request, MySeedsServiceInterface $mySeedsService): JsonResponse
     {
         $result = $mySeedsService->changeqty($request->request->all());
-        return new JsonResponse(['result'=> $result]);
+        return new JsonResponse(['result' => $result]);
     }
+
+    #[Route('/changecomment', name:'changecomment')]
+    public function changecomment(Request $request, MySeedsServiceInterface $mySeedsService): JsonResponse
+    {
+        $result = $mySeedsService->changecomment($request->request->all());
+        return new JsonResponse(['result' => $result]);
+    }
+
 }

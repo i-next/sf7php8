@@ -11,31 +11,29 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class StrainType extends AbstractType
 {
-
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-       $ckEditorOptions = ['config' => ['toolbar' => 'basic', 'uiColor' => '#73b64f'], 'required' => false];
+        $ckEditorOptions = ['config' => ['toolbar' => 'basic', 'uiColor' => '#73b64f'], 'required' => false];
         $builder
-            ->add('breeder', BreederAutocompleteField::class,[
+            ->add('breeder', BreederAutocompleteField::class, [
                 'required' => false,
             ])
-            ->add('newbreeder',BreederType::class,[
+            ->add('newbreeder', BreederType::class, [
                 'required' => false,
                 'mapped' => false,
                 'label' => false,
             ])
             ->add('auto')
-            ->add('duration',IntegerType::class,[
+            ->add('duration', IntegerType::class, [
                 'required' => false,
             ])
             ->add('type')
             ->add('url_photo');
-            if(\Locale::getDefault() === 'fr'){
-                $builder->add('description',CKEditorType::class,$ckEditorOptions);
-            } else {
-                $builder->add('descriptionen',CKEditorType::class,$ckEditorOptions);
-            };
+        if(\Locale::getDefault() === 'fr') {
+            $builder->add('description', CKEditorType::class, $ckEditorOptions);
+        } else {
+            $builder->add('descriptionen', CKEditorType::class, $ckEditorOptions);
+        };
 
     }
 

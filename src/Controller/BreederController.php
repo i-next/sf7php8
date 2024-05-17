@@ -28,7 +28,7 @@ class BreederController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Breeder $breeder): Response
     {
-        return $this->render('breeder/show.html.twig',[
+        return $this->render('breeder/show.html.twig', [
             'breeder'   => $breeder,
             'nav'       => 'breeder',
         ]);
@@ -36,7 +36,7 @@ class BreederController extends AbstractController
 
     #[IsGranted('ROLE_ADMIN')]
     #[Route('/del/{id}', name: 'del', methods: ['GET'])]
-    public function del(Breeder $breeder,EntityManagerInterface $entityManager): Response
+    public function del(Breeder $breeder, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($breeder);
         $entityManager->flush();
@@ -47,7 +47,8 @@ class BreederController extends AbstractController
     #[Route('/ajaxbreeders', name: 'ajax')]
     public function ajaxBreeders(Request $request, DatatablesServiceInterface $datatablesService): JsonResponse
     {
-        $queryResult = $datatablesService->getData('Breeder',$request);
+
+        $queryResult = $datatablesService->getData('Breeder', $request);
         $queryResult['admin'] = false;
         if (in_array('ROLE_ADMIN', $this->getUser()->getRoles(), true)) {
             $queryResult['admin'] = true;

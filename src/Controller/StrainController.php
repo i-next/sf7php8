@@ -25,9 +25,9 @@ class StrainController extends AbstractController
     }
 
     #[Route('/ajaxbreederstrains', name: 'ajaxbreederstrains')]
-    public function ajaxBreederStrains(Request $request, DatatablesServiceInterface $datatablesService,StrainRepository $strainRepository): JsonResponse
+    public function ajaxBreederStrains(Request $request, DatatablesServiceInterface $datatablesService, StrainRepository $strainRepository): JsonResponse
     {
-        $queryResult = $datatablesService->getData('Strain',$request);
+        $queryResult = $datatablesService->getData('Strain', $request);
         $queryResult['admin'] = false;
         if (in_array('ROLE_ADMIN', $this->getUser()->getRoles(), true)) {
             $queryResult['admin'] = true;

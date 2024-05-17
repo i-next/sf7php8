@@ -20,9 +20,9 @@ final class Version20240422061420 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE my_seeds DROP FOREIGN KEY FK_9EEF5F1933C95BB1');
+       /* $this->addSql('ALTER TABLE my_seeds DROP FOREIGN KEY FK_9EEF5F1933C95BB1');
         $this->addSql('DROP INDEX IDX_9EEF5F1933C95BB1 ON my_seeds');
-        $this->addSql('ALTER TABLE my_seeds DROP breeder_id, DROP name, DROP seeder, DROP duration, DROP description');
+        $this->addSql('ALTER TABLE my_seeds DROP breeder_id, DROP name, DROP seeder, DROP duration, DROP description');*/
     }
 
     public function down(Schema $schema): void

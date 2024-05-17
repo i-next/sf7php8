@@ -12,11 +12,18 @@
 :root {
     scroll-behavior: smooth;
     --default-color: #669949;
-    /*--default-color: #73b64f;*/
     --default-color-light: #a2e777;
+    --germination-color: #496699;
+    --growth-color: #436530;
+    --prebloom-color: #ff924c;
+    --bloom-color: #bf3f3f;
+    --harvest-color: #5c0101;
     --label-color: #ffffff;
     --action-color: #ffffff;
     --font-size-buttons: 1.2rem;
+    --bs-nav-link-font-size: 0.9rem;
+    --bs-border-radius: 5px;
+    --head-background-color: #243918;
 }
 
 html {
@@ -97,7 +104,7 @@ h6 {
     right: 15px;
     bottom: 15px;
     z-index: 99999;
-    background: #4154f1;
+    background: var(--default-color);
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -111,7 +118,7 @@ h6 {
 }
 
 .back-to-top:hover {
-    background: #6776f4;
+    background: var(--default-color);
     color: #fff;
 }
 
@@ -168,7 +175,7 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #f6f9ff;
+    color: var(--default-color);
 }
 
 @media (min-width: 768px) {
@@ -239,16 +246,22 @@ h6 {
 /* Card */
 .card {
     margin-bottom: 30px;
-    border: none;
+    width: fit-content;
+    border: var(--bs-card-border-width) solid var(--default-color)
+    /*border: none;*/
 
 }
 
 .card-header,
 .card-footer {
-    border-color: #ebeef4;
-    background-color: #fff;
-    color: #798eb3;
+    background-color: var(--default-color);
+    color: var(--label-color);
     padding: 15px;
+    font-size: 1.25rem;
+}
+
+.card-header a{
+    color: var(--label-color);
 }
 
 .card-title {
@@ -266,12 +279,14 @@ h6 {
 }
 
 .card-body {
-    padding: 0 20px 20px 20px;
+    padding: 20px;
 }
 
 .card-img-overlay {
     background-color: rgba(255, 255, 255, 0.6);
 }
+
+
 
 /* Alerts */
 .alert-heading {
@@ -380,11 +395,15 @@ h6 {
 .navbar-nav .nav-link.active {
     background-color: var(--default-color);
     border: 2px solid var(--default-color);
+    border-radius: var(--bs-border-radius);
 }
 
 .navbar-nav .nav-link.active:hover {
     /*background-color: var(--default-color);*/
     border: 2px solid var(--default-color);
+}
+.nav-pills {
+    border-radius: var(--bs-border-radius);
 }
 
 @media (min-width: 1200px) {

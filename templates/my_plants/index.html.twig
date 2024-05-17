@@ -1,0 +1,47 @@
+{% extends 'my_plants/base.html.twig' %}
+
+{% block title %}{{ "common.#{ entity_name|lower }"|trans }}{% endblock %}
+
+{% block body %}
+    {% include('modals/modal_change_state.html.twig') %}
+    {% include('modals/modal_delete.html.twig') %}
+    {% include('modals/modal_my_plants_info.html.twig') %}
+    <div class="content-base">
+        <h1>{{ "common.#{ entity_name|lower }"|trans }}</h1>
+        {% if entity_name != 'all' %}
+            <table class="table datatables bg-transparent" data-url="{{ path('app_my_plants_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}" data-entity="{{ entity_name }}">
+                <thead>
+                <tr>
+                    <th></th>
+
+                    <th>{{ 'myplants.index.table.head.name'|trans }}</th>
+                    <th>{{ 'myplants.index.table.head.seeder'|trans }}</th>
+                    <th>{{ 'myplants.index.table.head.duration'|trans }}</th>
+                    <th>{{ 'myplants.index.table.head.started'|trans }}</th>
+                    {# <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
+                    <th>Type</th>
+                    <th>{{ 'myseeds.index.table.head.comment'|trans }}</th>
+                    <th>Description</th>#}
+                </tr>
+                </thead>
+            </table>
+        {% else %}
+            <table class="table datatables bg-transparent" data-url="{{ path('app_my_plants_all_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}" data-entity="{{ entity_name }}">
+                <thead>
+                <tr>
+                    <th></th>
+
+                    <th>{{ 'myplants.index.table.head.name'|trans }}</th>
+                    <th>{{ 'myplants.index.table.head.seeder'|trans }}</th>
+                   <th>{{ 'myplants.index.table.head.state'|trans }}</th>
+                     {#<th>{{ 'myseeds.index.table.head.started'|trans }}</th>#}
+                    {# <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
+                    <th>Type</th>
+                    <th>{{ 'myseeds.index.table.head.comment'|trans }}</th>
+                    <th>Description</th>#}
+                </tr>
+                </thead>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,9 +1,27 @@
 {% extends('strain/base.html.twig') %}
 {% block title %}{{ 'breeder.index.page_title'|trans }}{% endblock %}
 {% block body %}
+    {% include('modals/modal_add_seed.html.twig') %}
+    {#<div class="modal fade" id="basicModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ 'form.title.strain.new'|trans }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'form.button.close'|trans }}</button>
+                    <button type="button" class="btn btn-primary add_seed">{{ 'form.button.add'|trans }}</button>
+                </div>
+            </div>
+        </div>
+    </div>#}
     <h1><img src="{{ absolute_url(asset(breeder.logo)) }}" alt="nologo" class="logo" /> {{ breeder.name }}</h1>
     <a href="{{ path('app_breeder_index') }}">{{ 'common.navigation.backtolist'|trans }}</a>
-    <table class="table datatables stripe" data-url="{{ path('app_strain_ajaxbreederstrains') }}" data-breederid="{{ breeder.id }}" data-noimg="{{ asset('img/no-img.png') }}">
+    <table class="table datatables stripe" data-url="{{ path('app_strain_ajaxbreederstrains') }}" data-url-add="{{ path('app_my_seeds_add') }}" data-breederid="{{ breeder.id }}" data-noimg="{{ asset('img/no-img.png') }}">
         <thead>
             <tr>
                 <th></th>

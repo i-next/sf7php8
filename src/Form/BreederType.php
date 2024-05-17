@@ -13,7 +13,7 @@ class BreederType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('url_photo',TextType::class,[
+            ->add('url_photo', TextType::class, [
                 'required' => false,
             ]);
     }

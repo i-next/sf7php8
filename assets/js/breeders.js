@@ -48,12 +48,13 @@ $(document).ready(function(){
       url: $(".datatables").data('url'),
       type: 'POST',
       data: {
-        filters: {'user_id': { 0: 'null', 1: $(".datatables").data('version')}}
+        filters: {'userid': { 0: 'null', 1: $(".datatables").data('version')}}
       }
     },
     processing: true,
     serverSide: true
 
   }
+  console.log(options);
   $('.datatables').DataTable(options);
 })
