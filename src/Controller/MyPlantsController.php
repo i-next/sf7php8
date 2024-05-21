@@ -143,6 +143,7 @@ class MyPlantsController extends AbstractController
     public function changeState(Request $request, EntityManagerInterface $entityManager, Security $security): JsonResponse|RedirectResponse
     {
         $dataAll = $request->request->all();
+
         $state = $request->request->get('state') ?: $dataAll['change_state_my_plants']['state'];
         $keyCurrentStep = array_search($state, $arraySteps = EnumStates::toArray());
         $idMyPlant = $request->request->get('id') ?: $dataAll['change_state_my_plants']['idmyplants'];
@@ -172,16 +173,18 @@ class MyPlantsController extends AbstractController
 
         $plantName = $myPlant->getName() ?: $myPlant->getMySeeds()->getStrain()->getName();
         while (key($arraySteps) !== $keyCurrentStep) next($arraySteps);
-        $nexStep = current($arraySteps);
+        $nextStep = next($arraySteps);
+        $urlAction = $this->generateUrl('app_my_plants_changestate');
 
         $data = [
             'data' => [
-                'newstate' => next($arraySteps),
+                'newstate' => $nextStep,
                 'idmyplant' => $idMyPlant,
                 'state' => $state,
             ],
-            'action' => $this->generateUrl('app_my_plants_changestate'),
+            'action' => $urlAction,
         ];
+
         $form = $this->createForm(ChangeStateMyPlantsType::class, null, $data);
 
         $form->handleRequest($request);
@@ -193,8 +196,14 @@ class MyPlantsController extends AbstractController
             $new->setDateActive(new \DateTimeImmutable($dataAll['change_state_my_plants']['date_active']));
             $new->setMyPlants($myPlant);
             $new->setFinished(false);
+            if($new instanceof Harvests){
+                $new->setWeight($dataAll['change_state_my_plants']['weight']);
+                $new->setNotes($dataAll['change_state_my_plants']['notes']);
+                $myPlant->setFinished(true);
+            }
             $entityManager->persist($dataInfo);
             $entityManager->persist($new);
+            $entityManager->persist($myPlant);
             $entityManager->flush();
             return $this->redirectToRoute('app_my_plants_list', ['slug' => $state]);
         }

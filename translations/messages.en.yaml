@@ -15,7 +15,9 @@ common:
     germination: Germination
     bloom: Florewing
     all: All
-    days: days
+    days: Days
+    week: Week
+    weeks: Weeks
     navigation:
         backtolist: Back to list
         logout: Logout
@@ -65,7 +67,8 @@ form:
     title:
         strain:
             new: Add a seed variety to your stock
-            list: 
+        changestate:
+            weight: Weight            
     label:
         strain:
             strain: Search for a seed

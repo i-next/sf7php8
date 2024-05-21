@@ -1,6 +1,6 @@
 {% macro card(path,head="",icon,content="", class="headercarddashboarddefault") %}
     <div class="col align-items-center d-flex justify-content-center">
-        <div class="card bg-transparent card-block d-flex carddashboard">
+        <div class="card bg-transparent card-block d-flex carddashboard {{ class }}">
             <div class="card-header align-items-center d-flex justify-content-center {{ class }}">
                 {% if content == "0" %}
                     {{ icon|raw }}&nbsp;{{ head }}

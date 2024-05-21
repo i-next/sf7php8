@@ -2,12 +2,17 @@
 
 namespace App\Twig\Runtime;
 
+use App\Entity\Blooms;
+use App\Entity\Germination;
+use App\Entity\Growths;
 use App\Entity\MyPlants;
+use App\Entity\Preblooms;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\RuntimeExtensionInterface;
 use Symfony\Bundle\SecurityBundle\Security;
 use App\Entity\Plant;
 use App\Repository\PlantRepository;
+Use DateTime;
 
 class PlantExtensionRuntime implements RuntimeExtensionInterface
 {
@@ -85,4 +90,51 @@ class PlantExtensionRuntime implements RuntimeExtensionInterface
             return $myPlant->getName()." (".$strainName.")";
         }
     }
+
+    public function getDaysDuration(Germination $germination): int
+    {
+        $dateStarted = $germination->getDateActive();
+        if($germination->isFinished()){
+            $dateEnd = $germination->getMyPlants()->getGrowths()->getDateActive();
+        }else{
+            $dateEnd =new \DateTimeImmutable();
+        }
+        return $dateEnd->diff($dateStarted)->days;
+    }
+
+    public function getWeeksDurationGrowth(Growths $growths): int
+    {
+        $dateStarted = $growths->getDateActive();
+        if($growths->isFinished()){
+            $dateEnd = $growths->getMyPlants()->getPreblooms()->getDateActive();
+        }else{
+            $dateEnd =new \DateTimeImmutable();
+        }
+        $interval = $dateEnd->diff($dateStarted);
+        return floor($interval->days/7);
+    }
+    public function getWeeksDurationPrebloom(Preblooms $preblooms): int
+    {
+        $dateStarted = $preblooms->getDateActive();
+        if($preblooms->isFinished()){
+            $dateEnd = $preblooms->getMyPlants()->getBlooms()->getDateActive();
+        }else{
+            $dateEnd =new \DateTimeImmutable();
+        }
+        $interval = $dateEnd->diff($dateStarted);
+        return $interval->days;
+    }
+
+    public function getWeeksDurationBloom(Blooms $blooms): int
+    {
+        $dateStarted = $blooms->getDateActive();
+        if($blooms->isFinished()){
+            $dateEnd = $blooms->getMyPlants()->getHarvests()->getDateActive();
+        }else{
+            $dateEnd =new \DateTimeImmutable();
+        }
+        $interval = $dateEnd->diff($dateStarted);
+        return floor($interval->days/7);
+    }
+
 }

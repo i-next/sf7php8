@@ -1,10 +1,101 @@
 {% macro diary(plant) %}
-    <div class="card card-diary">
-        <div class="card-header card-header-diary">
-            FLO
-        </div>
-        <div class="card-body card-body-diary">
-            <p class="card-text">5</p>
+    {% if plant.germination %}
+    <div class="col-1">
+        <div class="card card-diary card-germination">
+            <div class="card-header card-header-diary card-header-germination">
+                <span class="card-text-header">{{ 'common.germination'|trans|slice(0,3) }}</span>
+            </div>
+            <div class="card-body card-body-diary">
+                <div class="card-text-body">{{ function_get_days_duration(plant.germination) }}</div>
+                <div class="card-text-footer">{{ 'common.days'|trans }}</div>
+            </div>
         </div>
     </div>
+    {% endif %}
+
+    {% if plant.growths %}
+        {% if function_get_weeks_duration_growths(plant.growths) == 0 %}
+            <div class="col-1">
+                <div class="card card-diary card-growth">
+                    <div class="card-header card-header-diary card-header-growth">
+                        <span class="card-text-header">{{ 'common.growths'|trans|slice(0,3) }}</span>
+                    </div>
+                    <div class="card-body card-body-diary">
+                        <div class="card-text-body">1</div>
+                        <div class="card-text-footer">{{ 'common.week'|trans }}</div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if plant.growths.isFinished() %}
+                <div class="col-1">
+                    <div class="card card-diary card-growth">
+                        <div class="card-header card-header-diary card-header-growth">
+                            <span class="card-text-header">{{ 'common.growths'|trans|slice(0,3) }}</span>
+                        </div>
+                        <div class="card-body card-body-diary">
+                            <div class="card-text-body">{{ function_get_weeks_duration_growths(plant.growths) }}</div>
+                            <div class="card-text-footer">{{ 'common.weeks'|trans }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {% for i in 1..function_get_weeks_duration_growths(plant.growths) %}
+                    <div class="col-1">
+                        <div class="card card-diary card-growth">
+                            <div class="card-header card-header-diary card-header-growth">
+                                <span class="card-text-header">{{ 'common.growths'|trans|slice(0,3) }}</span>
+                            </div>
+                            <div class="card-body card-body-diary">
+                                <div class="card-text-body">{{ i }}</div>
+                                <div class="card-text-footer">{{ 'common.week'|trans }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if plant.preblooms %}
+        <div class="col-1">
+            <div class="card card-diary card-prebloom">
+                <div class="card-header card-header-diary card-header-prebloom">
+                    <span class="card-text-header">{{ 'common.preblooms'|trans|slice(0,3) }}</span>
+                </div>
+                <div class="card-body card-body-diary">
+                    <div class="card-text-body">{{ function_get_weeks_duration_preblooms(plant.preblooms) }}</div>
+                    <div class="card-text-footer">{{ 'common.days'|trans }}</div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if plant.blooms %}
+        {% if plant.blooms.isFinished() %}
+            <div class="col-1">
+                <div class="card card-diary card-bloom">
+                    <div class="card-header card-header-diary card-header-bloom">
+                        <span class="card-text-header">{{ 'common.blooms'|trans|slice(0,3) }}</span>
+                    </div>
+                    <div class="card-body card-body-diary">
+                        <div class="card-text-body">{{ function_get_weeks_duration_blooms(plant.blooms) }}</div>
+                        <div class="card-text-footer">{{ 'common.weeks'|trans }}</div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% for i in 1..function_get_weeks_duration_blooms(plant.blooms) %}
+                <div class="col-1">
+                    <div class="card card-diary card-bloom">
+                        <div class="card-header card-header-diary card-header-bloom">
+                            <span class="card-text-header">{{ 'common.blooms'|trans|slice(0,3) }}</span>
+                        </div>
+                        <div class="card-body card-body-diary">
+                            <div class="card-text-body">{{ i }}</div>
+                            <div class="card-text-footer">{{ 'common.week'|trans }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
 {% endmacro %}

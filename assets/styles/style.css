@@ -248,8 +248,6 @@ h6 {
     margin-bottom: 30px;
     width: fit-content;
     border: var(--bs-card-border-width) solid var(--default-color)
-    /*border: none;*/
-
 }
 
 .card-header,
@@ -258,6 +256,46 @@ h6 {
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
+}
+
+.card-germination{
+    border: var(--bs-card-border-width) solid var(--germination-color)
+}
+
+.card-header-germination{
+    background-color: var(--germination-color);
+}
+
+.card-growth{
+    border: var(--bs-card-border-width) solid var(--growth-color)
+}
+
+.card-header-growth{
+    background-color: var(--growth-color);
+}
+
+.card-prebloom{
+    border: var(--bs-card-border-width) solid var(--prebloom-color)
+}
+
+.card-header-prebloom{
+    background-color: var(--prebloom-color);
+}
+
+.card-bloom{
+    border: var(--bs-card-border-width) solid var(--bloom-color)
+}
+
+.card-header-bloom{
+    background-color: var(--bloom-color);
+}
+
+.card-harvest{
+    border: var(--bs-card-border-width) solid var(--harvest-color)
+}
+
+.card-header-harvest{
+    background-color: var(--harvest-color);
 }
 
 .card-header a{

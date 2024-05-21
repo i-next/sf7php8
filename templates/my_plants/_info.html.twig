@@ -1,27 +1,27 @@
 {% import "macros/diaries_my_plants_history.html.twig" as my_plant_history %}
 <div class="row">
-    <div class="col-2 text-center">
+    <div class="col-1 text-center">
         {% if my_plant.mySeeds.strain.breeder.logo %}
             <img src="{{ asset(my_plant.mySeeds.strain.breeder.logo) }}" class="logo">
         {% else %}
             <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
         {% endif %}
     </div>
-    <div class="col-8">
+    <div class="col-11">
         <div class="row">{{ my_plant.mySeeds.strain.breeder.name }}</div>
     </div>
 </div>
 <br/>
 <div class="row">
 
-    <div class="col-2 text-center">
+    <div class="col-1 text-center">
         {% if my_plant.mySeeds.strain.logo %}
             <img src="{{ asset(my_plant.mySeeds.strain.logo) }}" class="logo">
         {% else %}
             <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
         {% endif %}
     </div>
-    <div class="col-8">
+    <div class="col-11">
         <div class="row">{{ function_get_name(my_plant) }}</div>
         <div class="row">{{ 'modals.myplantsinfo.bloomduration'|trans }}{% if my_plant.duration == 0 %}{{ my_plant.mySeeds.strain.duration }} {% else %}{{ my_plant.duration}}{% endif %} {{ 'common.days'|trans }}</div>
         <div class="row">{{ 'modals.myplantsinfo.qtyremain'|trans }}{{ my_plant.mySeeds.quantity }}</div>
@@ -29,7 +29,7 @@
         {% if my_plant.mySeeds.strain.auto %}<div class="row">{{ 'myseeds.index.table.head.auto'|trans }}</div>{% endif %}
     </div>
 </div>
-<div class="row" style="padding: 0 10px 0 10px">
+<div class="row" style="padding: 10px 10px 0 10px">
     {{ my_plant_history.diary(my_plant) }}
 </div>
 

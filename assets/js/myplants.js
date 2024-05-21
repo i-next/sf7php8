@@ -1,11 +1,13 @@
 import '../app.js';
 import $ from 'jquery';
+import '../styles/myplants.css'
 $(document).ready(function(){
   let columns = [];
   let columnDefs = [];
   function showState(d){
 
     if(d.finished){
+
       if(d.harvests && d.harvests.length !== 0){
         return finished;
       }
@@ -20,7 +22,9 @@ $(document).ready(function(){
       }
       return abandoned+' (Germination)';
     }else{
-
+      if(d.harvests && d.harvests.length !== 0){
+        return finished;
+      }
       if(d.blooms && d.blooms.length !== 0){
         return bloom;
       }
@@ -63,7 +67,6 @@ $(document).ready(function(){
       {
         targets: 'actions:name',
         render: function(data, type, row){
-          console.log(row);
           return '<span data-state="'+$('.datatables').data('entity')+'" data-id="'+data+'" data-my-plants-id="'+row.my_plants.id+'">' +
             '<i class="bi bi-info-circle-fill button_action myplantsinfo" data-bs-toggle="modal" data-bs-target="#myPlantsInfoModal"></i> '+
             '<i class="bi bi-forward-fill button_action changestate" data-bs-toggle="modal" data-bs-target="#changeStateModal"></i> '
@@ -202,7 +205,6 @@ $(document).ready(function(){
   $(document).on('show.bs.modal','#changeStateModal', function(e) {
     let idseed = $(e.relatedTarget).parent().data('id');
     let state = $(e.relatedTarget).parent().data('state');
-
     $.ajax({
       method: 'POST',
       url: '/myplants/changestate',
@@ -210,7 +212,7 @@ $(document).ready(function(){
       success: function (res) {
           $('.modal-body').html(res.form);
           $('.change_plant').on('click',function(){
-          $(".modal-body").find('form').submit();
+          $('.modal-body-change').find('form').submit();
         })
       }
     });
@@ -219,13 +221,11 @@ $(document).ready(function(){
   $(document).on('show.bs.modal','#deleteModal', function(e) {
     let idseed = $(e.relatedTarget).parent().data('id');
     let state = $(e.relatedTarget).parent().data('state');
-
     $.ajax({
       method: 'POST',
       url: '/myplants/delete',
       data:{ idmyplants:idseed,state:state},
       success: function (res) {
-        console.log(res);
         $('.modal-body-delete').html(res.form);
         $('.delete_plant').on('click',function(){
           $(".modal-body").find('form').submit();
@@ -237,7 +237,6 @@ $(document).ready(function(){
     let idseed = $(e.relatedTarget).parent().data('id');
     let state = $(e.relatedTarget).parent().data('state');
     let idplant = $(e.relatedTarget).parent().data('my-plants-id');
-
     $.ajax({
       method: 'POST',
       url: '/myplants/info',

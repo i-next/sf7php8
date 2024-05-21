@@ -152,42 +152,62 @@ span.changestate{
     font-size: var(--font-size-buttons);
 }
 
-.headercarddashboarddefault {
+.card.headercarddashboardgermination{
+    border: var(--bs-card-border-width) solid var(--germination-color)
+}
+
+.card.headercarddashboardgrowth{
+    border: var(--bs-card-border-width) solid var(--growth-color)
+}
+
+.card.headercarddashboardprebloom{
+    border: var(--bs-card-border-width) solid var(--prebloom-color)
+}
+
+.card.headercarddashboardbloom{
+    border: var(--bs-card-border-width) solid var(--bloom-color)
+}
+
+.card.headercarddashboardharvest{
+    border: var(--bs-card-border-width) solid var(--harvest-color)
+}
+
+.card-header.headercarddashboarddefault {
     background-color: var(--default-color);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
-.headercarddashboardgermination {
+.card-header.headercarddashboardgermination {
     background-color: var(--germination-color);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
-.headercarddashboardgrowth {
+.card-header.headercarddashboardgrowth {
     background-color: var(--growth-color);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
-.headercarddashboardprebloom {
+.card-header.headercarddashboardprebloom {
     background-color: var(--prebloom-color);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
-.headercarddashboardbloom {
+.card-header.headercarddashboardbloom {
     background-color: var(--bloom-color);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
-.headercarddashboardharvest {
+.card-header.headercarddashboardharvest {
     background-color: var(--harvest-color);
     color: var(--label-color);
     padding: 15px;

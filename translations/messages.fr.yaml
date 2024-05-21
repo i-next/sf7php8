@@ -4,7 +4,7 @@ common:
     strains: Variétés de Graines
     seeds: Stock de Graines
     plants: Plantes
-    harvests: Recolte
+    harvests: Recoltes
     email: Courriel
     password: Mot de passe
     germinations: Germinations
@@ -15,7 +15,9 @@ common:
     germination: Germinations
     bloom: Floraison
     all: Toutes
-    days: jours
+    days: Jours
+    week: Semaine
+    weeks: Semaines
     navigation:
         backtolist: Retour à la liste
         logout: Déconnexion
@@ -70,6 +72,8 @@ form:
     label:
         strain:
             strain: Rechercher une graine
+        changestate:
+            weight: Poids
     placeholder:
         strain:
             strain: Choisir ou créer votre graine

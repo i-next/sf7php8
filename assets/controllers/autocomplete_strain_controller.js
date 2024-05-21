@@ -12,7 +12,7 @@ import { Controller } from '@hotwired/stimulus';
 export default class extends Controller {
   initialize() {
     this._onPreConnect = this._onPreConnect.bind(this);
-    this._onConnect = this._onConnect.bind(this);
+    this._onConnect = this._onConnect.bind(this); b
   }
 
   connect() {

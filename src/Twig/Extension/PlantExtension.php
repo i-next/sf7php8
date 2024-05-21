@@ -26,7 +26,11 @@ class PlantExtension extends AbstractExtension
             new TwigFunction('function_step', [ PlantExtensionRuntime::class, 'stepPlant']),
             new twigFunction('function_days_remained', [ PlantExtensionRuntime::class, 'getDaysRemained']),
             new TwigFunction('function_format_description', [PlantExtensionRuntime::class, 'formatDescription']),
-            new TwigFunction('function_get_name', [PlantExtensionRuntime::class,'getName'])
+            new TwigFunction('function_get_name', [PlantExtensionRuntime::class,'getName']),
+            new TwigFunction('function_get_days_duration',[PlantExtensionRuntime::class,'getDaysDuration']),
+            new TwigFunction('function_get_weeks_duration_growths',[PlantExtensionRuntime::class,'getWeeksDurationGrowth']),
+            new TwigFunction('function_get_weeks_duration_preblooms',[PlantExtensionRuntime::class,'getWeeksDurationPrebloom']),
+            new TwigFunction('function_get_weeks_duration_blooms',[PlantExtensionRuntime::class, 'getWeeksDurationBloom'])
         ];
     }
 }
