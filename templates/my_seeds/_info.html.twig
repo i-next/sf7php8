@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-4 text-center">
+                {% if my_seed.strain.breeder.logo %}
+                    <img src="{{ asset(my_seed.strain.breeder.logo) }}" class="logo">
+                {% else %}
+                    <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="row">{{ my_seed.strain.breeder.name }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row ">
+            <div class="col-4 text-center">
+                {% if my_seed.strain.logo %}
+                    <img src="{{ asset(my_seed.strain.logo) }}" class="logo">
+                {% else %}
+                    <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="row">{{ my_seed.strain.name }}</div>
+                <div class="row info-inline">{{ 'modals.myplantsinfo.bloomduration'|trans }} {{ my_seed.strain.duration }} {{ 'common.days'|trans }}</div>
+                <div class="row">{{ 'modals.myplantsinfo.qtyremain'|trans }}{{ my_seed.quantity }}</div>
+                <div class="row">Type: {{ my_seed.strain.type }}</div>
+                {% if my_seed.strain.auto %}<div class="row">{{ 'myseeds.index.table.head.auto'|trans }}</div>{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="info">
+<div class="">
+    {{ my_seed.strain.description|replace({'\\': ''})|raw }}
+</div>

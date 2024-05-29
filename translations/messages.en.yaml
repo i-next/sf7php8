@@ -109,3 +109,5 @@ modals:
         title: Details
         bloomduration: "Flowering duration: "
         qtyremain: "Number of seeds remaining: "
+    myseedsinfo:
+        title: Details

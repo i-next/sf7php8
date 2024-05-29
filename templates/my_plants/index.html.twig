@@ -7,7 +7,7 @@
     {% include('modals/modal_delete.html.twig') %}
     {% include('modals/modal_my_plants_info.html.twig') %}
     <div class="content-base">
-        <h1>{{ "common.#{ entity_name|lower }"|trans }}</h1>
+        <h1  class="title_my_plants">{{ "common.#{ entity_name|lower }"|trans }}</h1>
         {% if entity_name != 'all' %}
             <table class="table datatables bg-transparent" data-url="{{ path('app_my_plants_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}" data-entity="{{ entity_name }}">
                 <thead>

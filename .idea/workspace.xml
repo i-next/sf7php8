@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92bb2615-4b83-4ab6-87a9-62089841aa66" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/controllers/autocomplete_strain_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers/autocomplete_strain_controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/myplants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myplants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/myseeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myseeds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/strains.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/strains.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/myplants.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myplants.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/myseeds.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myseeds.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MyPlantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MyPlantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChangeStateMyPlantsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChangeStateMyPlantsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Extension/PlantExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/Runtime/PlantExtensionRuntime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/macros/card_dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macros/card_dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/macros/diaries_my_plants_history.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/macros/diaries_my_plants_history.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/modals/modal_change_state.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/modals/modal_change_state.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/modals/modal_my_plants_info.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/modals/modal_my_plants_info.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MySeedsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MySeedsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/breeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/my_plants/_info.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_plants/_info.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_plants/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_plants/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.yaml" afterDir="false" />
     </list>
@@ -215,6 +216,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Makefile Target.help.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -225,6 +227,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="help" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="help" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.help" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -244,6 +259,15 @@
       <workItem from="1716181530279" duration="3546000" />
       <workItem from="1716214776436" duration="4597000" />
       <workItem from="1716267826622" duration="2189000" />
+      <workItem from="1716282716881" duration="3554000" />
+      <workItem from="1716356064876" duration="14500000" />
+      <workItem from="1716440772921" duration="7085000" />
+      <workItem from="1716528380068" duration="2467000" />
+      <workItem from="1716540123002" duration="3054000" />
+      <workItem from="1716795932999" duration="606000" />
+      <workItem from="1716875429708" duration="1941000" />
+      <workItem from="1716929145619" duration="445000" />
+      <workItem from="1716960359044" duration="6562000" />
     </task>
     <servers />
   </component>

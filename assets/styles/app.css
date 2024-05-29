@@ -8,12 +8,22 @@ div.content-base{
     margin-left: 50px;
     margin-right: 50px;
 }
+
+div.content-small-table{
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+.title_my_plants{
+    color: var(--label-color);
+}
 /* *******************************************************
                          Nav
 ******************************************************* */
 .btn-secondary {
-    background-color: var(--default-color) !important;
-    border: 2px solid var(--default-color) !important;
+    /*background-color: var(--default-color) !important;*/
+    background: var(--default-background-linear-default);
+    border: 1px solid var(--default-color) !important;
 }
 
 .germ {
@@ -173,42 +183,47 @@ span.changestate{
 }
 
 .card-header.headercarddashboarddefault {
-    background-color: var(--default-color);
+    background: var(--default-background-linear-default);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
 .card-header.headercarddashboardgermination {
-    background-color: var(--germination-color);
+    /*background-color: var(--germination-color);*/
+    background: var(--default-background-linear-germination);
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
 .card-header.headercarddashboardgrowth {
-    background-color: var(--growth-color);
+    background: var(--default-background-linear-growth);
+    /*background-color: var(--growth-color);*/
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
 .card-header.headercarddashboardprebloom {
-    background-color: var(--prebloom-color);
+    background: var(--default-background-linear-prebloom);
+    /*background-color: var(--prebloom-color);*/
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
 .card-header.headercarddashboardbloom {
-    background-color: var(--bloom-color);
+    background: var(--default-background-linear-bloom);
+    /*background-color: var(--bloom-color);*/
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
 }
 
 .card-header.headercarddashboardharvest {
-    background-color: var(--harvest-color);
+    background: var(--default-background-linear-harvest);
+    /*background-color: var(--harvest-color);*/
     color: var(--label-color);
     padding: 15px;
     font-size: 1.25rem;
@@ -234,6 +249,15 @@ span.changestate{
     vertical-align: middle;
     min-height: inherit;
 }
+.info-text{
+    color: var(--default-color);
+}
+.info-inline{
+    display: inline-block;
+}
+.info-text-title{
+    font-size: 1rem;
+}
 /* *******************************************************
                           images
 ******************************************************* */
@@ -251,11 +275,10 @@ img.logo{
     padding: 0px !important;
 }
 
-.card-header-diary{
-    /*padding: 0px !important;*/
+hr.info {
+    border: 1px solid var(--default-color);
 }
 
-.card-body-diary{
-    /*padding: 0px !important;*/
-
+div.content-info{
+    display: flex;
 }

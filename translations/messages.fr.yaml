@@ -113,5 +113,7 @@ modals:
         title: Détails
         bloomduration: "Durée Floraison: "
         qtyremain: "Nombre de graines restantes: "
+    myseedsinfo:
+        title: Détails
         
     

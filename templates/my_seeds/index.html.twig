@@ -20,8 +20,9 @@
         </div>
     </div>#}
     {% include('/modals/modal_add_plant.html.twig') %}
+    {% include('/modals/modal_my_seeds_info.html.twig') %}
     <div class="content-base">
-        <h1>{{ 'strain.index.title'|trans }}</h1>
+        <h1 class="title_my_plants">{{ 'strain.index.title'|trans }}</h1>
         <a href="{{ path('app_my_seeds_new') }}"><i class="bi bi-plus-circle button_action"></i> {{ 'form.title.strain.new'|trans }}</a>
         <table class="table datatables bg-transparent" data-url="{{ path('app_my_seeds_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}">
             <thead>

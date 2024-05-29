@@ -6,9 +6,9 @@ $(document).ready(function(){
 
   function format(d) {
     if(navigator.language != 'fr-FR' && navigator.language != 'fr' && d.descriptionen != '') {
-      return ( $.parseHTML(d.descriptionen) );
+      return ( d.descriptionen );
     }else{
-      return ( $.parseHTML(d.description) );
+      return ( d.description );
     }
   }
   let addyourstock = ''
@@ -95,6 +95,7 @@ $(document).ready(function(){
       row.child.hide();
     }
     else {
+      console.log('toto');
       $('.details').hide();
       // Open this row
       row.child(format(row.data()),'details').show();

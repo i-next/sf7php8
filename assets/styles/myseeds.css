@@ -1,9 +1,7 @@
 .form-select{
     background: transparent!important;
 }
-h1{
-    color: var(--default-color)!important;
-}
+
 .ts-dropdown{
     color: white !important;
     .active {

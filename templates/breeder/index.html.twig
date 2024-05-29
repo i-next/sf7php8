@@ -1,7 +1,7 @@
 {% extends 'breeder/base.html.twig' %}
 {% block title %}{{ 'breeder.index.page_title'|trans }}{% endblock %}
 {% block body %}
-    <div class="content-base">
+    <div class="content-small-table">
         <table class="table datatables bg-transparent breedertable" data-url="{{ path('app_breeder_ajax') }}" data-noimg="{{ asset('img/no-img.png') }}" data-version="{{ app.user.id }}">
             <thead>
             <tr>

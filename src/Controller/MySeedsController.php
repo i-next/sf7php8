@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\MySeeds;
 use App\Form\AddMySeedsType;
 use App\Form\MySeedsType;
+use App\Repository\MySeedsRepository;
 use App\Repository\StrainRepository;
 use App\Service\DatatablesServiceInterface;
 use App\Service\MySeedsServiceInterface;
@@ -153,6 +154,16 @@ class MySeedsController extends AbstractController
     {
         $result = $mySeedsService->changecomment($request->request->all());
         return new JsonResponse(['result' => $result]);
+    }
+
+    #[Route('/info', name: 'info')]
+    public function info(Request $request, MySeedsRepository $mySeedsRepository): JsonResponse
+    {
+        $mySeed= $mySeedsRepository->find($request->request->get('idseed'));
+        $view = $this->render('my_seeds/_info.html.twig',[
+            'my_seed' => $mySeed,
+        ]);
+        return new JsonResponse(['data' => $view->getContent()]);
     }
 
 }

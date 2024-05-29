@@ -67,6 +67,7 @@ $(document).ready(function(){
       {
         targets: 'actions:name',
         render: function(data, type, row){
+          //TODO mettre les alt
           return '<span data-state="'+$('.datatables').data('entity')+'" data-id="'+data+'" data-my-plants-id="'+row.my_plants.id+'">' +
             '<i class="bi bi-info-circle-fill button_action myplantsinfo" data-bs-toggle="modal" data-bs-target="#myPlantsInfoModal"></i> '+
             '<i class="bi bi-forward-fill button_action changestate" data-bs-toggle="modal" data-bs-target="#changeStateModal"></i> '
@@ -97,13 +98,13 @@ $(document).ready(function(){
       {
         targets: 'breeder:name',
         render: function(data,type,row){
-          let img = '';
+          let img = data;
 
           if(row.my_plants.my_seeds.strain.breeder.logo != null){
             img = '<img src="'+window.location.origin+'/'+row.my_plants.my_seeds.strain.breeder.logo+'" alt="nologo" class="logo" /> ';
           }
 
-          return img+data;
+          return img;
         }
 
       },

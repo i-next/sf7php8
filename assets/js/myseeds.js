@@ -73,7 +73,10 @@ $(document).ready(function(){
         targets: 'actions:name',
         render: function (data, type, row) {
 
-          return '<a href="/myseeds/delete/'+data+'"><i class="bi bi-trash button_action"></i></a> <i class="bi bi-node-plus-fill button_action add-to-germination" title="Germination" data-id='+data+' data-bs-toggle="modal" data-bs-target="#addplantModal"></i>'
+          return '<span data-id="'+data+'">'+
+          '<i class="bi bi-eye button_action myplantsinfo" data-bs-toggle="modal" data-bs-target="#mySeedsInfoModal"></i> '+
+            '<i class="bi bi-node-plus-fill button_action add-to-germination" title="Germination" data-id='+data+' data-bs-toggle="modal" data-bs-target="#addplantModal"></i> '+
+            '<a href="/myseeds/delete/'+data+'"><i class="bi bi-trash button_action"></i></a></span>'
         }
       },{
         targets: 'strain.name:name',
@@ -96,9 +99,9 @@ $(document).ready(function(){
         targets: 'strain.breeder:name',
         render: function (data, type, row) {
           if(data.url_photo == ''){
-            return '<img src="'+$(".datatables").data('noimg')+'" alt="nologo" class="logo" /> '+data.name;
+            return data;
           }
-          return '<img src="'+window.location.origin+'/'+data.logo+'" alt="nologo" class="logo" /> '+data.name;
+          return '<img src="'+window.location.origin+'/'+data.logo+'" alt="nologo" class="logo" />';
         }
       },
       {
@@ -223,5 +226,17 @@ $(document).ready(function(){
       });
     }
 
+  });
+  $(document).on('show.bs.modal','#mySeedsInfoModal', function(e) {
+    let idseed = $(e.relatedTarget).parent().data('id');
+    $.ajax({
+      method: 'POST',
+      url: '/myseeds/info',
+      data: {idseed:idseed},
+      success: function (res){
+        $('.modal-body-info').html(res.data);
+      }
+    })
+    console.log(idseed);
   });
 });

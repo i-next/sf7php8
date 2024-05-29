@@ -1,34 +1,49 @@
 {% import "macros/diaries_my_plants_history.html.twig" as my_plant_history %}
 <div class="row">
-    <div class="col-1 text-center">
-        {% if my_plant.mySeeds.strain.breeder.logo %}
-            <img src="{{ asset(my_plant.mySeeds.strain.breeder.logo) }}" class="logo">
-        {% else %}
-            <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
-        {% endif %}
+    <div class="col-6">
+        <div class="row">
+            <div class="col-4 text-center">
+                {% if my_plant.mySeeds.strain.breeder.logo %}
+                    <img src="{{ asset(my_plant.mySeeds.strain.breeder.logo) }}" class="logo">
+                {% else %}
+                    <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="row info-text info-text-title">{{ my_plant.mySeeds.strain.breeder.name }}</div>
+            </div>
+        </div>
     </div>
-    <div class="col-11">
-        <div class="row">{{ my_plant.mySeeds.strain.breeder.name }}</div>
-    </div>
-</div>
-<br/>
-<div class="row">
+    <div class="col-6">
+        <div class="row ">
+            <div class="col-4 text-center">
+                {% if my_plant.mySeeds.strain.logo %}
+                    <img src="{{ asset(my_plant.mySeeds.strain.logo) }}" class="logo">
+                {% else %}
+                    <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
+                {% endif %}
+            </div>
+            <div class="col-8">
+                <div class="row info-text info-text-title"><div class="col">{{ function_get_name(my_plant) }}</div></div>
 
-    <div class="col-1 text-center">
-        {% if my_plant.mySeeds.strain.logo %}
-            <img src="{{ asset(my_plant.mySeeds.strain.logo) }}" class="logo">
-        {% else %}
-            <img src="{{ asset('img/no-img.png') }}" alt="nologo" class="logo" />
-        {% endif %}
-    </div>
-    <div class="col-11">
-        <div class="row">{{ function_get_name(my_plant) }}</div>
-        <div class="row">{{ 'modals.myplantsinfo.bloomduration'|trans }}{% if my_plant.duration == 0 %}{{ my_plant.mySeeds.strain.duration }} {% else %}{{ my_plant.duration}}{% endif %} {{ 'common.days'|trans }}</div>
-        <div class="row">{{ 'modals.myplantsinfo.qtyremain'|trans }}{{ my_plant.mySeeds.quantity }}</div>
-        <div class="row">Type: {{ my_plant.mySeeds.strain.type }}</div>
-        {% if my_plant.mySeeds.strain.auto %}<div class="row">{{ 'myseeds.index.table.head.auto'|trans }}</div>{% endif %}
+            </div>
+        </div>
     </div>
 </div>
+<hr class="info">
+<div class="row">
+    <div class="col-12">
+        <div class="row "><div class="col">{{ 'modals.myplantsinfo.bloomduration'|trans }}<span class="info-text">{% if my_plant.duration == 0 %} {{ my_plant.mySeeds.strain.duration }} {% else %}{{ my_plant.duration}}{% endif %} {{ 'common.days'|trans }}</span></div></div>
+        <div class="row "><div class="col">{{ 'modals.myplantsinfo.qtyremain'|trans }}<span class="info-text">{{ my_plant.mySeeds.quantity }}</span></div></div>
+        <div class="row "><div class="col">Type: <span class="info-text">{{ my_plant.mySeeds.strain.type }}</span></div></div>
+        {% if my_plant.mySeeds.strain.auto %}<div class="row info-text"><div class="col">{{ 'myseeds.index.table.head.auto'|trans }}</div></div>{% endif %}
+    </div>
+</div>
+<hr class="info">
+<div class="">
+    {{ my_plant.mySeeds.strain.description|replace({'\\': ''})|raw }}
+</div>
+<hr class="info">
 <div class="row" style="padding: 10px 10px 0 10px">
     {{ my_plant_history.diary(my_plant) }}
 </div>
