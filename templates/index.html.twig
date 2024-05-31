@@ -4,55 +4,66 @@
 {% block body %}
     {% if data_dashboard %}
         <section class="section dashboard">
-            <div class="row">
-                <div class="col-12 ">
-                    <div class="row align-items-center d-flex">
-                        {{ card_dashboard.card(path('app_breeder_index'), 'common.breeders'|trans, '<i class="bi bi-shop"></i>', data_dashboard.breeders) }}
-                        {{ card_dashboard.card(path('app_breeder_index'), 'common.strains'|trans, '<i class="bi bi-droplet-fill"></i>', data_dashboard.strains) }}
-                        {{ card_dashboard.card(path('app_my_seeds_index'), 'dashboard.yourseedsstock'|trans, '<i class="bi bi-droplet-fill"></i>', data_dashboard.my_seeds_count) }}
-                        {{ card_dashboard.card(path('app_my_seeds_index'), 'dashboard.yourvaritystock'|trans, '<i class="bi bi-egg-fill"></i>', data_dashboard.my_breeders_count) }}
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="rowalign-items-center d-flex">
-                        {% if constant('App\\Entity\\EnumStates::GERM').name in data_dashboard|keys %}
-                            {% set key = constant('App\\Entity\\EnumStates::GERM').name %}
-                            {% set value = data_dashboard[key] %}
-                        {% else %}
-                            {% set value = 0 %}
-                        {% endif %}
-                        {{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Germination'}), 'common.germinations'|trans, '<i class="bi bi-brightness-alt-high"></i>', value,'headercarddashboardgermination') }}
-                        {% if constant('App\\Entity\\EnumStates::CROIS').name in data_dashboard|keys %}
-                            {% set key = constant('App\\Entity\\EnumStates::CROIS').name %}
-                            {% set value = data_dashboard[key] %}
-                        {% else %}
-                            {% set value = 0 %}
-                        {% endif %}
-                        {{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Growths'}), 'common.growths'|trans, '<i class="bi bi-flower3"></i>', value,'headercarddashboardgrowth') }}
-                        {% if constant('App\\Entity\\EnumStates::PREFLO').name in data_dashboard|keys %}
-                            {% set key = constant('App\\Entity\\EnumStates::PREFLO').name %}
-                            {% set value = data_dashboard[key] %}
-                        {% else %}
-                            {% set value = 0 %}
-                        {% endif %}
-                        {{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Preblooms'}), 'common.preblooms'|trans, '<i class="bi bi-flower1"></i>', value,'headercarddashboardprebloom') }}
-                        {% if constant('App\\Entity\\EnumStates::FLO').name in data_dashboard|keys %}
-                            {% set key = constant('App\\Entity\\EnumStates::FLO').name %}
-                            {% set value = data_dashboard[key] %}
-                        {% else %}
-                            {% set value = 0 %}
-                        {% endif %}
-                        {{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Blooms'}), 'common.blooms'|trans, '<i class="bi bi-flower2"></i>', value,'headercarddashboardbloom') }}
-                        {% if constant('App\\Entity\\EnumStates::REC').name in data_dashboard|keys %}
-                            {% set key = constant('App\\Entity\\EnumStates::REC').name %}
-                            {% set value = data_dashboard[key] %}
-                        {% else %}
-                            {% set value = 0 %}
-                        {% endif %}
-                        {{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Harvests'}), 'common.harvests'|trans, '<i class="bi bi-archive"></i>', value,'headercarddashboardharvest') }}
+            <div class="container">
+                <div class="row align-items-center d-flex">
 
-                    </div>
+
+                        <div
+                            class="col-xs-12 col-lg-3">{{ card_dashboard.card(path('app_breeder_index'), 'common.breeders'|trans, '<i class="bi bi-shop"></i>', data_dashboard.breeders) }}</div>
+                        <div
+                            class="col-xs-12 col-lg-3">{{ card_dashboard.card(path('app_breeder_index'), 'common.strains'|trans, '<i class="bi bi-droplet-fill"></i>', data_dashboard.strains) }}</div>
+                        <div
+                            class="col-xs-12 col-lg-3">{{ card_dashboard.card(path('app_my_seeds_index'), 'dashboard.yourseedsstock'|trans, '<i class="bi bi-droplet-fill"></i>', data_dashboard.my_seeds_count) }}</div>
+                        <div
+                            class="col-xs-12 col-lg-3">{{ card_dashboard.card(path('app_my_seeds_index'), 'dashboard.yourvaritystock'|trans, '<i class="bi bi-egg-fill"></i>', data_dashboard.my_breeders_count) }}</div>
+
                 </div>
+
+                <div class="row align-items-center d-flex">
+                    {% if constant('App\\Entity\\EnumStates::GERM').name in data_dashboard|keys %}
+                        {% set key = constant('App\\Entity\\EnumStates::GERM').name %}
+                        {% set value = data_dashboard[key] %}
+                    {% else %}
+                        {% set value = 0 %}
+                    {% endif %}
+                    <div
+                        class="col-xs-12 col-md">{{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Germination'}), 'common.germinations'|trans, '<i class="bi bi-brightness-alt-high"></i>', value,'headercarddashboardgermination') }}</div>
+                    {% if constant('App\\Entity\\EnumStates::CROIS').name in data_dashboard|keys %}
+                        {% set key = constant('App\\Entity\\EnumStates::CROIS').name %}
+                        {% set value = data_dashboard[key] %}
+                    {% else %}
+                        {% set value = 0 %}
+                    {% endif %}
+                    <div
+                        class="col-xs-12 col-lg">{{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Growths'}), 'common.growths'|trans, '<i class="bi bi-flower3"></i>', value,'headercarddashboardgrowth') }}</div>
+                    {% if constant('App\\Entity\\EnumStates::PREFLO').name in data_dashboard|keys %}
+                        {% set key = constant('App\\Entity\\EnumStates::PREFLO').name %}
+                        {% set value = data_dashboard[key] %}
+                    {% else %}
+                        {% set value = 0 %}
+                    {% endif %}
+                    <div
+                        class="col-xs-12 col-lg">{{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Preblooms'}), 'common.preblooms'|trans, '<i class="bi bi-flower1"></i>', value,'headercarddashboardprebloom') }}</div>
+                    {% if constant('App\\Entity\\EnumStates::FLO').name in data_dashboard|keys %}
+                        {% set key = constant('App\\Entity\\EnumStates::FLO').name %}
+                        {% set value = data_dashboard[key] %}
+                    {% else %}
+                        {% set value = 0 %}
+                    {% endif %}
+                    <div
+                        class="col-xs-12 col-lg">{{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Blooms'}), 'common.blooms'|trans, '<i class="bi bi-flower2"></i>', value,'headercarddashboardbloom') }}</div>
+                    {% if constant('App\\Entity\\EnumStates::REC').name in data_dashboard|keys %}
+                        {% set key = constant('App\\Entity\\EnumStates::REC').name %}
+                        {% set value = data_dashboard[key] %}
+                    {% else %}
+                        {% set value = 0 %}
+                    {% endif %}
+                    <div
+                        class="col-xs-12 col-lg">{{ card_dashboard.card(path('app_my_plants_list', {'slug': 'Harvests'}), 'common.harvests'|trans, '<i class="bi bi-archive"></i>', value,'headercarddashboardharvest') }}</div>
+
+                </div>
+
+            </div>
             </div>
         </section>
     {% endif %}

@@ -31,7 +31,7 @@ class StrainAutocompleteField extends AbstractType
             'searchable_fields' => ['name'],
             'query_builder' => function (StrainRepository $strainRepository) {
                 return $strainRepository->createQueryBuilder('strain')
-                    ->leftJoin('strain.breeder', 'b')->where('b = strain.breeder')->andWhere('strain.user_id = '.$this->security->getUser()->getId().' OR strain.user_id IS NULL')->orderby('b.name', 'ASC')->addOrderBy('strain.name', 'ASC');
+                    ->leftJoin('strain.breeder', 'b')->where('b = strain.breeder')->andWhere('strain.userid = '.$this->security->getUser()->getId().' OR strain.userid IS NULL')->orderby('b.name', 'ASC')->addOrderBy('strain.name', 'ASC');
             },
             'attr' => [
                 'class' => 'selstrain shortfield form-control',

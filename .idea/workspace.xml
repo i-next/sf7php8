@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92bb2615-4b83-4ab6-87a9-62089841aa66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sf7php8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf7php8.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/myplants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myplants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/myseeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myseeds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/strains.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/strains.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/myplants.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myplants.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/myseeds.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myseeds.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MySeedsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MySeedsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/breeder/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/breeder/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_plants/_info.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_plants/_info.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_plants/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_plants/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +255,9 @@
       <workItem from="1716795932999" duration="606000" />
       <workItem from="1716875429708" duration="1941000" />
       <workItem from="1716929145619" duration="445000" />
-      <workItem from="1716960359044" duration="6562000" />
+      <workItem from="1716960359044" duration="8013000" />
+      <workItem from="1717051593502" duration="3980000" />
+      <workItem from="1717145011807" duration="1493000" />
     </task>
     <servers />
   </component>

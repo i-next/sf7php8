@@ -34,6 +34,7 @@ class MySeedsController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager, MySeedsServiceInterface $mySeedsService): Response
     {
         $mySeed = new MySeeds();
+
         $form = $this->createForm(MySeedsType::class, $mySeed);
 
         $form->handleRequest($request);

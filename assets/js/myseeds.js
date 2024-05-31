@@ -61,12 +61,6 @@ $(document).ready(function(){
       {
         name: 'comment',
         data: 'comment'
-      },
-      {
-        className: 'view',
-        orderable: false,
-        data: null,
-        defaultContent: '<i class="bi bi-eye button_action"></i>'
       }],
     columnDefs: [
       {
@@ -148,7 +142,7 @@ $(document).ready(function(){
 
 
   let datatablesMySeeds = $('.datatables').DataTable(options);
-  datatablesMySeeds.on('click', 'td.view', function (e) {
+  /*datatablesMySeeds.on('click', 'td.view', function (e) {
     let tr = e.target.closest('tr');
     let row = datatablesMySeeds.row(tr);
 
@@ -160,7 +154,7 @@ $(document).ready(function(){
       // Open this row
       row.child(format(row.data().strain)).show();
     }
-  });
+  });*/
 
   $('#my_seeds_strain-ts-control').on('change',function(){
     $('.newseed').hide();
