@@ -21,6 +21,7 @@ $(document).ready(function(){
     }
   }
   let options = {
+    responsive: true,
     pageLength: 10,
     order: [[2, 'asc']],
     columns: [

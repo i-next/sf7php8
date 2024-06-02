@@ -1,17 +1,31 @@
 /* *******************************************************
                          Global
 ******************************************************* */
-body {
-    font-size: 0.80rem !important;
-}
-div.content-base{
-    margin-left: 50px;
-    margin-right: 50px;
+@media screen and (min-width: 601px) {
+    body {
+        font-size: 0.8rem !important;
+    }
+    div.content-base{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1rem !important;
+    }
+
+    .logostrain{
+        display: none;
+    }
+}
+
+
+
 div.content-small-table{
-    margin-left: 20rem;
-    margin-right: 20rem;
+    /*margin-left: 20rem;
+    margin-right: 20rem;*/
 }
 
 .title_my_plants{

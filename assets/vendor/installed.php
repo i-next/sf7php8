@@ -40,16 +40,6 @@
     array (
     ),
   ),
-  'apexcharts' => 
-  array (
-    'version' => '3.46.0',
-    'dependencies' => 
-    array (
-    ),
-    'extraFiles' => 
-    array (
-    ),
-  ),
   'boxicons' => 
   array (
     'version' => '2.1.4',
@@ -758,16 +748,6 @@
     array (
     ),
   ),
-  'tinymce' => 
-  array (
-    'version' => '6.8.3',
-    'dependencies' => 
-    array (
-    ),
-    'extraFiles' => 
-    array (
-    ),
-  ),
   'zrender' => 
   array (
     'version' => '5.5.0',
@@ -799,17 +779,6 @@
       0 => 'jquery',
       1 => 'datatables.net',
       2 => 'datatables.net',
-    ),
-    'extraFiles' => 
-    array (
-    ),
-  ),
-  'datatables.net' => 
-  array (
-    'version' => '2.0.1',
-    'dependencies' => 
-    array (
-      0 => 'jquery',
     ),
     'extraFiles' => 
     array (
@@ -870,6 +839,28 @@
     'version' => '2.3.1',
     'dependencies' => 
     array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'datatables.net' => 
+  array (
+    'version' => '2.0.8',
+    'dependencies' => 
+    array (
+      0 => 'jquery',
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'datatables-responsive' => 
+  array (
+    'version' => '1.0.7',
+    'dependencies' => 
+    array (
+      0 => 'datatables.net',
     ),
     'extraFiles' => 
     array (

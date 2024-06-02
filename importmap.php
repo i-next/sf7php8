@@ -16,7 +16,6 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
-
     'bootstrap' => [
         'version' => '5.3.3',
     ],
@@ -30,9 +29,6 @@ return [
     'jquery' => [
         'version' => '3.7.1',
     ],
-    /*'apexcharts' => [
-        'version' => '3.46.0',
-    ],*/
     'boxicons' => [
         'version' => '2.1.4',
     ],
@@ -218,9 +214,6 @@ return [
         'version' => '9.0.0',
         'type' => 'css',
     ],
-    /*'tinymce' => [
-        'version' => '6.8.3',
-    ],*/
     'zrender' => [
         'version' => '5.5.0',
     ],
@@ -232,7 +225,7 @@ return [
         'version' => '2.0.1',
     ],
     'datatables.net' => [
-        'version' => '2.0.1',
+        'version' => '2.0.8',
     ],
     'datatables.net-dt/css/dataTables.dataTables.min.css' => [
         'version' => '2.0.1',
@@ -281,5 +274,8 @@ return [
     'myplants' => [
         'path' => './assets/js/myplants.js',
         'entrypoint' => true,
-    ]
+    ],
+    'datatables-responsive' => [
+        'version' => '1.0.7',
+    ],
 ];

@@ -82,7 +82,7 @@ $(document).ready(function(){
             let img = '';
 
             if (row.my_plants.my_seeds.strain.logo != null) {
-              img = '<img src="' + window.location.origin + '/' + row.my_plants.my_seeds.strain.logo + '" alt="nologo" class="logo" /> ';
+              img = '<img src="' + window.location.origin + '/' + row.my_plants.my_seeds.strain.logo + '" alt="nologo" class="logo logostrain" /> ';
             }
             if (data == "") {
               return img + row.my_plants.my_seeds.strain.name;
@@ -202,7 +202,7 @@ $(document).ready(function(){
     options.info = false;
   }
   let datatablesMyPlants = $('.datatables').DataTable(options);
-
+  DataTable.responsive(datatablesMyPlants);
   $(document).on('show.bs.modal','#changeStateModal', function(e) {
     let idseed = $(e.relatedTarget).parent().data('id');
     let state = $(e.relatedTarget).parent().data('state');
