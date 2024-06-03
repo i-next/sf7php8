@@ -34,11 +34,12 @@ class StrainAutocompleteField extends AbstractType
                     ->leftJoin('strain.breeder', 'b')->where('b = strain.breeder')->andWhere('strain.userid = '.$this->security->getUser()->getId().' OR strain.userid IS NULL')->orderby('b.name', 'ASC')->addOrderBy('strain.name', 'ASC');
             },
             'attr' => [
-                'class' => 'selstrain shortfield form-control',
+                'class' => 'selstrain shortfield form-control textform',
                 'data-controller' => 'autocomplete_strain',
                 ],
             'tom_select_options' => [
                 'maxOptions' => null,
+                'create' => true,
                 ]
         ]);
     }

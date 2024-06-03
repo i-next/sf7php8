@@ -14,7 +14,7 @@
         {{ form_row(form.newstrain.duration) }}
         {{ form_row(form.newstrain.type) }}
         {{ form_row(form.newstrain.url_photo) }}
-        {% if form.newstrain.description is defined%}
+        {% if form.newstrain.description is defined %}
             {{ form_row(form.newstrain.description) }}
         {% else %}
             {{ form_row(form.newstrain.descriptionEN) }}
@@ -22,6 +22,7 @@
 
     </fieldset>
         {{ form_row(form.quantity) }}
+        {{ form_row(form.comment) }}
         {#<button type="submit" class="btn btn-success">{{'form.button.add'|trans }}</button>#}
         {{ form_row(form.submit) }}
 {{ form_end(form) }}

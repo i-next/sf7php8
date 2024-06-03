@@ -147,12 +147,11 @@ $(document).ready(function(){
 
 
   let datatablesMySeeds = $('.datatables').DataTable(options);
-  console.log(datatablesMySeeds.columns([1]));
+
   $('#my_seeds_strain-ts-control').on('change',function(){
     $('.newseed').hide();
   });
   $('#my_seeds_strain').on('change',function(){
-
     if($.isNumeric($(this).val()) || $(this).val() == ''){
       $('.newseed').hide();
       $('#my_seeds_newstrain_breeder-ts-label').removeClass('required');

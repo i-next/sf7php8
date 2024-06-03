@@ -42,9 +42,7 @@ fieldset
     color: var(--default-color-light) !important;
 }
 
-.shortfield{
-    width: 40em !important;
-}
+
 .input-group{
     width: 4rem !important;
 }

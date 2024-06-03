@@ -202,7 +202,6 @@ $(document).ready(function(){
     options.info = false;
   }
   let datatablesMyPlants = $('.datatables').DataTable(options);
-  DataTable.responsive(datatablesMyPlants);
   $(document).on('show.bs.modal','#changeStateModal', function(e) {
     let idseed = $(e.relatedTarget).parent().data('id');
     let state = $(e.relatedTarget).parent().data('state');

@@ -8,6 +8,7 @@ use App\Repository\BreederRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -23,7 +24,7 @@ class MySeedsType extends AbstractType
         $builder
             ->add('strain', StrainAutocompleteField::class, [
                 'label_attr' => [
-                    'class' => 'required',
+                    'class' => 'required textform',
                 ]
             ])
             ->add('newstrain', StrainType::class, [
@@ -37,7 +38,9 @@ class MySeedsType extends AbstractType
                 ],
                 'data' => 1
             ])
-            ->add('comment')
+            ->add('comment',TextType::class,[
+                'attr' => ['class' => 'textform']
+            ])
             ->add('submit', SubmitType::class, [
                 'attr' => ['class' => 'btn btn-success'],
                 'label' => 'submit'

@@ -4,7 +4,6 @@
 
 {% block body %}
     <h1>{{ 'form.title.strain.new'|trans }}</h1>
-
     {{ include('my_seeds/_form.html.twig') }}
     <div><a href="{{ path('app_my_seeds_index') }}">{{ 'common.navigation.backtolist'|trans }}</a></div>
 {% endblock %}
