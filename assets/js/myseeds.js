@@ -33,7 +33,8 @@ $(document).ready(function(){
       {
         name: 'strain.urlPhoto',
         orderable: false,
-        data: 'strain.logo'
+        data: 'strain.logo',
+        className: 'logostrain',
       },
       {
         name: 'strain.name',
@@ -53,15 +54,18 @@ $(document).ready(function(){
       },
       {
         name: 'strain.auto',
-        data: 'strain.auto'
+        data: 'strain.auto',
+        className: 'logostrain',
       },
       {
         name: 'strain.type',
-        data: 'strain.type'
+        data: 'strain.type',
+        className: 'logostrain',
       },
       {
         name: 'comment',
-        data: 'comment'
+        data: 'comment',
+        className: 'logostrain',
       }],
     columnDefs: [
       {
@@ -87,7 +91,7 @@ $(document).ready(function(){
           if(data == null){
             return ''
           }
-          return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo" />'
+          return '<img src="'+window.location.origin+'/'+data+'" alt="nologo" class="logo logostrain" />'
         }
       },
       {
@@ -143,20 +147,7 @@ $(document).ready(function(){
 
 
   let datatablesMySeeds = $('.datatables').DataTable(options);
-  /*datatablesMySeeds.on('click', 'td.view', function (e) {
-    let tr = e.target.closest('tr');
-    let row = datatablesMySeeds.row(tr);
-
-    if (row.child.isShown()) {
-      // This row is already open - close it
-      row.child.hide();
-    }
-    else {
-      // Open this row
-      row.child(format(row.data().strain)).show();
-    }
-  });*/
-
+  console.log(datatablesMySeeds.columns([1]));
   $('#my_seeds_strain-ts-control').on('change',function(){
     $('.newseed').hide();
   });
@@ -210,7 +201,6 @@ $(document).ready(function(){
     });
   });
   datatablesMySeeds.on('change keyup', 'input[name="comment"]', function (e) {
-    console.log($(this).val());
     if($(this).val().length > 3){
       $.ajax({
         method: 'POST',

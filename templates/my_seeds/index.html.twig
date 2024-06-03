@@ -3,22 +3,6 @@
 {% block title %}{{ 'myseeds.index.page_title'|trans }}{% endblock %}
 
 {% block body %}
-    {#<div class="modal fade" id="basicModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">{{ 'form.title.strain.new'|trans }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'form.button.close'|trans }}</button>
-                    <button type="button" class="btn btn-primary add_plant">{{ 'form.button.add'|trans }}</button>
-                </div>
-            </div>
-        </div>
-    </div>#}
     {% include('/modals/modal_add_plant.html.twig') %}
     {% include('/modals/modal_my_seeds_info.html.twig') %}
     <div class="content-base">
@@ -28,14 +12,14 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th></th>
+                    <th class="logostrain"></th>
                     <th>{{ 'myseeds.index.table.head.name'|trans }}</th>
                     <th>{{ 'myseeds.index.table.head.seeder'|trans }}</th>
                     <th>{{ 'myseeds.index.table.head.quantity'|trans }}</th>
                     <th>{{ 'myseeds.index.table.head.duration'|trans }}</th>
-                    <th>{{ 'myseeds.index.table.head.auto'|trans }}</th>
-                    <th>Type</th>
-                    <th>{{ 'myseeds.index.table.head.comment'|trans }}</th>
+                    <th class="logostrain">{{ 'myseeds.index.table.head.auto'|trans }}</th>
+                    <th class="logostrain">Type</th>
+                    <th class="logostrain">{{ 'myseeds.index.table.head.comment'|trans }}</th>
                 </tr>
             </thead>
         </table>
