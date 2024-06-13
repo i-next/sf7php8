@@ -44,7 +44,7 @@ class RegistrationController extends AbstractController
             $validator = new EmailValidator();
             $multipleValidations = new MultipleValidationWithAnd([
                 new RFCValidation(),
-                new DNSCheckValidation()
+                //new DNSCheckValidation()
             ]);
             if(!$validator->isValid($user->getEmail(), $multipleValidations)){
                 $error = new FormError($this->translator->trans('email.verify.error'));

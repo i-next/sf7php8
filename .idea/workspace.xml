@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="92bb2615-4b83-4ab6-87a9-62089841aa66" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/myplants.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myplants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/myseeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myseeds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/myseeds.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/myseeds.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MySeedsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MySeedsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/StrainAutocompleteField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_seeds/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_seeds/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_seeds/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MyPlantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MyPlantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +257,11 @@
       <workItem from="1717145011807" duration="5786000" />
       <workItem from="1717220775394" duration="2301000" />
       <workItem from="1717308822897" duration="2883000" />
-      <workItem from="1717394667604" duration="5018000" />
+      <workItem from="1717394667604" duration="5436000" />
+      <workItem from="1717416934186" duration="1230000" />
+      <workItem from="1717488254883" duration="696000" />
+      <workItem from="1718172117055" duration="2247000" />
+      <workItem from="1718253637783" duration="2318000" />
     </task>
     <servers />
   </component>

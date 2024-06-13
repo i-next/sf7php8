@@ -64,10 +64,11 @@ class MyPlantsController extends AbstractController
         if ($form->isSubmitted()) {
             $germination = new Germination();
             $germination->setMyPlants($myplant);
-            $dategerm = new \DateTimeImmutable();
+            $dategerm = \DateTimeImmutable::createFromFormat('Y-m-d',$request->request->all()['my_plants']['date_germination']);
             $germination->setUserid($this->getUser());
-            $dategerm->setTimestamp((int)strtotime($request->request->all()['my_plants']['date_germination']));
+
             $germination->setDateActive($dategerm);
+
             $germination->setFinished(false);
             $myseed->setQuantity($myseed->getQuantity() - 1);
             $entityManager->persist($myplant);
